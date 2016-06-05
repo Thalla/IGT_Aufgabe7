@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://api.thumbnail.ws/soap" targetNamespace="http://api.thumbnail.ws/soap">
+<wsdl:documentation>This is the Thumbnail.ws service.
+
+Available methods:
+
+ * get : Get a screenshot for a given URL.
+
+</wsdl:documentation>
+<wsdl:types>
+  <xsd:schema targetNamespace="http://api.thumbnail.ws/soap">
+    <xsd:element name="getRequest">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="apikey" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="url" type="xsd:string" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="width" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="format" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="fullpage" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="mobile" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="delay" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="getResponse">
+      <xsd:complexType>
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="encoding" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="image" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+</wsdl:types>
+
+<wsdl:message name="getSoapIn">
+    <wsdl:part name="parameters" element="tns:getRequest" />
+</wsdl:message>
+<wsdl:message name="getSoapOut">
+    <wsdl:part name="parameters" element="tns:getResponse" />
+</wsdl:message>
+<wsdl:portType name="getSoap">
+  <wsdl:operation name="get">
+    <wsdl:input message="tns:getSoapIn" />
+    <wsdl:output message="tns:getSoapOut" />
+  </wsdl:operation>
+</wsdl:portType>
+
+<wsdl:binding name="getSoap" type="tns:getSoap">
+  <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  <wsdl:operation name="get">
+    <soap:operation soapAction="http://api.thumbnail.ws/soap" style="document" />
+    <wsdl:input>
+      <soap:body use="literal" />
+    </wsdl:input>
+    <wsdl:output>
+      <soap:body use="literal" />
+    </wsdl:output>
+  </wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="soap">
+  <wsdl:port name="getSoap" binding="tns:getSoap">
+    <soap:address location="http://api.thumbnail.ws/soap" />
+  </wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

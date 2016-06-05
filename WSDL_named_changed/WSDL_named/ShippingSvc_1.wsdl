@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://portal.workhorseproducts.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://portal.workhorseproducts.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://portal.workhorseproducts.com/">
+      <s:element name="ComputeValue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="x" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="y" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ComputeValueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ComputeValueResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingQuote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PickupZip" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationZip" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Weight" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ArrivalNotify" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="InsidePickup" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="InsideDelivery" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Residential" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="Liftgate" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="LimitedAccess" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetShippingQuoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetShippingQuoteResult" type="tns:ShippingResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ShippingResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ODCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ODZip" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ODCost" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ODServiceDays" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="YRCCity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YRCZip" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="YRCCost" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="YRCServiceDays" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ComputeValueSoapIn">
+    <wsdl:part name="parameters" element="tns:ComputeValue" />
+  </wsdl:message>
+  <wsdl:message name="ComputeValueSoapOut">
+    <wsdl:part name="parameters" element="tns:ComputeValueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingQuoteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetShippingQuote" />
+  </wsdl:message>
+  <wsdl:message name="GetShippingQuoteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetShippingQuoteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ShippingSvcSoap">
+    <wsdl:operation name="ComputeValue">
+      <wsdl:input message="tns:ComputeValueSoapIn" />
+      <wsdl:output message="tns:ComputeValueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingQuote">
+      <wsdl:input message="tns:GetShippingQuoteSoapIn" />
+      <wsdl:output message="tns:GetShippingQuoteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ShippingSvcSoap" type="tns:ShippingSvcSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ComputeValue">
+      <soap:operation soapAction="http://portal.workhorseproducts.com/ComputeValue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingQuote">
+      <soap:operation soapAction="http://portal.workhorseproducts.com/GetShippingQuote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ShippingSvcSoap12" type="tns:ShippingSvcSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ComputeValue">
+      <soap12:operation soapAction="http://portal.workhorseproducts.com/ComputeValue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetShippingQuote">
+      <soap12:operation soapAction="http://portal.workhorseproducts.com/GetShippingQuote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ShippingSvc">
+    <wsdl:port name="ShippingSvcSoap" binding="tns:ShippingSvcSoap">
+      <soap:address location="http://portal.workhorseproducts.com/shippingService/ShippingSvc.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ShippingSvcSoap12" binding="tns:ShippingSvcSoap12">
+      <soap12:address location="http://portal.workhorseproducts.com/shippingService/ShippingSvc.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

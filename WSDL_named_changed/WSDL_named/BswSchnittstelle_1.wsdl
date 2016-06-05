@@ -1,0 +1,646 @@
+<?xml version="1.0" ?>
+<wsdl:definitions targetNamespace="http://ws.bsw.vsa" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ax222="http://entscheidung.ws.bsw.vsa/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://ws.bsw.vsa" xmlns:ax217="http://einlieferung.ws.bsw.vsa/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ax218="http://ws.bsw.vsa/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.bsw.vsa/xsd">
+    <xs:complexType name="Kontaktdaten">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="bundesland_kz" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="email" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="hausnummer" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="land_kz" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="titel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ort" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="plz" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="strasse" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="telefonnr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="vorname" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Identifikation">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="adresse" nillable="true" type="ax218:Kontaktdaten"/>
+            <xs:element minOccurs="0" name="adresseAnsprechpartner" nillable="true" type="ax218:Kontaktdaten"/>
+            <xs:element minOccurs="0" name="ik" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Statusmeldung">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="kvnr_azh" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="kvnr_bsw" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Statusabfrage">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="kvnr_azh" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="kvnr_bsw" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="leistungserbringerIk" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://einlieferung.ws.bsw.vsa/xsd" xmlns:ax219="http://ws.bsw.vsa/xsd">
+    <xs:import namespace="http://ws.bsw.vsa/xsd"/>
+    <xs:complexType name="Einlieferung">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="kostenvoranschlag" nillable="true" type="ax217:Kostenvoranschlag"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Kostenvoranschlag">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="adresse" nillable="true" type="ax218:Kontaktdaten"/>
+            <xs:element minOccurs="0" name="adresseAnsprechpartner" nillable="true" type="ax218:Kontaktdaten"/>
+            <xs:element minOccurs="0" name="anhang" nillable="true" type="ax217:Anhang"/>
+            <xs:element minOccurs="0" name="anzahlperioden" type="xs:int"/>
+            <xs:element minOccurs="0" name="bemerkung" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="betrageigenanteil" type="xs:double"/>
+            <xs:element minOccurs="0" name="betragzuzahlung" type="xs:double"/>
+            <xs:element minOccurs="0" name="bruttobetrag" type="xs:double"/>
+            <xs:element minOccurs="0" name="kostentraeger" nillable="true" type="ax217:Kostentraeger"/>
+            <xs:element minOccurs="0" name="kvnr_bsw" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="ik" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="mwstbetrag" type="xs:double"/>
+            <xs:element minOccurs="0" name="nettobetrag" type="xs:double"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="positionsdaten" nillable="true" type="ax217:Positionsdaten"/>
+            <xs:element minOccurs="0" name="verordnungsdaten" nillable="true" type="ax217:Verordnungsdaten"/>
+            <xs:element minOccurs="0" name="versandart" type="xs:int"/>
+            <xs:element minOccurs="0" name="versichertendaten" nillable="true" type="ax217:Versichertendaten"/>
+            <xs:element minOccurs="0" name="versorgungsart" type="xs:int"/>
+            <xs:element minOccurs="0" name="versorgungsperiode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="versorgungszeitraumbis" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="versorgungszeitraumvon" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Anhang">
+        <xs:sequence>
+            <xs:element maxOccurs="10" minOccurs="0" name="dateiname" nillable="true" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="anhangsart" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Kostentraeger">
+        <xs:sequence>
+        	<xs:element minOccurs="0" name="ik" nillable="true" type="xs:string"/>
+        	<xs:element minOccurs="0" name="adresse" nillable="true" type="ax218:Kontaktdaten"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Positionsdaten">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="anfragenummer" type="xs:int"/>
+            <xs:element minOccurs="0" name="anzahl" type="xs:double"/>
+            <xs:element minOccurs="0" name="anzurechnendemwst" type="xs:double"/>
+            <xs:element minOccurs="0" name="bemerkung" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="beschreibungpos" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="bruttobetrag" type="xs:double"/>
+            <xs:element minOccurs="0" name="geraetenummer" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="hersteller" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="herstellungsjahr" type="xs:int"/>
+            <xs:element minOccurs="0" name="hilfsmittelkz" type="xs:int"/>
+            <xs:element minOccurs="0" name="hilfsmittelposnr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="inventarnr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="legs" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="mengeneinheit" type="xs:int"/>
+            <xs:element minOccurs="0" name="mwstkz" type="xs:int"/>
+            <xs:element minOccurs="0" name="nettobetrag" type="xs:double"/>
+            <xs:element minOccurs="0" name="positionsnr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="produktbesonderheit" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="produktbezeichnung" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="pzn" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="rabatt" type="xs:double"/>
+            <xs:element minOccurs="0" name="registernummer" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="seriennummer" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="vorbesitzer" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="zeitwert" type="xs:double"/>
+            <xs:element minOccurs="0" name="zubehoerkz" type="xs:int"/>
+            <xs:element minOccurs="0" name="zuschlag" type="xs:double"/>
+			<xs:element minOccurs="0" name="betrageigenanteil" type="xs:double"/>
+			<xs:element minOccurs="0" name="zuzahlung" type="xs:double"/>
+			<xs:element minOccurs="0" name="hilfsmittelreferenznummer" type="xs:boolean"/>
+			<xs:element minOccurs="0" name="koerperhaelfte" nillable="true" type="xs:int"/>
+			<xs:element minOccurs="0" name="versorgungszeitraumbis" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="versorgungszeitraumvon" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="auslieferungsdatum" nillable="true" type="xs:string"/>
+			<xs:element minOccurs="0" name="betriebsstunden" nillable="true" type="xs:int"/>
+ 			<xs:element minOccurs="0" name="hilfsmittelzumverbrauch" nillable="true" type="xs:boolean"/>
+ 			<xs:element minOccurs="0" name="versicherungsart" nillable="true" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Verordnungsdaten">
+        <xs:sequence>
+        	<xs:element minOccurs="0" name="titel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="abg" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="arztname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="arztvorname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="arztnr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="bsnr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="bvg" type="xs:int"/>
+            <xs:element minOccurs="0" name="diagnoseschluessel" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="diagnosetext" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="leistung" nillable="true" type="xs:string"/>
+            <xs:element maxOccurs="1" minOccurs="0" name="bemerkung" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="unfalldatum" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="unfallkz" type="xs:int"/>
+            <xs:element minOccurs="0" name="verordnerIk" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="verordnungsdatum" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="verordnungsnr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="verordnungskz" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="opdatum" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="versorgungkz" nillable="true" type="xs:int"/>
+            <xs:element minOccurs="0" name="verordnungsartkz" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Versichertendaten">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="abweichendeLieferadresse" nillable="true" type="ax218:Kontaktdaten"/>
+            <xs:element minOccurs="0" name="adresse" nillable="true" type="ax218:Kontaktdaten"/>
+            <xs:element minOccurs="0" name="befreiungbis" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="befreiungseit" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="geburtsdatum" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="kartegueltigbis" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="versichertennr" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="versichertenstatus" type="xs:string"/>
+            <xs:element minOccurs="0" name="versicherungsart" type="xs:int"/>
+            <xs:element minOccurs="0" name="zuzahlungskz" type="xs:int"/>
+            <xs:element minOccurs="0" name="versichertennrneu" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.bsw.vsa" xmlns:ax220="http://einlieferung.ws.bsw.vsa/xsd" xmlns:ax221="http://ws.bsw.vsa/xsd" xmlns:ax224="http://entscheidung.ws.bsw.vsa/xsd">
+    <xs:import namespace="http://einlieferung.ws.bsw.vsa/xsd"/>
+    <xs:import namespace="http://ws.bsw.vsa/xsd"/>
+    <xs:import namespace="http://entscheidung.ws.bsw.vsa/xsd"/>
+    <xs:element name="sendKostenvoranschlagData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="1" minOccurs="0" name="kv" nillable="true" type="ax217:Einlieferung"/>
+                <xs:element minOccurs="0" name="identifikation" nillable="true" type="ax218:Identifikation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="sendKostenvoranschlagDataResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax218:Statusmeldung"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateKostenvoranschlagStatusData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="10" minOccurs="0" name="statusdata" nillable="true" type="ax222:KostentraegerentscheidungIn"/>
+                <xs:element minOccurs="0" name="identifikation" nillable="true" type="ax218:Identifikation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateKostenvoranschlagStatusDataResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax218:Statusmeldung"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="retrieveAnhang">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="10" minOccurs="0" name="statusabfrage" nillable="true" type="ax218:Statusabfrage"/>
+                <xs:element minOccurs="0" name="identifikation" nillable="true" type="ax218:Identifikation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="retrieveAnhangResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax222:Anhang"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="retrieveKostenvoranschlagStatusData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="10" minOccurs="0" name="ids" nillable="true" type="ax218:Statusabfrage"/>
+                <xs:element minOccurs="0" name="identifikation" nillable="true" type="ax218:Identifikation"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="retrieveKostenvoranschlagStatusDataResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="10" minOccurs="0" name="return" nillable="true" type="ax222:KostentraegerentscheidungOut"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="retrieveKostenvoranschlagStatusDataWithPosEntscheidung">
+    	<xs:complexType>
+    		<xs:sequence>
+
+    			<xs:element maxOccurs="10" minOccurs="0" name="ids" type="ax221:Statusabfrage"/>
+                        <xs:element maxOccurs="1" minOccurs="0" name="identifikation" type="ax221:Identifikation"/>
+                    </xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    <xs:element name="retrieveKostenvoranschlagStatusDataWithPosEntscheidungResponse">
+    	<xs:complexType>
+    		<xs:sequence>
+
+    			<xs:element maxOccurs="10" minOccurs="0" name="return" type="xsd:KostentraegerentscheidungWithPosEntscheidungOut"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    <xs:element name="updateKostenvoranschlagStatusDataWithPosEntscheidung">
+    	<xs:complexType>
+    		<xs:sequence>
+
+    			<xs:element maxOccurs="10" minOccurs="0" name="statusData" type="xsd:KostentraegerentscheidungWithPosEntscheidungIn">
+    			</xs:element>
+    			<xs:element maxOccurs="1" minOccurs="0" name="identifikation" type="ax221:Identifikation"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    <xs:element name="updateKostenvoranschlagStatusDataWithPosEntscheidungResponse">
+    	<xs:complexType>
+    		<xs:sequence>
+
+    			<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="ax221:Statusmeldung"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="KostentraegerentscheidungWithPosEntscheidungOut">
+    	<xs:complexContent>
+    		<xs:extension base="ax224:Kostentraegerentscheidung">
+    			<xs:sequence>
+    				<xs:element maxOccurs="unbounded" minOccurs="0" name="kostentraegerpositionsentscheidung" type="xsd:Kostentraegerpositionsentscheidung">
+    				</xs:element>
+    				<xs:element maxOccurs="unbounded" minOccurs="0" name="statusmeldungen" type="ax221:Statusmeldung"/>
+    			</xs:sequence>
+    		</xs:extension>
+    	</xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="KostentraegerentscheidungWithPosEntscheidungIn">
+    	<xs:complexContent>
+    		<xs:extension base="ax224:KostentraegerentscheidungIn">
+    			<xs:sequence>
+    				<xs:element maxOccurs="unbounded" minOccurs="0" name="kostentraegerpositionsentscheidung" type="xsd:Kostentraegerpositionsentscheidung">
+    				</xs:element>
+<!--    				<xs:element name="anhang" type="ax224:Anhang" minOccurs="0" maxOccurs="1" ></xs:element>-->
+    			</xs:sequence>
+    		</xs:extension>
+    	</xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="Kostentraegerpositionsentscheidung">
+    	<xs:sequence>
+    		<xs:element maxOccurs="1" minOccurs="0" name="beschreibung" type="xs:string">
+    		</xs:element>
+    		<xs:element maxOccurs="1" minOccurs="0" name="nettobetragbewilligt" type="xs:double">
+    		</xs:element>
+    		<xs:element maxOccurs="1" minOccurs="0" name="bruttobetragbewilligt" type="xs:double">
+    		</xs:element>
+    		<xs:element maxOccurs="1" minOccurs="0" name="positionsnummer" type="xs:string"/>
+    		<xs:element maxOccurs="1" minOccurs="0" name="statusmeldung" nillable="true" type="ax218:Statusmeldung"/>
+    	</xs:sequence>
+    </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://entscheidung.ws.bsw.vsa/xsd" xmlns:ax223="http://ws.bsw.vsa/xsd">
+    <xs:import namespace="http://ws.bsw.vsa/xsd"/>
+    <xs:complexType name="Kostentraegerentscheidung">
+        <xs:complexContent>
+            <xs:extension base="ax218:Statusmeldung">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="anhangVorhanden" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="begruendung" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="eigenanteil" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="eigentumsvorbehalt" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="eingangsdatum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="genehmigungsnummer" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="genehmigungsdatum" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="genehmigungszeitraum" nillable="true" type="ax222:Genehmigungszeitraum"/>
+                    <xs:element minOccurs="0" name="gesamtBetragBewilligt" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="kostentraegerIk" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="leistungserbringerIk" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="lieferung" nillable="true" type="ax222:Lieferung"/>
+                    <xs:element minOccurs="0" name="sachbearbeiter" nillable="true" type="ax222:Sachbearbeiter"/>
+                    <xs:element minOccurs="0" name="zuzahlung" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="zuzahlungsart" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+     <xs:complexType name="KostentraegerentscheidungIn">
+        <xs:complexContent>
+            <xs:extension base="ax222:Kostentraegerentscheidung">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="anhang" nillable="true" type="ax222:Anhang"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="KostentraegerentscheidungOut">
+        <xs:complexContent>
+            <xs:extension base="ax222:Kostentraegerentscheidung">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="statusmeldungen" nillable="true" type="ax218:Statusmeldung"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    <xs:complexType name="Genehmigungszeitraum">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="anzahlPerioden" type="xs:int"/>
+            <xs:element minOccurs="0" name="bis" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="periode" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="von" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Lieferung">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="adresse" nillable="true" type="ax218:Kontaktdaten"/>
+            <xs:element minOccurs="0" name="adresseAnsprechpartner" nillable="true" type="ax218:Kontaktdaten"/>
+            <xs:element minOccurs="0" name="lagerort" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Sachbearbeiter">
+        <xs:sequence>
+            <xs:element minOccurs="0" name="adresse" nillable="true" type="ax218:Kontaktdaten"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Anhang">
+        <xs:sequence>
+            <xs:element maxOccurs="5" minOccurs="0" name="dateiname" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="kvnr_azh" nillable="true" type="xs:string"/>
+            <xs:element minOccurs="0" name="kvnr_bsw" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="retrieveAnhangRequest">
+    <wsdl:part name="parameters" element="xsd:retrieveAnhang">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateKostenvoranschlagStatusDataRequest">
+    <wsdl:part name="parameters" element="xsd:updateKostenvoranschlagStatusData">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateKostenvoranschlagStatusDataWithPosEntscheidungRequest">
+    <wsdl:part name="parameters" element="xsd:updateKostenvoranschlagStatusDataWithPosEntscheidung">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendKostenvoranschlagDataRequest">
+    <wsdl:part name="parameters" element="xsd:sendKostenvoranschlagData">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveKostenvoranschlagStatusDataRequest">
+    <wsdl:part name="parameters" element="xsd:retrieveKostenvoranschlagStatusData">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sendKostenvoranschlagDataResponse">
+    <wsdl:part name="parameters" element="xsd:sendKostenvoranschlagDataResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateKostenvoranschlagStatusDataResponse">
+    <wsdl:part name="parameters" element="xsd:updateKostenvoranschlagStatusDataResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveKostenvoranschlagStatusDataWithPosEntscheidungRequest">
+    <wsdl:part name="parameters" element="xsd:retrieveKostenvoranschlagStatusDataWithPosEntscheidung">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveAnhangResponse">
+    <wsdl:part name="parameters" element="xsd:retrieveAnhangResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateKostenvoranschlagStatusDataWithPosEntscheidungResponse">
+    <wsdl:part name="parameters" element="xsd:updateKostenvoranschlagStatusDataWithPosEntscheidungResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveKostenvoranschlagStatusDataResponse">
+    <wsdl:part name="parameters" element="xsd:retrieveKostenvoranschlagStatusDataResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="retrieveKostenvoranschlagStatusDataWithPosEntscheidungResponse">
+    <wsdl:part name="parameters" element="xsd:retrieveKostenvoranschlagStatusDataWithPosEntscheidungResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="BswSchnittstellePortType">
+    <wsdl:operation name="retrieveAnhang">
+      <wsdl:input message="xsd:retrieveAnhangRequest" wsaw:Action="urn:retrieveAnhang">
+    </wsdl:input>
+      <wsdl:output message="xsd:retrieveAnhangResponse" wsaw:Action="urn:retrieveAnhangResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveKostenvoranschlagStatusData">
+      <wsdl:input message="xsd:retrieveKostenvoranschlagStatusDataRequest" wsaw:Action="urn:retrieveKostenvoranschlagStatusData">
+    </wsdl:input>
+      <wsdl:output message="xsd:retrieveKostenvoranschlagStatusDataResponse" wsaw:Action="urn:retrieveKostenvoranschlagStatusDataResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKostenvoranschlagStatusData">
+      <wsdl:input message="xsd:updateKostenvoranschlagStatusDataRequest" wsaw:Action="urn:updateKostenvoranschlagStatusData">
+    </wsdl:input>
+      <wsdl:output message="xsd:updateKostenvoranschlagStatusDataResponse" wsaw:Action="urn:updateKostenvoranschlagStatusDataResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendKostenvoranschlagData">
+      <wsdl:input message="xsd:sendKostenvoranschlagDataRequest" wsaw:Action="urn:sendKostenvoranschlagData">
+    </wsdl:input>
+      <wsdl:output message="xsd:sendKostenvoranschlagDataResponse" wsaw:Action="urn:sendKostenvoranschlagDataResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveKostenvoranschlagStatusDataWithPosEntscheidung">
+      <wsdl:input message="xsd:retrieveKostenvoranschlagStatusDataWithPosEntscheidungRequest">
+    </wsdl:input>
+      <wsdl:output message="xsd:retrieveKostenvoranschlagStatusDataWithPosEntscheidungResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKostenvoranschlagStatusDataWithPosEntscheidung">
+      <wsdl:input message="xsd:updateKostenvoranschlagStatusDataWithPosEntscheidungRequest">
+    </wsdl:input>
+      <wsdl:output message="xsd:updateKostenvoranschlagStatusDataWithPosEntscheidungResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BswSchnittstelleSoap11Binding" type="xsd:BswSchnittstellePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="retrieveAnhang">
+      <soap:operation soapAction="urn:retrieveAnhang" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveKostenvoranschlagStatusData">
+      <soap:operation soapAction="urn:retrieveKostenvoranschlagStatusData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKostenvoranschlagStatusData">
+      <soap:operation soapAction="urn:updateKostenvoranschlagStatusData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveKostenvoranschlagStatusDataWithPosEntscheidung">
+      <soap12:operation soapAction="urn:retrieveKostenvoranschlagStatusDataWithPosEntscheidung" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKostenvoranschlagStatusDataWithPosEntscheidung">
+      <soap12:operation soapAction="urn:updateKostenvoranschlagStatusDataWithPosEntscheidung" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendKostenvoranschlagData">
+      <soap:operation soapAction="urn:sendKostenvoranschlagData" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BswSchnittstelleHttpBinding" type="xsd:BswSchnittstellePortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="retrieveAnhang">
+      <http:operation location="BswSchnittstelle/retrieveAnhang"/>
+      <wsdl:input>
+        <mime:content part="retrieveAnhang" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="retrieveAnhang" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveKostenvoranschlagStatusData">
+      <http:operation location="BswSchnittstelle/retrieveKostenvoranschlagStatusData"/>
+      <wsdl:input>
+        <mime:content part="retrieveKostenvoranschlagStatusData" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="retrieveKostenvoranschlagStatusData" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKostenvoranschlagStatusData">
+      <http:operation location="BswSchnittstelle/updateKostenvoranschlagStatusData"/>
+      <wsdl:input>
+        <mime:content part="updateKostenvoranschlagStatusData" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="updateKostenvoranschlagStatusData" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveKostenvoranschlagStatusDataWithPosEntscheidung">
+      <http:operation location="BswSchnittstelle/retrieveKostenvoranschlagStatusDataWithPosEntscheidung"/>
+      <wsdl:input>
+        <mime:content part="retrieveKostenvoranschlagStatusDataWithPosEntscheidung" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="retrieveKostenvoranschlagStatusDataWithPosEntscheidung" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKostenvoranschlagStatusDataWithPosEntscheidung">
+      <http:operation location="BswSchnittstelle/updateKostenvoranschlagStatusDataWithPosEntscheidung"/>
+      <wsdl:input>
+        <mime:content part="updateKostenvoranschlagStatusDataWithPosEntscheidung" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="updateKostenvoranschlagStatusDataWithPosEntscheidung" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendKostenvoranschlagData">
+      <http:operation location="BswSchnittstelle/sendKostenvoranschlagData"/>
+      <wsdl:input>
+        <mime:content part="sendKostenvoranschlagData" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="sendKostenvoranschlagData" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BswSchnittstelleSoap12Binding" type="xsd:BswSchnittstellePortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="retrieveAnhang">
+      <soap12:operation soapAction="urn:retrieveAnhang" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveKostenvoranschlagStatusData">
+      <soap12:operation soapAction="urn:retrieveKostenvoranschlagStatusData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKostenvoranschlagStatusData">
+      <soap12:operation soapAction="urn:updateKostenvoranschlagStatusData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieveKostenvoranschlagStatusDataWithPosEntscheidung">
+      <soap12:operation soapAction="urn:retrieveKostenvoranschlagStatusDataWithPosEntscheidung" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateKostenvoranschlagStatusDataWithPosEntscheidung">
+      <soap12:operation soapAction="urn:updateKostenvoranschlagStatusDataWithPosEntscheidung" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendKostenvoranschlagData">
+      <soap12:operation soapAction="urn:sendKostenvoranschlagData" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BswSchnittstelle">
+    <wsdl:port name="BswSchnittstelleHttpSoap12Endpoint" binding="xsd:BswSchnittstelleSoap12Binding">
+      <soap12:address location="https://www.azh-portal.de/services/BswSchnittstelle"/>
+    </wsdl:port>
+    <wsdl:port name="BswSchnittstelleHttpSoap11Endpoint" binding="xsd:BswSchnittstelleSoap11Binding">
+      <soap:address location="https://www.azh-portal.de/services/BswSchnittstelle"/>
+    </wsdl:port>
+    <wsdl:port name="BswSchnittstelleHttpEndpoint" binding="xsd:BswSchnittstelleHttpBinding">
+      <http:address location="https://www.azh-portal.de/services/BswSchnittstelle"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

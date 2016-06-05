@@ -1,0 +1,277 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://sab/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:http1="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://sab/">
+    <wsdl:documentation>Currency service Revision: 5658. Contains methods that works with Data Service Currency</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ns="http://sab/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://sab/">
+            <xs:element name="getCurrencyListShort">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="getCurrencyListShortResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="currencyItem" nillable="true" type="ns1:currencyItem"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getCurrencyListShortResponse" type="ns1:getCurrencyListShortResponse"/>
+            <xs:complexType name="currencyItem">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="currencyId" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="currencyCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getCurrencyRate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="type" nillable="true" type="xs:int"/>
+                        <xs:element minOccurs="0" name="currencyId" nillable="true" type="xs:int"/>
+                        <xs:element minOccurs="0" name="rateDate" nillable="true" type="xs:date"/>
+                        <xs:element minOccurs="0" name="toboId" nillable="true" type="xs:int"/>
+                        <xs:element minOccurs="0" name="currencyCode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="getCurrencyRateResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="currencyRate" nillable="true" type="ns1:currencyRate"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getCurrencyRateResponse" type="ns1:getCurrencyRateResponse"/>
+            <xs:complexType name="currencyRate">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="rate" nillable="true" type="xs:decimal"/>
+                    <xs:element minOccurs="0" name="dateFrom" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateTo" nillable="true" type="xs:date"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getCurrencyListFull">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="currencyId" nillable="true" type="xs:int"/>
+                        <xs:element minOccurs="0" name="currencyCode" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="getCurrencyListFullResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="currencyItem" nillable="true" type="ns1:currencyItem"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getCurrencyListFullResponse" type="ns1:getCurrencyListFullResponse"/>
+            <xs:element name="getCurrencyRateTypes">
+                <xs:complexType>
+                    <xs:sequence/>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="getCurrencyRateTypesResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="currencyRateType" nillable="true" type="ns1:currencyRateType"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getCurrencyRateTypesResponse" type="ns1:getCurrencyRateTypesResponse"/>
+            <xs:complexType name="currencyRateType">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getCardCrossRate">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="ccyFrom" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="ccyTo" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="date" nillable="true" type="xs:date"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="getCardCrossRateResponse">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="currencyCrossRate" nillable="true" type="ns1:currencyCrossRate"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:element name="getCardCrossRateResponse" type="ns1:getCardCrossRateResponse"/>
+            <xs:complexType name="currencyCrossRate">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="operDate" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="realDate" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="ccyFrom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ccyTo" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rate" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="crossRate" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getCurrencyRateRequest">
+        <wsdl:part name="parameters" element="ns1:getCurrencyRate"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrencyRateResponse">
+        <wsdl:part name="parameters" element="ns1:getCurrencyRateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrencyRateTypesRequest">
+        <wsdl:part name="parameters" element="ns1:getCurrencyRateTypes"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrencyRateTypesResponse">
+        <wsdl:part name="parameters" element="ns1:getCurrencyRateTypesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrencyListFullRequest">
+        <wsdl:part name="parameters" element="ns1:getCurrencyListFull"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrencyListFullResponse">
+        <wsdl:part name="parameters" element="ns1:getCurrencyListFullResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCardCrossRateRequest">
+        <wsdl:part name="parameters" element="ns1:getCardCrossRate"/>
+    </wsdl:message>
+    <wsdl:message name="getCardCrossRateResponse">
+        <wsdl:part name="parameters" element="ns1:getCardCrossRateResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrencyListShortRequest">
+        <wsdl:part name="parameters" element="ns1:getCurrencyListShort"/>
+    </wsdl:message>
+    <wsdl:message name="getCurrencyListShortResponse">
+        <wsdl:part name="parameters" element="ns1:getCurrencyListShortResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="CurrencyPortType">
+        <wsdl:operation name="getCurrencyRate">
+            <wsdl:documentation>method to get currency rate by type, id, tobo. type: see getCurrencyRateTypes method.</wsdl:documentation>
+            <wsdl:input message="ns1:getCurrencyRateRequest" wsaw:Action="urn:getCurrencyRate"/>
+            <wsdl:output message="ns1:getCurrencyRateResponse" wsaw:Action="urn:getCurrencyRateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyRateTypes">
+            <wsdl:documentation>method to get currency rate types</wsdl:documentation>
+            <wsdl:input message="ns1:getCurrencyRateTypesRequest" wsaw:Action="urn:getCurrencyRateTypes"/>
+            <wsdl:output message="ns1:getCurrencyRateTypesResponse" wsaw:Action="urn:getCurrencyRateTypesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyListFull">
+            <wsdl:documentation>method to get whole currency list (id, code, name)</wsdl:documentation>
+            <wsdl:input message="ns1:getCurrencyListFullRequest" wsaw:Action="urn:getCurrencyListFull"/>
+            <wsdl:output message="ns1:getCurrencyListFullResponse" wsaw:Action="urn:getCurrencyListFullResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCardCrossRate">
+            <wsdl:documentation>Client oriented operation. If client has UAH and want to get USD, then ccyFrom=UAH, ccyTo=USD.
+    	USD amount = UAH amount * crossRate.
+    	Rate is just a DISPLAY rate.
+		crossRate is a REAL exchange rate
+    </wsdl:documentation>
+            <wsdl:input message="ns1:getCardCrossRateRequest" wsaw:Action="urn:getCardCrossRate"/>
+            <wsdl:output message="ns1:getCardCrossRateResponse" wsaw:Action="urn:getCardCrossRateResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyListShort">
+            <wsdl:documentation>method to get most used currency list in AlfaBank (id, code, name)</wsdl:documentation>
+            <wsdl:input message="ns1:getCurrencyListShortRequest" wsaw:Action="urn:getCurrencyListShort"/>
+            <wsdl:output message="ns1:getCurrencyListShortResponse" wsaw:Action="urn:getCurrencyListShortResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CurrencySoap11Binding" type="ns1:CurrencyPortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getCurrencyRate">
+            <soap:operation soapAction="urn:getCurrencyRate" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyRateTypes">
+            <soap:operation soapAction="urn:getCurrencyRateTypes" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyListFull">
+            <soap:operation soapAction="urn:getCurrencyListFull" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCardCrossRate">
+            <soap:operation soapAction="urn:getCardCrossRate" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyListShort">
+            <soap:operation soapAction="urn:getCurrencyListShort" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="CurrencyHttpBinding" type="ns1:CurrencyPortType">
+        <http1:binding verb="POST"/>
+        <wsdl:operation name="getCurrencyRate">
+            <http1:operation location="getCurrencyRate"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getCurrencyRate"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getCurrencyRate"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyRateTypes">
+            <http1:operation location="getCurrencyRateTypes"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getCurrencyRateTypes"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getCurrencyRateTypes"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyListFull">
+            <http1:operation location="getCurrencyListFull"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getCurrencyListFull"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getCurrencyListFull"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCardCrossRate">
+            <http1:operation location="getCardCrossRate"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getCardCrossRate"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getCardCrossRate"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCurrencyListShort">
+            <http1:operation location="getCurrencyListShort"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getCurrencyListShort"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getCurrencyListShort"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Currency">
+        <wsdl:port name="CurrencyHttpSoap11Endpoint" binding="ns1:CurrencySoap11Binding">
+            <soap:address location="http://dwsesbapp01.alfa.bank.int:8280/services/Currency.CurrencyHttpSoap11Endpoint"/>
+        </wsdl:port>
+        <wsdl:port name="CurrencyHttpsSoap11Endpoint" binding="ns1:CurrencySoap11Binding">
+            <soap:address location="https://dwsesbapp01.alfa.bank.int:8243/services/Currency.CurrencyHttpsSoap11Endpoint"/>
+        </wsdl:port>
+        <wsdl:port name="CurrencyHttpEndpoint" binding="ns1:CurrencyHttpBinding">
+            <http1:address location="http://dwsesbapp01.alfa.bank.int:8280/services/Currency.CurrencyHttpEndpoint"/>
+        </wsdl:port>
+        <wsdl:port name="CurrencyHttpsEndpoint" binding="ns1:CurrencyHttpBinding">
+            <http1:address location="https://dwsesbapp01.alfa.bank.int:8243/services/Currency.CurrencyHttpsEndpoint"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

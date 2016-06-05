@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:tns0="http://azcp.online.ws/types/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://azcp.online.ws/" name="IssuePolicy" targetNamespace="http://azcp.online.ws/">
+    <types>
+        <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://azcp.online.ws/types/" targetNamespace="http://azcp.online.ws/types/" elementFormDefault="qualified">
+            <complexType name="RequestModel">
+                <sequence>
+                    <element name="PAYER_POST_CODE" type="string" nillable="true"/>
+                    <element name="PAYER_TITLE" type="string" nillable="true"/>
+                    <element name="TERM_END_DATE" type="string" nillable="true"/>
+                    <element name="PAYER_COMPANY_NAME" type="string" nillable="true"/>
+                    <element name="CMI_POLICY_NO" type="string" nillable="true"/>
+                    <element name="METHOD" type="string" nillable="true"/>
+                    <element name="INSURED_TEL_NO" type="string" nillable="true"/>
+                    <element name="VMI_PREMIUM" type="string" nillable="true"/>
+                    <element name="ACCESSORY_LIST" type="tns:ACCESSORY" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="BENE_TITLE_TEXT" type="string" nillable="true"/>
+                    <element name="ENGINE_NO" type="string" nillable="true"/>
+                    <element name="OLD_POL_NO" type="string" nillable="true"/>
+                    <element name="PAYER_ADDRESS2" type="string" nillable="true"/>
+                    <element name="PAYMENTMETHOD" type="string" nillable="true"/>
+                    <element name="VMI_FLAG" type="string" nillable="true"/>
+                    <element name="PAYER_ADDRESS3" type="string" nillable="true"/>
+                    <element name="INSURED_ADDRESS2" type="string" nillable="true"/>
+                    <element name="BENE_AMPHOR_CODE" type="string" nillable="true"/>
+                    <element name="PAYER_OCCU" type="string" nillable="true"/>
+                    <element name="INSURED_FNAME" type="string" nillable="true"/>
+                    <element name="CMI_FLAG" type="string" nillable="true"/>
+                    <element name="INSURED_NATIONALITY" type="string" nillable="true"/>
+                    <element name="INSURED_COMPANY_PREFIX" type="string" nillable="true"/>
+                    <element name="INSURED_ADDRESS1" type="string" nillable="true"/>
+                    <element name="INSURED_TITLE_TEXT" type="string" nillable="true"/>
+                    <element name="BENE_TYPE" type="string" nillable="true"/>
+                    <element name="VMI_STAMP" type="string" nillable="true"/>
+                    <element name="CMI_TOTAL" type="string" nillable="true"/>
+                    <element name="PAYER_GENDER" type="string" nillable="true"/>
+                    <element name="CUSTOMER_NAME_TEXT" type="string" nillable="true"/>
+                    <element name="INSURED_ADDRESS3" type="string" nillable="true"/>
+                    <element name="INSURED_COMPANY_SUFFIX" type="string" nillable="true"/>
+                    <element name="BODY_CODE" type="string" nillable="true"/>
+                    <element name="BENE_LNAME" type="string" nillable="true"/>
+                    <element name="ISSUED_DATE" type="string" nillable="true"/>
+                    <element name="MODEL_YEAR" type="string" nillable="true"/>
+                    <element name="INSURED_GENDER" type="string" nillable="true"/>
+                    <element name="PAYER_ID_CARD" type="string" nillable="true"/>
+                    <element name="VMI_POLICY_NO" type="string" nillable="true"/>
+                    <element name="GARAGE_TYPE" type="string" nillable="true"/>
+                    <element name="BENE_COMPANY_NAME" type="string" nillable="true"/>
+                    <element name="VMI_TOTAL" type="string" nillable="true"/>
+                    <element name="INTERMEDIARY_ID" type="string" nillable="true"/>
+                    <element name="INSURED_OCCU" type="string" nillable="true"/>
+                    <element name="VMI_VAT" type="string" nillable="true"/>
+                    <element name="PAYER_TYPE" type="string" nillable="true"/>
+                    <element name="PACKAGE_ID" type="string" nillable="true"/>
+                    <element name="PAYER_ADDRESS5" type="string" nillable="true"/>
+                    <element name="PAYER_PASSPORT_NO" type="string" nillable="true"/>
+                    <element name="PAYER_ADDRESS1" type="string" nillable="true"/>
+                    <element name="TX_ID" type="string" nillable="true"/>
+                    <element name="PAYER_ADDRESS4" type="string" nillable="true"/>
+                    <element name="NEW_RENEW" type="string" nillable="true"/>
+                    <element name="INSURED_TYPE" type="string" nillable="true"/>
+                    <element name="TERM_START_DATE" type="string" nillable="true"/>
+                    <element name="INSURED_TITLE" type="string" nillable="true"/>
+                    <element name="VMI_SUMINSURED" type="string" nillable="true"/>
+                    <element name="LICENSE_PROVINCE" type="string" nillable="true"/>
+                    <element name="PAYER_BRANCH_CODE" type="string" nillable="true"/>
+                    <element name="ACCESSORY_SUMINSURED" type="string" nillable="true"/>
+                    <element name="BENE_GENDER" type="string" nillable="true"/>
+                    <element name="VMI_VEHTYPE" type="string" nillable="true"/>
+                    <element name="BENE_ADDRESS3" type="string" nillable="true"/>
+                    <element name="INSURED_ADDRESS5" type="string" nillable="true"/>
+                    <element name="BILLING_PLAN" type="string" nillable="true"/>
+                    <element name="BRAND_CODE" type="string" nillable="true"/>
+                    <element name="BENE_ADDRESS2" type="string" nillable="true"/>
+                    <element name="USERID" type="string" nillable="true"/>
+                    <element name="INSURED_ADDRESS4" type="string" nillable="true"/>
+                    <element name="BENE_ADDRESS1" type="string" nillable="true"/>
+                    <element name="BENE_FNAME" type="string" nillable="true"/>
+                    <element name="INSURED_PASSPORT_NO" type="string" nillable="true"/>
+                    <element name="POL_YEAR_SEQ" type="string" nillable="true"/>
+                    <element name="INSURED_MOBILE_NO" type="string" nillable="true"/>
+                    <element name="CMI_STAMP" type="string" nillable="true"/>
+                    <element name="PAYER_TITLE_TEXT" type="string" nillable="true"/>
+                    <element name="PAYER_COMPANY_SUFFIX" type="string" nillable="true"/>
+                    <element name="INSURED_AMPHOR_CODE" type="string" nillable="true"/>
+                    <element name="BENE_TITLE" type="string" nillable="true"/>
+                    <element name="INSURED_POST_CODE" type="string" nillable="true"/>
+                    <element name="CMI_PREMIUM" type="string" nillable="true"/>
+                    <element name="WEIGHT" type="string" nillable="true"/>
+                    <element name="PAYER_AMPHOR_CODE" type="string" nillable="true"/>
+                    <element name="CMI_SUMINSURED" type="string" nillable="true"/>
+                    <element name="BENE_COMPANY_PREFIX" type="string" nillable="true"/>
+                    <element name="NO_OF_SEAT" type="string" nillable="true"/>
+                    <element name="PAYER_NATIONALITY" type="string" nillable="true"/>
+                    <element name="MODEL_CODE" type="string" nillable="true"/>
+                    <element name="PAYER_LNAME" type="string" nillable="true"/>
+                    <element name="PAYER_TAX_ID" type="string" nillable="true"/>
+                    <element name="BENE_OCCU" type="string" nillable="true"/>
+                    <element name="INSURED_COMPANY_NAME" type="string" nillable="true"/>
+                    <element name="LICENSE_NO" type="string" nillable="true"/>
+                    <element name="INSURED_FAX_NO" type="string" nillable="true"/>
+                    <element name="PAYER_SUB_DISTRIC" type="string" nillable="true"/>
+                    <element name="INSURED_SUB_DISTRIC" type="string" nillable="true"/>
+                    <element name="PAYER_FNAME" type="string" nillable="true"/>
+                    <element name="INSURED_REGISTER_ID" type="string" nillable="true"/>
+                    <element name="BENE_ID_CARD" type="string" nillable="true"/>
+                    <element name="BENE_ADDRESS4" type="string" nillable="true"/>
+                    <element name="PAYER_PROVINCE_CODE" type="string" nillable="true"/>
+                    <element name="PASSWORD" type="string" nillable="true"/>
+                    <element name="CHASSIS_NO" type="string" nillable="true"/>
+                    <element name="INSURED_PROVINCE_CODE" type="string" nillable="true"/>
+                    <element name="BENE_PROVINCE_CODE" type="string" nillable="true"/>
+                    <element name="PAYER_COMPANY_PREFIX" type="string" nillable="true"/>
+                    <element name="INSURED_ID_CARD" type="string" nillable="true"/>
+                    <element name="BENE_COMPANY_SUFFIX" type="string" nillable="true"/>
+                    <element name="CC" type="string" nillable="true"/>
+                    <element name="CMI_VEHTYPE" type="string" nillable="true"/>
+                    <element name="CMI_VAT" type="string" nillable="true"/>
+                    <element name="BENE_POST_CODE" type="string" nillable="true"/>
+                    <element name="SUM_ACCESSORY" type="string" nillable="true"/>
+                    <element name="COVER_TYPE" type="string" nillable="true"/>
+                    <element name="INSURED_LNAME" type="string" nillable="true"/>
+                    <element name="BENE_ADDRESS5" type="string" nillable="true"/>
+                    <element name="BENE_SUB_DISTRIC" type="string" nillable="true"/>
+                </sequence>
+            </complexType>
+            <complexType name="ACCESSORY">
+                <sequence>
+                    <element name="CODE" type="string" nillable="true"/>
+                    <element name="ACC_SUM_INSURED" type="string" nillable="true"/>
+                    <element name="REMARK" type="string" nillable="true"/>
+                </sequence>
+            </complexType>
+            <element name="OnlineMainWSElement">
+                <complexType>
+                    <sequence>
+                        <element name="requestModel" type="tns:RequestModel" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="OnlineMainWSResponseElement">
+                <complexType>
+                    <sequence>
+                        <element name="result" type="tns:ResponseModel" nillable="true"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <complexType name="ResponseModel">
+                <sequence>
+                    <element name="TX_ID" type="string" nillable="true"/>
+                    <element name="CMI_POLICY_NO" type="string" nillable="true"/>
+                    <element name="VMI_POLICY_NO" type="string" nillable="true"/>
+                    <element name="METHOD" type="string" nillable="true"/>
+                    <element name="DESC" type="string" nillable="true"/>
+                    <element name="VMI_PREMIUM" type="string" nillable="true"/>
+                    <element name="VMI_STAMP" type="string" nillable="true"/>
+                    <element name="CMI_URL_PRINT" type="string" nillable="true"/>
+                    <element name="CODE" type="string" nillable="true"/>
+                    <element name="VMI_URL_PRINT" type="string" nillable="true"/>
+                    <element name="VMI_TOTAL" type="string" nillable="true"/>
+                    <element name="VMI_SUMINSURED" type="string" nillable="true"/>
+                    <element name="VMI_VAT" type="string" nillable="true"/>
+                </sequence>
+            </complexType>
+        </schema>
+    </types>
+    <message name="IssuePolicy_OnlineMainWS">
+        <part name="parameters" element="tns0:OnlineMainWSElement"/>
+    </message>
+    <message name="IssuePolicy_OnlineMainWSResponse">
+        <part name="parameters" element="tns0:OnlineMainWSResponseElement"/>
+    </message>
+    <portType name="IssuePolicy">
+        <operation name="OnlineMainWS">
+            <input message="tns:IssuePolicy_OnlineMainWS"/>
+            <output message="tns:IssuePolicy_OnlineMainWSResponse"/>
+        </operation>
+    </portType>
+    <binding name="IssuePolicySoapHttp" type="tns:IssuePolicy">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="OnlineMainWS">
+            <soap:operation soapAction="http://azcp.online.ws//OnlineMainWS"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="IssuePolicy">
+        <port name="IssuePolicySoapHttpPort" binding="tns:IssuePolicySoapHttp">
+            <soap:address location="http://svrweo2.allianzcp.com:7778/online_insurance/IssuePolicySoapHttpPort"/>
+        </port>
+    </service>
+</definitions>

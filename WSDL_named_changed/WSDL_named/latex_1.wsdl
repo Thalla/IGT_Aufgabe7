@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<wsdl:definitions targetNamespace="http://DefaultNamespace" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:tns="http://DefaultNamespace" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://DefaultNamespace">
+<xsd:element name="compile">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="source" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="device" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="deviceInfo" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="dpi" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="utf8" type="xsd:boolean"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="ochem" type="xsd:boolean"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="embeddedData" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="SOAPlatexResult">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="data" nillable="true" type="xsd:base64Binary"/>
+<xsd:element minOccurs="0" name="embeddedData" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="error" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="fileExt" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="height" type="xsd:int"/>
+<xsd:element minOccurs="0" name="size" type="xsd:int"/>
+<xsd:element minOccurs="0" name="success" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="url" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="width" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="compileResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="tns:SOAPlatexResult"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="compileRequest">
+    <wsdl:part name="parameters" element="tns:compile">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="compileResponse">
+    <wsdl:part name="parameters" element="tns:compileResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="latex">
+    <wsdl:operation name="compile">
+      <wsdl:input name="compileRequest" message="tns:compileRequest">
+    </wsdl:input>
+      <wsdl:output name="compileResponse" message="tns:compileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="latexHttpBinding" type="tns:latex">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="compile">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="compileRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="compileResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="latex">
+    <wsdl:port name="latexHttpPort" binding="tns:latexHttpBinding">
+      <wsdlsoap:address location="http://sciencesoft.at/services/latex"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

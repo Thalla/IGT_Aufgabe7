@@ -1,0 +1,199 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://wwww.loreal.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://wwww.loreal.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">StoreLocator WebServices.</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://wwww.loreal.com">
+      <s:element name="GetStoresAddressesByTopic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="points" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lcid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nbStore" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="top_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filter" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStoresAddressesByTopicResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStoresAddressesByTopicResult" type="tns:ArrayOfPushpins" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPushpins">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pushpins" nillable="true" type="tns:Pushpins" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Pushpins">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Address">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="StrCode" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Details" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="DetailsHTML" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt7" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt8" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt9" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrExt10" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt5" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt6" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt7" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt8" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt9" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="StrLngExt10" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="State" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Zip_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Latitude" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Longitude" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetStoresAddresses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="points" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="AddressName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AdressDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="longitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="latitude" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lcid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStoresAddressesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStoresAddressesResult" type="tns:ArrayOfPushpins" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetStoresAddressesByTopicSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStoresAddressesByTopic" />
+  </wsdl:message>
+  <wsdl:message name="GetStoresAddressesByTopicSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStoresAddressesByTopicResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStoresAddressesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStoresAddresses" />
+  </wsdl:message>
+  <wsdl:message name="GetStoresAddressesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStoresAddressesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StoreLocatorWebServiceSoap">
+    <wsdl:operation name="GetStoresAddressesByTopic">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get given number of Stores Addresses</wsdl:documentation>
+      <wsdl:input message="tns:GetStoresAddressesByTopicSoapIn" />
+      <wsdl:output message="tns:GetStoresAddressesByTopicSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStoresAddresses">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get Stores Addresses</wsdl:documentation>
+      <wsdl:input message="tns:GetStoresAddressesSoapIn" />
+      <wsdl:output message="tns:GetStoresAddressesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="StoreLocatorWebServiceHttpGet" />
+  <wsdl:portType name="StoreLocatorWebServiceHttpPost" />
+  <wsdl:binding name="StoreLocatorWebServiceSoap" type="tns:StoreLocatorWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStoresAddressesByTopic">
+      <soap:operation soapAction="http://wwww.loreal.com/GetStoresAddressesByTopic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoresAddresses">
+      <soap:operation soapAction="http://wwww.loreal.com/GetStoresAddresses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StoreLocatorWebServiceSoap12" type="tns:StoreLocatorWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetStoresAddressesByTopic">
+      <soap12:operation soapAction="http://wwww.loreal.com/GetStoresAddressesByTopic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStoresAddresses">
+      <soap12:operation soapAction="http://wwww.loreal.com/GetStoresAddresses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StoreLocatorWebServiceHttpGet" type="tns:StoreLocatorWebServiceHttpGet">
+    <http:binding verb="GET" />
+  </wsdl:binding>
+  <wsdl:binding name="StoreLocatorWebServiceHttpPost" type="tns:StoreLocatorWebServiceHttpPost">
+    <http:binding verb="POST" />
+  </wsdl:binding>
+  <wsdl:service name="StoreLocatorWebService">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">StoreLocator WebServices.</wsdl:documentation>
+    <wsdl:port name="StoreLocatorWebServiceSoap" binding="tns:StoreLocatorWebServiceSoap">
+      <soap:address location="http://www.thebodyshop.com/ws/ajax/StoreLocator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StoreLocatorWebServiceSoap12" binding="tns:StoreLocatorWebServiceSoap12">
+      <soap12:address location="http://www.thebodyshop.com/ws/ajax/StoreLocator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StoreLocatorWebServiceHttpGet" binding="tns:StoreLocatorWebServiceHttpGet">
+      <http:address location="http://www.thebodyshop.com/ws/ajax/StoreLocator.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StoreLocatorWebServiceHttpPost" binding="tns:StoreLocatorWebServiceHttpPost">
+      <http:address location="http://www.thebodyshop.com/ws/ajax/StoreLocator.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

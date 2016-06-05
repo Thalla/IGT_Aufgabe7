@@ -1,0 +1,784 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://127.0.0.1/SAP/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://127.0.0.1/SAP/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://127.0.0.1/SAP/">
+      <s:element name="Information">
+        <s:complexType />
+      </s:element>
+      <s:element name="InformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InformationResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Interact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SOAPCommand" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InteractResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InteractResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DIServerBI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SOAPCommands" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DIServerBIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DIServerBIResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataBasePassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="License" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogoutResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Validate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBusinessObjectTemplate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Objects" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBusinessObjectTemplateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBusinessObjectTemplateResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadObjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Objects" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IDValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadObjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadObjectsResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSQL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Query" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteSQLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExecuteSQLResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBObob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ObjectModel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ParameterValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBObobResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SBObobResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BOM" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommandID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddObjectResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Objects" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="QueryParams" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BOMData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CommandID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateObjectResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DIServices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Service" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SOAPCommand" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Parameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DIServicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DIServicesResult">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QR">
+        <s:complexType />
+      </s:element>
+      <s:element name="QRResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Token">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataBaseUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataBasePassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LicenseServer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="License" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginSSL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TokenData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginSSLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginSSLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InformationSoapIn">
+    <wsdl:part name="parameters" element="tns:Information" />
+  </wsdl:message>
+  <wsdl:message name="InformationSoapOut">
+    <wsdl:part name="parameters" element="tns:InformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="InteractSoapIn">
+    <wsdl:part name="parameters" element="tns:Interact" />
+  </wsdl:message>
+  <wsdl:message name="InteractSoapOut">
+    <wsdl:part name="parameters" element="tns:InteractResponse" />
+  </wsdl:message>
+  <wsdl:message name="DIServerBISoapIn">
+    <wsdl:part name="parameters" element="tns:DIServerBI" />
+  </wsdl:message>
+  <wsdl:message name="DIServerBISoapOut">
+    <wsdl:part name="parameters" element="tns:DIServerBIResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSoapIn">
+    <wsdl:part name="parameters" element="tns:Validate" />
+  </wsdl:message>
+  <wsdl:message name="ValidateSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessObjectTemplateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBusinessObjectTemplate" />
+  </wsdl:message>
+  <wsdl:message name="GetBusinessObjectTemplateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBusinessObjectTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReadObjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadObjects" />
+  </wsdl:message>
+  <wsdl:message name="ReadObjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadObjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSQLSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteSQLSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="SBObobSoapIn">
+    <wsdl:part name="parameters" element="tns:SBObob" />
+  </wsdl:message>
+  <wsdl:message name="SBObobSoapOut">
+    <wsdl:part name="parameters" element="tns:SBObobResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:AddObject" />
+  </wsdl:message>
+  <wsdl:message name="AddObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:AddObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateObject" />
+  </wsdl:message>
+  <wsdl:message name="UpdateObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="DIServicesSoapIn">
+    <wsdl:part name="parameters" element="tns:DIServices" />
+  </wsdl:message>
+  <wsdl:message name="DIServicesSoapOut">
+    <wsdl:part name="parameters" element="tns:DIServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="QRSoapIn">
+    <wsdl:part name="parameters" element="tns:QR" />
+  </wsdl:message>
+  <wsdl:message name="QRSoapOut">
+    <wsdl:part name="parameters" element="tns:QRResponse" />
+  </wsdl:message>
+  <wsdl:message name="TokenSoapIn">
+    <wsdl:part name="parameters" element="tns:Token" />
+  </wsdl:message>
+  <wsdl:message name="TokenSoapOut">
+    <wsdl:part name="parameters" element="tns:TokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginSSLSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginSSL" />
+  </wsdl:message>
+  <wsdl:message name="LoginSSLSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginSSLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DIServerSoap">
+    <wsdl:operation name="Information">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SAP Developer partner information.</wsdl:documentation>
+      <wsdl:input message="tns:InformationSoapIn" />
+      <wsdl:output message="tns:InformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Interact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Interact is used to run the SOAP Command on the DI Server directly.</wsdl:documentation>
+      <wsdl:input message="tns:InteractSoapIn" />
+      <wsdl:output message="tns:InteractSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DIServerBI">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">BatchInteract is used to run the SOAP Commands on the DI Server directly.</wsdl:documentation>
+      <wsdl:input message="tns:DIServerBISoapIn" />
+      <wsdl:output message="tns:DIServerBISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Login to company.</wsdl:documentation>
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Logout to company.</wsdl:documentation>
+      <wsdl:input message="tns:LogoutSoapIn" />
+      <wsdl:output message="tns:LogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This option is useful to check if your session is valid.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateSoapIn" />
+      <wsdl:output message="tns:ValidateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessObjectTemplate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Use the GetBusinessObjectTemplate to retrieve the XML template of a specified business object.</wsdl:documentation>
+      <wsdl:input message="tns:GetBusinessObjectTemplateSoapIn" />
+      <wsdl:output message="tns:GetBusinessObjectTemplateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjects">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Get All Info from an Business Object.</wsdl:documentation>
+      <wsdl:input message="tns:ReadObjectsSoapIn" />
+      <wsdl:output message="tns:ReadObjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">ExecuteSQL is limited to perform SELECT statement only. Performing an SQL statement, in the &lt;Data&gt; element, other than SELECT causes a failure and an error is reported.</wsdl:documentation>
+      <wsdl:input message="tns:ExecuteSQLSoapIn" />
+      <wsdl:output message="tns:ExecuteSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SBObob">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The SBObob object is raw data access object that enables you to retrieve information quickly and easily.</wsdl:documentation>
+      <wsdl:input message="tns:SBObobSoapIn" />
+      <wsdl:output message="tns:SBObobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Use the AddObject command to add records to a business object. You can set only the Read/Write properties as defined in the business Object and Service schemas.</wsdl:documentation>
+      <wsdl:input message="tns:AddObjectSoapIn" />
+      <wsdl:output message="tns:AddObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Use the UpdateObject command to update records to a business object. You can set only the Read/Write properties as defined in the business Object and Service schemas.</wsdl:documentation>
+      <wsdl:input message="tns:UpdateObjectSoapIn" />
+      <wsdl:output message="tns:UpdateObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DIServices">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">The DI Services provide interfaces to additional logic within SAP Business One, which is not necessarily encapsulated in a business object. That is, the services approach enables to automate the implementation process.</wsdl:documentation>
+      <wsdl:input message="tns:DIServicesSoapIn" />
+      <wsdl:output message="tns:DIServicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create QR image.</wsdl:documentation>
+      <wsdl:input message="tns:QRSoapIn" />
+      <wsdl:output message="tns:QRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Token">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Generates the encryption of your information to navegate safely over the network.</wsdl:documentation>
+      <wsdl:input message="tns:TokenSoapIn" />
+      <wsdl:output message="tns:TokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginSSL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Login to company with Data Encrypted.</wsdl:documentation>
+      <wsdl:input message="tns:LoginSSLSoapIn" />
+      <wsdl:output message="tns:LoginSSLSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DIServerSoap" type="tns:DIServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Information">
+      <soap:operation soapAction="http://127.0.0.1/SAP/Information" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Interact">
+      <soap:operation soapAction="http://127.0.0.1/SAP/Interact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DIServerBI">
+      <soap:operation soapAction="http://127.0.0.1/SAP/DIServerBI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://127.0.0.1/SAP/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://127.0.0.1/SAP/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <soap:operation soapAction="http://127.0.0.1/SAP/Validate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessObjectTemplate">
+      <soap:operation soapAction="http://127.0.0.1/SAP/GetBusinessObjectTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjects">
+      <soap:operation soapAction="http://127.0.0.1/SAP/ReadObjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQL">
+      <soap:operation soapAction="http://127.0.0.1/SAP/ExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBObob">
+      <soap:operation soapAction="http://127.0.0.1/SAP/SBObob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddObject">
+      <soap:operation soapAction="http://127.0.0.1/SAP/AddObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <soap:operation soapAction="http://127.0.0.1/SAP/UpdateObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DIServices">
+      <soap:operation soapAction="http://127.0.0.1/SAP/DIServices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QR">
+      <soap:operation soapAction="http://127.0.0.1/SAP/QR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Token">
+      <soap:operation soapAction="http://127.0.0.1/SAP/Token" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginSSL">
+      <soap:operation soapAction="http://127.0.0.1/SAP/LoginSSL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DIServerSoap12" type="tns:DIServerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Information">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/Information" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Interact">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/Interact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DIServerBI">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/DIServerBI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validate">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/Validate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessObjectTemplate">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/GetBusinessObjectTemplate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadObjects">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/ReadObjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSQL">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/ExecuteSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBObob">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/SBObob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddObject">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/AddObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateObject">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/UpdateObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DIServices">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/DIServices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QR">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/QR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Token">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/Token" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginSSL">
+      <soap12:operation soapAction="http://127.0.0.1/SAP/LoginSSL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DIServer">
+    <wsdl:port name="DIServerSoap" binding="tns:DIServerSoap">
+      <soap:address location="http://201.149.28.43/SAP/DIServer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DIServerSoap12" binding="tns:DIServerSoap12">
+      <soap12:address location="http://201.149.28.43/SAP/DIServer.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

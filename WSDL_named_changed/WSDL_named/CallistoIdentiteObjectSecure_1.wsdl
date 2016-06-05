@@ -1,0 +1,2338 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://serviceobject.service.callisto.newsys.altares.fr" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax262="http://pcl.vo.callisto.newsys.altares.fr/xsd" xmlns:ax259="http://finance.vo.callisto.newsys.altares.fr/xsd" xmlns:ax263="http://annonce.vo.callisto.newsys.altares.fr/xsd" xmlns:ax257="http://vo.callisto.newsys.altares.fr/xsd" xmlns:ax266="http://lien.vo.callisto.newsys.altares.fr/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ax256="http://response.callisto.newsys.altares.fr/xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax254="http://request.callisto.newsys.altares.fr/xsd" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ax269="http://identite.response.callisto.newsys.altares.fr/xsd" targetNamespace="http://serviceobject.service.callisto.newsys.altares.fr">
+    <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="UTOverTransport">
+        <wsp:ExactlyOne>
+            <wsp:All>
+                <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+                    <wsp:Policy>
+                        <sp:TransportToken>
+                            <wsp:Policy>
+                                <sp:HttpsToken RequireClientCertificate="false"/>
+                            </wsp:Policy>
+                        </sp:TransportToken>
+                        <sp:AlgorithmSuite>
+                            <wsp:Policy>
+                                <sp:Basic256/>
+                            </wsp:Policy>
+                        </sp:AlgorithmSuite>
+                        <sp:Layout>
+                            <wsp:Policy>
+                                <sp:Lax/>
+                            </wsp:Policy>
+                        </sp:Layout>
+                    </wsp:Policy>
+                </sp:TransportBinding>
+            </wsp:All>
+        </wsp:ExactlyOne>
+    </wsp:Policy>
+    <wsdl:documentation>CallistoIdentiteObjectSecure</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://annonce.vo.callisto.newsys.altares.fr/xsd">
+            <xs:complexType name="MandataireBodaccInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fonction" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numRue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeDeVoie" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MandataireInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="numRue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeDeVoie" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MandataireRncsInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="adresse" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="commune" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fonction" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fonctionCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AnnonceBalo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="categorie" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="parution" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rubrique" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sousRubrique" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="url" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AvisMmd">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="contenuAnnonce" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="departementTribunalChiffre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="departementTribunalLettre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbPm" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbPp" type="xs:int"/>
+                    <xs:element minOccurs="0" name="parution" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="pmList" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ppList" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tribunal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeAnnonce" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AnnulationMmd">
+                <xs:complexContent>
+                    <xs:extension base="ax263:AvisMmd">
+                        <xs:sequence/>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AvisAdcs">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="contenuAnnonce" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateCloture" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="departementTribunalChiffre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="departementTribunalLettre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="parution" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tribunal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeAnnonce" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeDepot" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AnnonceRci">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="contenuAnnonce" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="departementTribunalChiffre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="departementTribunalLettre" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="etablissementList" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbEtablissement" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbPm" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbPp" type="xs:int"/>
+                    <xs:element minOccurs="0" name="parution" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="pmList" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ppList" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="tribunal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeAnnonce" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ImmatRci">
+                <xs:complexContent>
+                    <xs:extension base="ax263:AnnonceRci">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="dateCommencementActivite" nillable="true" type="xs:date"/>
+                            <xs:element minOccurs="0" name="dateEffet" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="dateEvenement" nillable="true" type="xs:date"/>
+                            <xs:element minOccurs="0" name="titrePapier" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ModificationMmd">
+                <xs:complexContent>
+                    <xs:extension base="ax263:AvisMmd">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="dateEffet" nillable="true" type="xs:date"/>
+                            <xs:element minOccurs="0" name="descriptif" nillable="true" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="evenementList" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="nbEvenement" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nbPrecpmList" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nbPrecppList" type="xs:int"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="precpmList" nillable="true" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="precppList" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="titrePapier" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RadiationMmd">
+                <xs:complexContent>
+                    <xs:extension base="ax263:AvisMmd">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="dateCessationActivitePP" nillable="true" type="xs:date"/>
+                            <xs:element minOccurs="0" name="descriptif" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="titrePapier" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="VenteJal">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="commentaires" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateEffet" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="greffe" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="montantVente" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="natureEvenement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbSequestre" type="xs:int"/>
+                    <xs:element minOccurs="0" name="pm" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pp" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="sequestreList" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="VenteRci">
+                <xs:complexContent>
+                    <xs:extension base="ax263:AnnonceRci">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="dateEffet" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="deviseVente" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="montantVente" nillable="true" type="xs:double"/>
+                            <xs:element minOccurs="0" name="nbPrecExpm" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nbPrecExpp" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nbPrecpm" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nbPrecpp" type="xs:int"/>
+                            <xs:element minOccurs="0" name="opposition" nillable="true" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="precExpmList" nillable="true" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="precExppList" nillable="true" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="precpmList" nillable="true" type="xs:string"/>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="precppList" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="statutEntreprise" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="titrePapier" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax258="http://vo.callisto.newsys.altares.fr/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://response.callisto.newsys.altares.fr/xsd">
+            <xs:import namespace="http://vo.callisto.newsys.altares.fr/xsd"/>
+            <xs:complexType name="CallistoResponse">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="correct" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="exception" nillable="true" type="ax257:CallistoException"/>
+                    <xs:element minOccurs="0" name="parametres" nillable="true" type="ax257:ParametreCallistoInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SyntheseFinanciereResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:SyntheseFinanciereInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="SoldeIntermediaireGestionResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:SoldeIntermediaireGestionInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RatioStructureResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:RatioInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RatioRentabiliteResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:RatioInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RatioIndicateurCourtTermeResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:RatioInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="PclResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:PclInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="MethodeResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="myInfo" nillable="true" type="ax257:MethodeInfo"/>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ListeEtablissementsResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="myInfo" nillable="true" type="ax257:EtablissementInfo"/>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ListeDirigeantsStatutairesResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:DirigeantsStatutaireInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ListeDecideursResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="myInfo" nillable="true" type="ax257:DecideurInfo"/>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="ListeBilansResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:ListeBilansInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="LiensCapitalistiquesResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:LiensCapitalistiquesInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="InformationsLegalesResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:AnnonceInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="HistoriqueIdentiteResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:HistoriqueIdentiteInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="EvolutionIdentiteResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:EvolutionIdentiteInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="CompteResultatResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:CompteResultatInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="BilanRetraiteResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:BilanRetraiteInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="BilanCompletResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:BilanCompletInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="BilanResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:BilanInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="AnalyseFinanciereResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:AnalyseFinanciereInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RechercheSimpleResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="myInfo" nillable="true" type="ax257:RechercheInfo"/>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nbMatch" type="xs:long"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RechercheEntrepriseResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="myInfo" nillable="true" type="ax257:RechercheInfo"/>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nbMatch" type="xs:long"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RechercheDirigeantResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" minOccurs="0" name="myInfo" nillable="true" type="ax257:RechercheDirigeantInfo"/>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nbMatch" type="xs:long"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://finance.vo.callisto.newsys.altares.fr/xsd">
+            <xs:complexType name="SyntheseFinanciere">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="libellePoste" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="montantN" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="montantN_1" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="montantN_2" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="poste" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pourcentageEvolutionN" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="pourcentageEvolutionN_1" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SIG">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="evolutionN" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="evolutionN_1" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="libellePosteCle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="montantN" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="montantN_1" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="montantN_2" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="posteCle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="titre" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Ratio">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="commentaire" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="contournement" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="libelleEntetePosteCle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="libellePosteCle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="position" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="posteCle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uniteEntreprise" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="uniteSecteur" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valeurEntreprise" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="valeurSecteur" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DispoBilan">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="bilanId" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateCloture" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="duree" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BilanRetraite">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="libellePosteCle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="montant" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="posteCle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pourcentageBilan" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="titre" type="xs:boolean"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PosteBilanStructure">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="poste" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valeur" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://lien.vo.callisto.newsys.altares.fr/xsd">
+            <xs:complexType name="Actionnaire">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codePays" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateMAJ" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="pays" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pourcentage" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="raisonSociale" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="siren" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Participation">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codePays" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateMAJ" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="pays" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="pourcentage" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="raisonSociale" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="siren" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="type" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax260="http://finance.vo.callisto.newsys.altares.fr/xsd" xmlns:ax265="http://pcl.vo.callisto.newsys.altares.fr/xsd" xmlns:ax268="http://annonce.vo.callisto.newsys.altares.fr/xsd" xmlns:ax267="http://lien.vo.callisto.newsys.altares.fr/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://vo.callisto.newsys.altares.fr/xsd">
+            <xs:import namespace="http://finance.vo.callisto.newsys.altares.fr/xsd"/>
+            <xs:import namespace="http://pcl.vo.callisto.newsys.altares.fr/xsd"/>
+            <xs:import namespace="http://lien.vo.callisto.newsys.altares.fr/xsd"/>
+            <xs:import namespace="http://annonce.vo.callisto.newsys.altares.fr/xsd"/>
+            <xs:complexType name="CallistoException">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="description" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="erreur" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ParametreCallistoInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="nbParametre" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="parametre" nillable="true" type="ax257:ParametreCallisto"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ParametreCallisto">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="valeur" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SyntheseFinanciereInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateClotureN" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateClotureN_1" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateClotureN_2" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dureeN" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dureeN_1" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dureeN_2" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbSyntheseFinanciere" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="syntheseFinanciereList" nillable="true" type="ax259:SyntheseFinanciere"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SoldeIntermediaireGestionInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="SIGList" nillable="true" type="ax259:SIG"/>
+                    <xs:element minOccurs="0" name="nbSIG" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RatioInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="codeNaf" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dataSecteur" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="libelleCodeNaf" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbRatio" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="ratioList" nillable="true" type="ax259:Ratio"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PclInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="flagPclEnCours" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbPclBodacc" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbPclInfogreffe" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbPclJal" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbPclRncs" nillable="true" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="pclBodacc" nillable="true" type="ax265:PclBodacc"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="pclInfogreffe" nillable="true" type="ax265:PclInfogreffe"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="pclJal" nillable="true" type="ax265:PclJal"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="pclRncs" nillable="true" type="ax265:PclRncs"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="MethodeInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="hasData" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EtablissementInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="actif" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="enseigne" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf5Code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf5libelle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nonDiffusible" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="siege" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="siret" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DirigeantsStatutaireInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="dirigeantStatutaire" nillable="true" type="ax257:DirigeantStatutaireInfo"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="dirigeantStatutaireHisto" nillable="true" type="ax257:DirigeantStatutaireInfo"/>
+                    <xs:element minOccurs="0" name="nbDirigeantStatutaire" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbDirigeantStatutaireHisto" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DirigeantStatutaireInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="civilite" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="civiliteCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateFonction" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateNaissance" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="fonction" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fonctionCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prenom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="villeNaissance" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="DecideurInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="civilite" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="civiliteCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateNaissance" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="fonction" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fonctionCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="prenom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="villeNaissance" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ListeBilansInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="bilanList" nillable="true" type="ax259:DispoBilan"/>
+                    <xs:element minOccurs="0" name="nbBilan" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="LiensCapitalistiquesInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="actionnairesList" nillable="true" type="ax267:Actionnaire"/>
+                    <xs:element minOccurs="0" name="nbActionnaires" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbParticipations" nillable="true" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="participationsList" nillable="true" type="ax267:Participation"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AnnonceInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="annonceBaloList" nillable="true" type="ax268:AnnonceBalo"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="annulationMmdList" nillable="true" type="ax268:AnnulationMmd"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="avisAdcsList" nillable="true" type="ax268:AvisAdcs"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="immatRciList" nillable="true" type="ax268:ImmatRci"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="modificationMmdList" nillable="true" type="ax268:ModificationMmd"/>
+                    <xs:element minOccurs="0" name="nbAnnonceBalo" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbAnnulationMmd" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbAvisAdcs" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbImmatRci" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbModificationMmd" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbRadiationMmd" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbVenteJal" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbVenteRci" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="radiationMmdList" nillable="true" type="ax268:RadiationMmd"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="venteJalList" nillable="true" type="ax268:VenteJal"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="venteRciList" nillable="true" type="ax268:VenteRci"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="IdentiteAltaEtablissementBase">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="actif" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="complementRue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateCreation" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="enseigne" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf5Code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf5Libelle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="raisonSociale" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rcs" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rubriqueFTCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rubriqueFTLabel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sigle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="siret" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trEffectifEtab" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trEffectifEtabCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeEtablissementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeEtablissementLabel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeExploitationCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeExploitationLabel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="IdentiteAltaN4EtablissementInfo">
+                <xs:complexContent>
+                    <xs:extension base="ax257:IdentiteAltaEtablissementBase">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="duns" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="nonDiffusible" type="xs:boolean"/>
+                            <xs:element minOccurs="0" name="siege" type="xs:boolean"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="IdentiteAltaN4EntrepriseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="capital" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="chiffreAffaire" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="codePaysOrigine" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="complementRue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateCreation" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateDernierBilan" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateFermeture" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateImmatriculation" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dirigeantPrincipal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dunsSiege" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dureeDernierBilan" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="effectif" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="etat" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formeJuridique" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formeJuridiqueCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="greffe" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="libellePaysOrigine" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf5EntreCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf5EntreLibelle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbEtablissement" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbEtablissementActif" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nonDiffusible" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="numTVAIntraCom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="procedureCollective" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="raisonSociale" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rcs" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sigle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="siret" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trCA" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trCACode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trEffectifEntre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trEffectifEntreCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeExploitationCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeExploitationLabel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="IdentiteAltaN3EtablissementInfo">
+                <xs:complexContent>
+                    <xs:extension base="ax257:IdentiteAltaEtablissementBase">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="nonDiffusible" type="xs:boolean"/>
+                            <xs:element minOccurs="0" name="siege" type="xs:boolean"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="IdentiteAltaN3EntrepriseInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="capital" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="chiffreAffaire" nillable="true" type="xs:double"/>
+                    <xs:element minOccurs="0" name="codePaysOrigine" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="complementRue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateCreation" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateDernierBilan" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateFermeture" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateImmatriculation" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dirigeantPrincipal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dureeDernierBilan" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="effectif" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="etat" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formeJuridique" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formeJuridiqueCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="greffe" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="libellePaysOrigine" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf5EntreCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf5EntreLibelle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbEtablissement" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbEtablissementActif" nillable="true" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nonDiffusible" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="numTVAIntraCom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="procedureCollective" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="raisonSociale" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rcs" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sigle" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="siret" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trCA" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trCACode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trEffectifEntre" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="trEffectifEntreCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeExploitationCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="typeExploitationLabel" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="HistoriqueIdentiteInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listeCode" nillable="true" type="ax257:HistoCodeInfo"/>
+                    <xs:element minOccurs="0" name="nbCode" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="HistoCodeInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="code" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateChangement" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="label" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="EvolutionIdentiteInfo">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="listeValeur" nillable="true" type="ax257:HistoValeurInfo"/>
+                    <xs:element minOccurs="0" name="nbValeur" type="xs:int"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="HistoValeurInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateChangement" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="valeur" nillable="true" type="xs:double"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="CompteResultatInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="url" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BilanRetraiteInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="nbPosteActif" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbPostePassif" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="posteActifList" nillable="true" type="ax259:BilanRetraite"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="postePassifList" nillable="true" type="ax259:BilanRetraite"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BilanCompletInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="url" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BilanInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateClotureN" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="datePublication" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dureeN" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbPoste" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="posteList" nillable="true" type="ax259:PosteBilanStructure"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="AnalyseFinanciereInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="nbSectionAnalyseFinanciere" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="sectionAnalyseFinanciereList" nillable="true" type="ax257:SectionAnalyseFinanciereInfo"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="SectionAnalyseFinanciereInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="nbParagraphe" type="xs:int"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="paragrapheList" nillable="true" type="ax257:ParagrapheInfo"/>
+                    <xs:element minOccurs="0" name="sectionCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="sectionLabel" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="ParagrapheInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="texte" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="titre" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RechercheInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="actif" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="complementRue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formeLegale" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="formeLegaleCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="naf" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nafCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nonDiffusible" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="raisonSociale" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="siege" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="siret" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="RechercheDirigeantInfo">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="actif" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="civilite" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="civiliteCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="complementRue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateNaissance" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="naf" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nafCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nonDiffusible" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="prenom" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="raisonSociale" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="rue" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="siege" type="xs:boolean"/>
+                    <xs:element minOccurs="0" name="siret" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://request.callisto.newsys.altares.fr/xsd">
+            <xs:complexType name="AbstractCallistoRequest">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="identification" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="refClient" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="BilanRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:AbstractCallistoRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="bilanId" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="siren" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="SirenRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:AbstractCallistoRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="siren" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="SirenSiretRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:AbstractCallistoRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="sirenSiret" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="HistoriqueSiretRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:AbstractCallistoRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="siret" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="typeHistorique" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="HistoriqueRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:SirenRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="typeHistorique" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="EvolutionRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:SirenRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="typeEvolution" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RechercheSimpleRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:AbstractCallistoRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                            <xs:element minOccurs="0" name="ou" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="qui" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RechercheEntrepriseRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:AbstractCallistoRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="codePostal" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="enseigne" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="ft" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="naf" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                            <xs:element minOccurs="0" name="raisonSociale" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="rcs" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="rue" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="sigle" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="siren" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="siret" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="ville" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="RechercheDirigeantRequest">
+                <xs:complexContent>
+                    <xs:extension base="ax254:AbstractCallistoRequest">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="annee" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="lieu" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="nbElt" type="xs:int"/>
+                            <xs:element minOccurs="0" name="nom" nillable="true" type="xs:string"/>
+                            <xs:element minOccurs="0" name="prenom" nillable="true" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax271="http://vo.callisto.newsys.altares.fr/xsd" xmlns:ax270="http://response.callisto.newsys.altares.fr/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://identite.response.callisto.newsys.altares.fr/xsd">
+            <xs:import namespace="http://response.callisto.newsys.altares.fr/xsd"/>
+            <xs:import namespace="http://vo.callisto.newsys.altares.fr/xsd"/>
+            <xs:complexType name="IdentiteAltaN4EtResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:IdentiteAltaN4EtablissementInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="IdentiteAltaN4EnResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:IdentiteAltaN4EntrepriseInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="IdentiteAltaN3EtResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:IdentiteAltaN3EtablissementInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+            <xs:complexType name="IdentiteAltaN3EnResponse">
+                <xs:complexContent>
+                    <xs:extension base="ax256:CallistoResponse">
+                        <xs:sequence>
+                            <xs:element minOccurs="0" name="myInfo" nillable="true" type="ax257:IdentiteAltaN3EntrepriseInfo"/>
+                        </xs:sequence>
+                    </xs:extension>
+                </xs:complexContent>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax264="http://annonce.vo.callisto.newsys.altares.fr/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://pcl.vo.callisto.newsys.altares.fr/xsd">
+            <xs:import namespace="http://annonce.vo.callisto.newsys.altares.fr/xsd"/>
+            <xs:complexType name="PclBodacc">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateCessationPaiement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateEffet" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="departementGreffe" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="etat" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="familleJugement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="greffe" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mandataireList" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mandataireListObjet" nillable="true" type="ax263:MandataireBodaccInfo"/>
+                    <xs:element minOccurs="0" name="natureEvenement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureJugement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbMandataire" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbMandataireObjet" type="xs:int"/>
+                    <xs:element minOccurs="0" name="parution" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="texteAnnonce" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PclInfogreffe">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateCessationPaiement" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateEffet" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateFinObservation" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="departementGreffe" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="entreprise" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="greffe" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="jugeCommissaire" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mandataireList" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mandataireListObjet" nillable="true" type="ax263:MandataireInfo"/>
+                    <xs:element minOccurs="0" name="natureEvenement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbMandataire" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbMandataireObjet" type="xs:int"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="texteAnnonce" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PclJal">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="commentaires" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="dateCessationPaiement" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateEffet" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="entreprise" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="greffe" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mandataireList" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mandataireListObjet" nillable="true" type="ax263:MandataireInfo"/>
+                    <xs:element minOccurs="0" name="natureEvenement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbMandataire" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbMandataireObjet" type="xs:int"/>
+                    <xs:element minOccurs="0" name="periodeObservation" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="PclRncs">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dateEffet" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="dateParution" nillable="true" type="xs:date"/>
+                    <xs:element minOccurs="0" name="greffe" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mandataireList" nillable="true" type="xs:string"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="mandataireListObjet" nillable="true" type="ax263:MandataireRncsInfo"/>
+                    <xs:element minOccurs="0" name="natureEvenement" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="natureEvenementCode" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="nbMandataire" type="xs:int"/>
+                    <xs:element minOccurs="0" name="nbMandataireObjet" type="xs:int"/>
+                    <xs:element minOccurs="0" name="source" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax272="http://identite.response.callisto.newsys.altares.fr/xsd" xmlns:ax261="http://response.callisto.newsys.altares.fr/xsd" xmlns:ax255="http://request.callisto.newsys.altares.fr/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://serviceobject.service.callisto.newsys.altares.fr">
+            <xs:import namespace="http://request.callisto.newsys.altares.fr/xsd"/>
+            <xs:import namespace="http://response.callisto.newsys.altares.fr/xsd"/>
+            <xs:import namespace="http://identite.response.callisto.newsys.altares.fr/xsd"/>
+            <xs:element name="getSyntheseFinanciere">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSyntheseFinanciereResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:SyntheseFinanciereResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSoldeIntermediaireGestion">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getSoldeIntermediaireGestionResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:SoldeIntermediaireGestionResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRatioStructure">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRatioStructureResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:RatioStructureResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRatioRentabilite">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRatioRentabiliteResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:RatioRentabiliteResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRatioIndicateurCourtTerme">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getRatioIndicateurCourtTermeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:RatioIndicateurCourtTermeResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPCL">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getPCLResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:PclResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getMethodes">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getMethodesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:MethodeResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListeEtablissements">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListeEtablissementsResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:ListeEtablissementsResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListeDirigeantsStatutaires">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListeDirigeantsStatutairesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:ListeDirigeantsStatutairesResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListeDecideurs">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListeDecideursResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:ListeDecideursResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListeBilans">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getListeBilansResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:ListeBilansResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLiensCapitalistiques">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getLiensCapitalistiquesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:LiensCapitalistiquesResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInformationsLegales">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getInformationsLegalesResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:InformationsLegalesResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIdentiteAltaN4Etablissement">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenSiretRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIdentiteAltaN4EtablissementResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax269:IdentiteAltaN4EtResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIdentiteAltaN4Entreprise">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIdentiteAltaN4EntrepriseResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax269:IdentiteAltaN4EnResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIdentiteAltaN3Etablissement">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenSiretRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIdentiteAltaN3EtablissementResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax269:IdentiteAltaN3EtResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIdentiteAltaN3Entreprise">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getIdentiteAltaN3EntrepriseResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax269:IdentiteAltaN3EnResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getHistoriqueIdentiteEtablissement">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:HistoriqueSiretRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getHistoriqueIdentiteEtablissementResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:HistoriqueIdentiteResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getHistoriqueIdentiteEntreprise">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:HistoriqueRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getHistoriqueIdentiteEntrepriseResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:HistoriqueIdentiteResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getEvolutionIdentiteEntreprise">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:EvolutionRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getEvolutionIdentiteEntrepriseResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:EvolutionIdentiteResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCompteResultat">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getCompteResultatResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:CompteResultatResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBilanRetraite">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBilanRetraiteResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:BilanRetraiteResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBilanComplet">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBilanCompletResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:BilanCompletResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBilan">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:BilanRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getBilanResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:BilanResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAnalyseFinanciere">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:SirenRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getAnalyseFinanciereResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:AnalyseFinanciereResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="doRechercheSimple">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:RechercheSimpleRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="doRechercheSimpleResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:RechercheSimpleResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="doRechercheEntreprise">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:RechercheEntrepriseRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="doRechercheEntrepriseResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:RechercheEntrepriseResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="doRechercheDirigeant">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="request" nillable="true" type="ax254:RechercheDirigeantRequest"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="doRechercheDirigeantResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ax256:RechercheDirigeantResponse"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getMethodesRequest">
+        <wsdl:part name="parameters" element="ns:getMethodes"/>
+    </wsdl:message>
+    <wsdl:message name="getMethodesResponse">
+        <wsdl:part name="parameters" element="ns:getMethodesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getIdentiteAltaN3EtablissementRequest">
+        <wsdl:part name="parameters" element="ns:getIdentiteAltaN3Etablissement"/>
+    </wsdl:message>
+    <wsdl:message name="getIdentiteAltaN3EtablissementResponse">
+        <wsdl:part name="parameters" element="ns:getIdentiteAltaN3EtablissementResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getIdentiteAltaN3EntrepriseRequest">
+        <wsdl:part name="parameters" element="ns:getIdentiteAltaN3Entreprise"/>
+    </wsdl:message>
+    <wsdl:message name="getIdentiteAltaN3EntrepriseResponse">
+        <wsdl:part name="parameters" element="ns:getIdentiteAltaN3EntrepriseResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBilanCompletRequest">
+        <wsdl:part name="parameters" element="ns:getBilanComplet"/>
+    </wsdl:message>
+    <wsdl:message name="getBilanCompletResponse">
+        <wsdl:part name="parameters" element="ns:getBilanCompletResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getInformationsLegalesRequest">
+        <wsdl:part name="parameters" element="ns:getInformationsLegales"/>
+    </wsdl:message>
+    <wsdl:message name="getInformationsLegalesResponse">
+        <wsdl:part name="parameters" element="ns:getInformationsLegalesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getIdentiteAltaN4EntrepriseRequest">
+        <wsdl:part name="parameters" element="ns:getIdentiteAltaN4Entreprise"/>
+    </wsdl:message>
+    <wsdl:message name="getIdentiteAltaN4EntrepriseResponse">
+        <wsdl:part name="parameters" element="ns:getIdentiteAltaN4EntrepriseResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getEvolutionIdentiteEntrepriseRequest">
+        <wsdl:part name="parameters" element="ns:getEvolutionIdentiteEntreprise"/>
+    </wsdl:message>
+    <wsdl:message name="getEvolutionIdentiteEntrepriseResponse">
+        <wsdl:part name="parameters" element="ns:getEvolutionIdentiteEntrepriseResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getHistoriqueIdentiteEtablissementRequest">
+        <wsdl:part name="parameters" element="ns:getHistoriqueIdentiteEtablissement"/>
+    </wsdl:message>
+    <wsdl:message name="getHistoriqueIdentiteEtablissementResponse">
+        <wsdl:part name="parameters" element="ns:getHistoriqueIdentiteEtablissementResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getIdentiteAltaN4EtablissementRequest">
+        <wsdl:part name="parameters" element="ns:getIdentiteAltaN4Etablissement"/>
+    </wsdl:message>
+    <wsdl:message name="getIdentiteAltaN4EtablissementResponse">
+        <wsdl:part name="parameters" element="ns:getIdentiteAltaN4EtablissementResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListeDecideursRequest">
+        <wsdl:part name="parameters" element="ns:getListeDecideurs"/>
+    </wsdl:message>
+    <wsdl:message name="getListeDecideursResponse">
+        <wsdl:part name="parameters" element="ns:getListeDecideursResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListeEtablissementsRequest">
+        <wsdl:part name="parameters" element="ns:getListeEtablissements"/>
+    </wsdl:message>
+    <wsdl:message name="getListeEtablissementsResponse">
+        <wsdl:part name="parameters" element="ns:getListeEtablissementsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="doRechercheSimpleRequest">
+        <wsdl:part name="parameters" element="ns:doRechercheSimple"/>
+    </wsdl:message>
+    <wsdl:message name="doRechercheSimpleResponse">
+        <wsdl:part name="parameters" element="ns:doRechercheSimpleResponse"/>
+    </wsdl:message>
+    <wsdl:message name="doRechercheDirigeantRequest">
+        <wsdl:part name="parameters" element="ns:doRechercheDirigeant"/>
+    </wsdl:message>
+    <wsdl:message name="doRechercheDirigeantResponse">
+        <wsdl:part name="parameters" element="ns:doRechercheDirigeantResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getHistoriqueIdentiteEntrepriseRequest">
+        <wsdl:part name="parameters" element="ns:getHistoriqueIdentiteEntreprise"/>
+    </wsdl:message>
+    <wsdl:message name="getHistoriqueIdentiteEntrepriseResponse">
+        <wsdl:part name="parameters" element="ns:getHistoriqueIdentiteEntrepriseResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getRatioRentabiliteRequest">
+        <wsdl:part name="parameters" element="ns:getRatioRentabilite"/>
+    </wsdl:message>
+    <wsdl:message name="getRatioRentabiliteResponse">
+        <wsdl:part name="parameters" element="ns:getRatioRentabiliteResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBilanRetraiteRequest">
+        <wsdl:part name="parameters" element="ns:getBilanRetraite"/>
+    </wsdl:message>
+    <wsdl:message name="getBilanRetraiteResponse">
+        <wsdl:part name="parameters" element="ns:getBilanRetraiteResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getAnalyseFinanciereRequest">
+        <wsdl:part name="parameters" element="ns:getAnalyseFinanciere"/>
+    </wsdl:message>
+    <wsdl:message name="getAnalyseFinanciereResponse">
+        <wsdl:part name="parameters" element="ns:getAnalyseFinanciereResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getBilanRequest">
+        <wsdl:part name="parameters" element="ns:getBilan"/>
+    </wsdl:message>
+    <wsdl:message name="getBilanResponse">
+        <wsdl:part name="parameters" element="ns:getBilanResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getRatioStructureRequest">
+        <wsdl:part name="parameters" element="ns:getRatioStructure"/>
+    </wsdl:message>
+    <wsdl:message name="getRatioStructureResponse">
+        <wsdl:part name="parameters" element="ns:getRatioStructureResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getCompteResultatRequest">
+        <wsdl:part name="parameters" element="ns:getCompteResultat"/>
+    </wsdl:message>
+    <wsdl:message name="getCompteResultatResponse">
+        <wsdl:part name="parameters" element="ns:getCompteResultatResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListeBilansRequest">
+        <wsdl:part name="parameters" element="ns:getListeBilans"/>
+    </wsdl:message>
+    <wsdl:message name="getListeBilansResponse">
+        <wsdl:part name="parameters" element="ns:getListeBilansResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getLiensCapitalistiquesRequest">
+        <wsdl:part name="parameters" element="ns:getLiensCapitalistiques"/>
+    </wsdl:message>
+    <wsdl:message name="getLiensCapitalistiquesResponse">
+        <wsdl:part name="parameters" element="ns:getLiensCapitalistiquesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getSoldeIntermediaireGestionRequest">
+        <wsdl:part name="parameters" element="ns:getSoldeIntermediaireGestion"/>
+    </wsdl:message>
+    <wsdl:message name="getSoldeIntermediaireGestionResponse">
+        <wsdl:part name="parameters" element="ns:getSoldeIntermediaireGestionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getPCLRequest">
+        <wsdl:part name="parameters" element="ns:getPCL"/>
+    </wsdl:message>
+    <wsdl:message name="getPCLResponse">
+        <wsdl:part name="parameters" element="ns:getPCLResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getSyntheseFinanciereRequest">
+        <wsdl:part name="parameters" element="ns:getSyntheseFinanciere"/>
+    </wsdl:message>
+    <wsdl:message name="getSyntheseFinanciereResponse">
+        <wsdl:part name="parameters" element="ns:getSyntheseFinanciereResponse"/>
+    </wsdl:message>
+    <wsdl:message name="doRechercheEntrepriseRequest">
+        <wsdl:part name="parameters" element="ns:doRechercheEntreprise"/>
+    </wsdl:message>
+    <wsdl:message name="doRechercheEntrepriseResponse">
+        <wsdl:part name="parameters" element="ns:doRechercheEntrepriseResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getListeDirigeantsStatutairesRequest">
+        <wsdl:part name="parameters" element="ns:getListeDirigeantsStatutaires"/>
+    </wsdl:message>
+    <wsdl:message name="getListeDirigeantsStatutairesResponse">
+        <wsdl:part name="parameters" element="ns:getListeDirigeantsStatutairesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="getRatioIndicateurCourtTermeRequest">
+        <wsdl:part name="parameters" element="ns:getRatioIndicateurCourtTerme"/>
+    </wsdl:message>
+    <wsdl:message name="getRatioIndicateurCourtTermeResponse">
+        <wsdl:part name="parameters" element="ns:getRatioIndicateurCourtTermeResponse"/>
+    </wsdl:message>
+    <wsdl:portType xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" name="CallistoIdentiteObjectSecurePortType" wsp:PolicyURIs="#UTOverTransport">
+        <wsdl:operation name="getMethodes">
+            <wsdl:input message="ns:getMethodesRequest" wsaw:Action="urn:getMethodes"/>
+            <wsdl:output message="ns:getMethodesResponse" wsaw:Action="urn:getMethodesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN3Etablissement">
+            <wsdl:input message="ns:getIdentiteAltaN3EtablissementRequest" wsaw:Action="urn:getIdentiteAltaN3Etablissement"/>
+            <wsdl:output message="ns:getIdentiteAltaN3EtablissementResponse" wsaw:Action="urn:getIdentiteAltaN3EtablissementResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN3Entreprise">
+            <wsdl:input message="ns:getIdentiteAltaN3EntrepriseRequest" wsaw:Action="urn:getIdentiteAltaN3Entreprise"/>
+            <wsdl:output message="ns:getIdentiteAltaN3EntrepriseResponse" wsaw:Action="urn:getIdentiteAltaN3EntrepriseResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBilanComplet">
+            <wsdl:input message="ns:getBilanCompletRequest" wsaw:Action="urn:getBilanComplet"/>
+            <wsdl:output message="ns:getBilanCompletResponse" wsaw:Action="urn:getBilanCompletResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getInformationsLegales">
+            <wsdl:input message="ns:getInformationsLegalesRequest" wsaw:Action="urn:getInformationsLegales"/>
+            <wsdl:output message="ns:getInformationsLegalesResponse" wsaw:Action="urn:getInformationsLegalesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN4Entreprise">
+            <wsdl:input message="ns:getIdentiteAltaN4EntrepriseRequest" wsaw:Action="urn:getIdentiteAltaN4Entreprise"/>
+            <wsdl:output message="ns:getIdentiteAltaN4EntrepriseResponse" wsaw:Action="urn:getIdentiteAltaN4EntrepriseResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getEvolutionIdentiteEntreprise">
+            <wsdl:input message="ns:getEvolutionIdentiteEntrepriseRequest" wsaw:Action="urn:getEvolutionIdentiteEntreprise"/>
+            <wsdl:output message="ns:getEvolutionIdentiteEntrepriseResponse" wsaw:Action="urn:getEvolutionIdentiteEntrepriseResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getHistoriqueIdentiteEtablissement">
+            <wsdl:input message="ns:getHistoriqueIdentiteEtablissementRequest" wsaw:Action="urn:getHistoriqueIdentiteEtablissement"/>
+            <wsdl:output message="ns:getHistoriqueIdentiteEtablissementResponse" wsaw:Action="urn:getHistoriqueIdentiteEtablissementResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN4Etablissement">
+            <wsdl:input message="ns:getIdentiteAltaN4EtablissementRequest" wsaw:Action="urn:getIdentiteAltaN4Etablissement"/>
+            <wsdl:output message="ns:getIdentiteAltaN4EtablissementResponse" wsaw:Action="urn:getIdentiteAltaN4EtablissementResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getListeDecideurs">
+            <wsdl:input message="ns:getListeDecideursRequest" wsaw:Action="urn:getListeDecideurs"/>
+            <wsdl:output message="ns:getListeDecideursResponse" wsaw:Action="urn:getListeDecideursResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getListeEtablissements">
+            <wsdl:input message="ns:getListeEtablissementsRequest" wsaw:Action="urn:getListeEtablissements"/>
+            <wsdl:output message="ns:getListeEtablissementsResponse" wsaw:Action="urn:getListeEtablissementsResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheSimple">
+            <wsdl:input message="ns:doRechercheSimpleRequest" wsaw:Action="urn:doRechercheSimple"/>
+            <wsdl:output message="ns:doRechercheSimpleResponse" wsaw:Action="urn:doRechercheSimpleResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheDirigeant">
+            <wsdl:input message="ns:doRechercheDirigeantRequest" wsaw:Action="urn:doRechercheDirigeant"/>
+            <wsdl:output message="ns:doRechercheDirigeantResponse" wsaw:Action="urn:doRechercheDirigeantResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getHistoriqueIdentiteEntreprise">
+            <wsdl:input message="ns:getHistoriqueIdentiteEntrepriseRequest" wsaw:Action="urn:getHistoriqueIdentiteEntreprise"/>
+            <wsdl:output message="ns:getHistoriqueIdentiteEntrepriseResponse" wsaw:Action="urn:getHistoriqueIdentiteEntrepriseResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioRentabilite">
+            <wsdl:input message="ns:getRatioRentabiliteRequest" wsaw:Action="urn:getRatioRentabilite"/>
+            <wsdl:output message="ns:getRatioRentabiliteResponse" wsaw:Action="urn:getRatioRentabiliteResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBilanRetraite">
+            <wsdl:input message="ns:getBilanRetraiteRequest" wsaw:Action="urn:getBilanRetraite"/>
+            <wsdl:output message="ns:getBilanRetraiteResponse" wsaw:Action="urn:getBilanRetraiteResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getAnalyseFinanciere">
+            <wsdl:input message="ns:getAnalyseFinanciereRequest" wsaw:Action="urn:getAnalyseFinanciere"/>
+            <wsdl:output message="ns:getAnalyseFinanciereResponse" wsaw:Action="urn:getAnalyseFinanciereResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getBilan">
+            <wsdl:input message="ns:getBilanRequest" wsaw:Action="urn:getBilan"/>
+            <wsdl:output message="ns:getBilanResponse" wsaw:Action="urn:getBilanResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioStructure">
+            <wsdl:input message="ns:getRatioStructureRequest" wsaw:Action="urn:getRatioStructure"/>
+            <wsdl:output message="ns:getRatioStructureResponse" wsaw:Action="urn:getRatioStructureResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCompteResultat">
+            <wsdl:input message="ns:getCompteResultatRequest" wsaw:Action="urn:getCompteResultat"/>
+            <wsdl:output message="ns:getCompteResultatResponse" wsaw:Action="urn:getCompteResultatResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getListeBilans">
+            <wsdl:input message="ns:getListeBilansRequest" wsaw:Action="urn:getListeBilans"/>
+            <wsdl:output message="ns:getListeBilansResponse" wsaw:Action="urn:getListeBilansResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getLiensCapitalistiques">
+            <wsdl:input message="ns:getLiensCapitalistiquesRequest" wsaw:Action="urn:getLiensCapitalistiques"/>
+            <wsdl:output message="ns:getLiensCapitalistiquesResponse" wsaw:Action="urn:getLiensCapitalistiquesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSoldeIntermediaireGestion">
+            <wsdl:input message="ns:getSoldeIntermediaireGestionRequest" wsaw:Action="urn:getSoldeIntermediaireGestion"/>
+            <wsdl:output message="ns:getSoldeIntermediaireGestionResponse" wsaw:Action="urn:getSoldeIntermediaireGestionResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getPCL">
+            <wsdl:input message="ns:getPCLRequest" wsaw:Action="urn:getPCL"/>
+            <wsdl:output message="ns:getPCLResponse" wsaw:Action="urn:getPCLResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getSyntheseFinanciere">
+            <wsdl:input message="ns:getSyntheseFinanciereRequest" wsaw:Action="urn:getSyntheseFinanciere"/>
+            <wsdl:output message="ns:getSyntheseFinanciereResponse" wsaw:Action="urn:getSyntheseFinanciereResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheEntreprise">
+            <wsdl:input message="ns:doRechercheEntrepriseRequest" wsaw:Action="urn:doRechercheEntreprise"/>
+            <wsdl:output message="ns:doRechercheEntrepriseResponse" wsaw:Action="urn:doRechercheEntrepriseResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getListeDirigeantsStatutaires">
+            <wsdl:input message="ns:getListeDirigeantsStatutairesRequest" wsaw:Action="urn:getListeDirigeantsStatutaires"/>
+            <wsdl:output message="ns:getListeDirigeantsStatutairesResponse" wsaw:Action="urn:getListeDirigeantsStatutairesResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioIndicateurCourtTerme">
+            <wsdl:input message="ns:getRatioIndicateurCourtTermeRequest" wsaw:Action="urn:getRatioIndicateurCourtTerme"/>
+            <wsdl:output message="ns:getRatioIndicateurCourtTermeResponse" wsaw:Action="urn:getRatioIndicateurCourtTermeResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CallistoIdentiteObjectSecureSoap11Binding" type="ns:CallistoIdentiteObjectSecurePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="getMethodes">
+            <soap:operation soapAction="urn:getMethodes" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN3Etablissement">
+            <soap:operation soapAction="urn:getIdentiteAltaN3Etablissement" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN3Entreprise">
+            <soap:operation soapAction="urn:getIdentiteAltaN3Entreprise" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBilanComplet">
+            <soap:operation soapAction="urn:getBilanComplet" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getInformationsLegales">
+            <soap:operation soapAction="urn:getInformationsLegales" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN4Entreprise">
+            <soap:operation soapAction="urn:getIdentiteAltaN4Entreprise" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getEvolutionIdentiteEntreprise">
+            <soap:operation soapAction="urn:getEvolutionIdentiteEntreprise" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN4Etablissement">
+            <soap:operation soapAction="urn:getIdentiteAltaN4Etablissement" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getHistoriqueIdentiteEtablissement">
+            <soap:operation soapAction="urn:getHistoriqueIdentiteEtablissement" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListeDecideurs">
+            <soap:operation soapAction="urn:getListeDecideurs" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListeEtablissements">
+            <soap:operation soapAction="urn:getListeEtablissements" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheSimple">
+            <soap:operation soapAction="urn:doRechercheSimple" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheDirigeant">
+            <soap:operation soapAction="urn:doRechercheDirigeant" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getHistoriqueIdentiteEntreprise">
+            <soap:operation soapAction="urn:getHistoriqueIdentiteEntreprise" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioRentabilite">
+            <soap:operation soapAction="urn:getRatioRentabilite" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBilanRetraite">
+            <soap:operation soapAction="urn:getBilanRetraite" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAnalyseFinanciere">
+            <soap:operation soapAction="urn:getAnalyseFinanciere" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioStructure">
+            <soap:operation soapAction="urn:getRatioStructure" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBilan">
+            <soap:operation soapAction="urn:getBilan" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCompteResultat">
+            <soap:operation soapAction="urn:getCompteResultat" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListeBilans">
+            <soap:operation soapAction="urn:getListeBilans" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLiensCapitalistiques">
+            <soap:operation soapAction="urn:getLiensCapitalistiques" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPCL">
+            <soap:operation soapAction="urn:getPCL" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSoldeIntermediaireGestion">
+            <soap:operation soapAction="urn:getSoldeIntermediaireGestion" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSyntheseFinanciere">
+            <soap:operation soapAction="urn:getSyntheseFinanciere" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheEntreprise">
+            <soap:operation soapAction="urn:doRechercheEntreprise" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListeDirigeantsStatutaires">
+            <soap:operation soapAction="urn:getListeDirigeantsStatutaires" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioIndicateurCourtTerme">
+            <soap:operation soapAction="urn:getRatioIndicateurCourtTerme" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="CallistoIdentiteObjectSecureHttpBinding" type="ns:CallistoIdentiteObjectSecurePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="getMethodes">
+            <http:operation location="CallistoIdentiteObjectSecure/getMethodes"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getMethodes"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getMethodes"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN3Etablissement">
+            <http:operation location="CallistoIdentiteObjectSecure/getIdentiteAltaN3Etablissement"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getIdentiteAltaN3Etablissement"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getIdentiteAltaN3Etablissement"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN3Entreprise">
+            <http:operation location="CallistoIdentiteObjectSecure/getIdentiteAltaN3Entreprise"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getIdentiteAltaN3Entreprise"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getIdentiteAltaN3Entreprise"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBilanComplet">
+            <http:operation location="CallistoIdentiteObjectSecure/getBilanComplet"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getBilanComplet"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getBilanComplet"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getInformationsLegales">
+            <http:operation location="CallistoIdentiteObjectSecure/getInformationsLegales"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getInformationsLegales"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getInformationsLegales"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN4Entreprise">
+            <http:operation location="CallistoIdentiteObjectSecure/getIdentiteAltaN4Entreprise"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getIdentiteAltaN4Entreprise"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getIdentiteAltaN4Entreprise"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getEvolutionIdentiteEntreprise">
+            <http:operation location="CallistoIdentiteObjectSecure/getEvolutionIdentiteEntreprise"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getEvolutionIdentiteEntreprise"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getEvolutionIdentiteEntreprise"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getIdentiteAltaN4Etablissement">
+            <http:operation location="CallistoIdentiteObjectSecure/getIdentiteAltaN4Etablissement"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getIdentiteAltaN4Etablissement"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getIdentiteAltaN4Etablissement"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getHistoriqueIdentiteEtablissement">
+            <http:operation location="CallistoIdentiteObjectSecure/getHistoriqueIdentiteEtablissement"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getHistoriqueIdentiteEtablissement"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getHistoriqueIdentiteEtablissement"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListeDecideurs">
+            <http:operation location="CallistoIdentiteObjectSecure/getListeDecideurs"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getListeDecideurs"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getListeDecideurs"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListeEtablissements">
+            <http:operation location="CallistoIdentiteObjectSecure/getListeEtablissements"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getListeEtablissements"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getListeEtablissements"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheSimple">
+            <http:operation location="CallistoIdentiteObjectSecure/doRechercheSimple"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="doRechercheSimple"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="doRechercheSimple"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheDirigeant">
+            <http:operation location="CallistoIdentiteObjectSecure/doRechercheDirigeant"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="doRechercheDirigeant"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="doRechercheDirigeant"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getHistoriqueIdentiteEntreprise">
+            <http:operation location="CallistoIdentiteObjectSecure/getHistoriqueIdentiteEntreprise"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getHistoriqueIdentiteEntreprise"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getHistoriqueIdentiteEntreprise"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioRentabilite">
+            <http:operation location="CallistoIdentiteObjectSecure/getRatioRentabilite"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getRatioRentabilite"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getRatioRentabilite"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBilanRetraite">
+            <http:operation location="CallistoIdentiteObjectSecure/getBilanRetraite"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getBilanRetraite"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getBilanRetraite"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getAnalyseFinanciere">
+            <http:operation location="CallistoIdentiteObjectSecure/getAnalyseFinanciere"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getAnalyseFinanciere"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getAnalyseFinanciere"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioStructure">
+            <http:operation location="CallistoIdentiteObjectSecure/getRatioStructure"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getRatioStructure"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getRatioStructure"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getBilan">
+            <http:operation location="CallistoIdentiteObjectSecure/getBilan"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getBilan"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getBilan"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getCompteResultat">
+            <http:operation location="CallistoIdentiteObjectSecure/getCompteResultat"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getCompteResultat"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getCompteResultat"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListeBilans">
+            <http:operation location="CallistoIdentiteObjectSecure/getListeBilans"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getListeBilans"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getListeBilans"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getLiensCapitalistiques">
+            <http:operation location="CallistoIdentiteObjectSecure/getLiensCapitalistiques"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getLiensCapitalistiques"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getLiensCapitalistiques"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getPCL">
+            <http:operation location="CallistoIdentiteObjectSecure/getPCL"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getPCL"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getPCL"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSoldeIntermediaireGestion">
+            <http:operation location="CallistoIdentiteObjectSecure/getSoldeIntermediaireGestion"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getSoldeIntermediaireGestion"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getSoldeIntermediaireGestion"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getSyntheseFinanciere">
+            <http:operation location="CallistoIdentiteObjectSecure/getSyntheseFinanciere"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getSyntheseFinanciere"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getSyntheseFinanciere"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="doRechercheEntreprise">
+            <http:operation location="CallistoIdentiteObjectSecure/doRechercheEntreprise"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="doRechercheEntreprise"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="doRechercheEntreprise"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getListeDirigeantsStatutaires">
+            <http:operation location="CallistoIdentiteObjectSecure/getListeDirigeantsStatutaires"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getListeDirigeantsStatutaires"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getListeDirigeantsStatutaires"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="getRatioIndicateurCourtTerme">
+            <http:operation location="CallistoIdentiteObjectSecure/getRatioIndicateurCourtTerme"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="getRatioIndicateurCourtTerme"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="getRatioIndicateurCourtTerme"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CallistoIdentiteObjectSecure">
+        <wsdl:port name="CallistoIdentiteObjectSecureHttpSoap11Endpoint" binding="ns:CallistoIdentiteObjectSecureSoap11Binding">
+            <soap:address location="http://intuiz.altares.fr:8080/axis2_V3.5/services/CallistoIdentiteObjectSecure.CallistoIdentiteObjectSecureHttpSoap11Endpoint/"/>
+        </wsdl:port>
+        <wsdl:port name="CallistoIdentiteObjectSecureHttpEndpoint" binding="ns:CallistoIdentiteObjectSecureHttpBinding">
+            <http:address location="http://intuiz.altares.fr:8080/axis2_V3.5/services/CallistoIdentiteObjectSecure.CallistoIdentiteObjectSecureHttpEndpoint/"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

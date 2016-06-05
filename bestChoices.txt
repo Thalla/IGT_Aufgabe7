@@ -1,0 +1,113 @@
+Pool.bpmn
+
+Name                           Value                                                                                                                  
+----                           -----                                                                                                                  
+ShippingSvc_1.wsdl             30                                                                                                                     
+IncidentManagement(ProcessEngineExecutable).bpmn
+DatosAlumno_1.wsdl             86                                                                                                                     
+APIService_1.wsdl              48                                                                                                                     
+VMS_Alarmi_RAZVOJ_MapServer... 20                                                                                                                     
+SFAPIService_1.wsdl            20                                                                                                                     
+Members_1.wsdl                 12                                                                                                                     
+Examples-DI-ExpandedSub-Process.bpmn
+Servicev2_1.wsdl               498                                                                                                                    
+Examples-DI-ExpandedSub-Process(1).bpmn
+Servicev2_1.wsdl               498                                                                                                                    
+EmailVoting2.bpmn
+Servicev2_1.wsdl               798                                                                                                                    
+Members_1.wsdl                 640                                                                                                                    
+Web_Apoyo_BI_1.wsdl            544                                                                                                                    
+Web_Apoyo_BI_2.wsdl            544                                                                                                                    
+APIService_1.wsdl              518                                                                                                                    
+CollapsedSubProcess.bpmn
+ShippingSvc_1.wsdl             39                                                                                                                     
+CustomerService_1.wsdl         10                                                                                                                     
+GASService_1.wsdl              5                                                                                                                      
+IssuePolicy_1.wsdl             1                                                                                                                      
+ShopService_1.wsdl             1                                                                                                                      
+Examples-DI-LanesandNestedLanes.bpmn
+Servicev2_1.wsdl               100                                                                                                                    
+APIService_1.wsdl              46                                                                                                                     
+SFAPIService_1.wsdl            41                                                                                                                     
+DatosAlumno_1.wsdl             28                                                                                                                     
+egmSorguService_1.wsdl         8                                                                                                                      
+IncidentManagementlevel1.bpmn
+GASService_1.wsdl              114                                                                                                                    
+IssuePolicy_1.wsdl             26                                                                                                                     
+VMS_Alarmi_RAZVOJ_MapServer... 25                                                                                                                     
+APIService_1.wsdl              18                                                                                                                     
+Members_1.wsdl                 12                                                                                                                     
+IncidentManagement(WholeCollab).bpmn
+VMS_Alarmi_RAZVOJ_MapServer... 3728                                                                                                                   
+APIService_1.wsdl              1332                                                                                                                   
+DatosAlumno_1.wsdl             1280                                                                                                                   
+Servicev2_1.wsdl               959                                                                                                                    
+Web_Apoyo_BI_1.wsdl            710                                                                                                                    
+Laneset.bpmn
+ShippingSvc_1.wsdl             30                                                                                                                     
+Process.bpmn
+ShippingSvc_1.wsdl             30                                                                                                                     
+triso-OrderProcessforPizzaV4.bpmn
+APIService_1.wsdl              15                                                                                                                     
+CustomerService_1.wsdl         10                                                                                                                     
+Servicev2_1.wsdl               10                                                                                                                     
+IssuePolicy_1.wsdl             2                                                                                                                      
+ShippingSvc_1.wsdl             1                                                                                                                      
+Examples-DI-Choreography.bpmn
+Examples-DI-CollapsedSub-Process.bpmn
+Servicev2_1.wsdl               498                                                                                                                    
+IncidentManagement-collchor.bpmn
+APIService_1.wsdl              324                                                                                                                    
+VMS_Alarmi_RAZVOJ_MapServer... 240                                                                                                                    
+Members_1.wsdl                 148                                                                                                                    
+GASService_1.wsdl              119                                                                                                                    
+XigniteScreener_1.wsdl         36                                                                                                                     
+ProcurementProcesseswithErrorHandling-StencilTrisotech3pages.bpmn
+ArticleService_1.wsdl          57                                                                                                                     
+ShippingSvc_1.wsdl             30                                                                                                                     
+VMS_Alarmi_RAZVOJ_MapServer... 22                                                                                                                     
+CustomerService_1.wsdl         20                                                                                                                     
+APIService_1.wsdl              16                                                                                                                     
+ExpandedSubProcess.bpmn
+ShippingSvc_1.wsdl             39                                                                                                                     
+CustomerService_1.wsdl         10                                                                                                                     
+GASService_1.wsdl              5                                                                                                                      
+IssuePolicy_1.wsdl             1                                                                                                                      
+ShopService_1.wsdl             1                                                                                                                      
+CallActivity.bpmn
+ShippingSvc_1.wsdl             39                                                                                                                     
+CustomerService_1.wsdl         10                                                                                                                     
+GASService_1.wsdl              5                                                                                                                      
+IssuePolicy_1.wsdl             1                                                                                                                      
+ShopService_1.wsdl             1                                                                                                                      
+TavelBooking.bpmn
+Info_1.wsdl                    642                                                                                                                    
+DatosAlumno_1.wsdl             366                                                                                                                    
+APIService_1.wsdl              342                                                                                                                    
+VMS_Alarmi_RAZVOJ_MapServer... 281                                                                                                                    
+XigniteScreener_1.wsdl         231                                                                                                                    
+NobelPrizeProcess.bpmn
+Members_1.wsdl                 316                                                                                                                    
+CallistoIdentiteObjectSecur... 269                                                                                                                    
+APIService_1.wsdl              114                                                                                                                    
+Web_Apoyo_BI_1.wsdl            108                                                                                                                    
+Web_Apoyo_BI_2.wsdl            108                                                                                                                    
+Examples-DI-VerticalCollaboration.bpmn
+triso-HardwareRetailerv2.bpmn
+Web_Apoyo_BI_1.wsdl            324                                                                                                                    
+Web_Apoyo_BI_2.wsdl            324                                                                                                                    
+XigniteScreener_1.wsdl         81                                                                                                                     
+CallistoIdentiteObjectSecur... 65                                                                                                                     
+VMS_Alarmi_RAZVOJ_MapServer... 61                                                                                                                     
+IncidentManagement(ProcessEngineOnly).bpmn
+APIService_1.wsdl              215                                                                                                                    
+DatosAlumno_1.wsdl             114                                                                                                                    
+GASService_1.wsdl              71                                                                                                                     
+Members_1.wsdl                 44                                                                                                                     
+SFAPIService_1.wsdl            20                                                                                                                     
+IncidentManagement(AccountManagerOnly).bpmn
+VMS_Alarmi_RAZVOJ_MapServer... 94                                                                                                                     
+APIService_1.wsdl              58                                                                                                                     
+Members_1.wsdl                 26                                                                                                                     
+XigniteScreener_1.wsdl         20                                                                                                                     
+CDC_1.wsdl                     18  

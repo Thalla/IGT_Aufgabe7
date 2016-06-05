@@ -1,0 +1,1894 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ws.idssasp.com/Members.asmx" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://ws.idssasp.com/Members.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ws.idssasp.com/Members.asmx">
+      <s:element name="C134_GetMembersByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeChildCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="venueDefID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="C134_GetMembersByCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="C134_GetMembersByCategoryResult" type="tns:ArrayOfMember134" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMember134">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Member134" nillable="true" type="tns:Member134" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Member134">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecondaryPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrimaryMarket" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Twitter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Facebook" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YouTube" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkedIn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addresses" type="tns:ArrayOfAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfMemberCategory134" />
+          <s:element minOccurs="0" maxOccurs="1" name="Service" type="tns:Services" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfUDFItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAddress">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Address" nillable="true" type="tns:Address" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Address">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AddressID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Suite" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateAbbr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryAbbr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GoogleMapQuery" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMemberCategory134">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MemberCategory134" nillable="true" type="tns:MemberCategory134" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberCategory134">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Directories" type="tns:ArrayOfMemberDirectory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMemberDirectory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MemberDirectory" nillable="true" type="tns:MemberDirectory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberDirectory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberDirectoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MemberCategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescriptionHtml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescriptionText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddressID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MDirectory" type="tns:Directory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Directory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Services">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rooms" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IndoorPool" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="OutdoorPool" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="HighSpeedInternet" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="RoomService" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Pets" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="AnnualAttendance" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capacity" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cuisine" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LowPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="HighPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Alcohol" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmployeeCount" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Area" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Distances" type="tns:ArrayOfServiceDistance" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfServiceDistance">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ServiceDistance" nillable="true" type="tns:ServiceDistance" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ServiceDistance">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServiceDistanceID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Directions" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Units" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUDFItem">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UDFItem" nillable="true" type="tns:UDFItem" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UDFItem">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="EventID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthorizeHeader" type="tns:AuthorizeHeader" />
+      <s:complexType name="AuthorizeHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetGeoCodeList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGeoCodeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGeoCodeListResult" type="tns:ArrayOfGeoCode" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGeoCode">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GeoCode" nillable="true" type="tns:GeoCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GeoCode">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCategoryList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCategoryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoryListResult" type="tns:ArrayOfCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Category">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFullCategoryList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetFullCategoryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFullCategoryListResult" type="tns:ArrayOfFullCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFullCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FullCategory" nillable="true" type="tns:FullCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="FullCategory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentCategoryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryDescriptionHtml" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Photo1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Photo2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Photo3" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCategoryUsedList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCategoryUsedListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCategoryUsedListResult" type="tns:ArrayOfCategory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDirectoryList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetDirectoryListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDirectoryListResult" type="tns:ArrayOfDirectory" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDirectory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Directory" nillable="true" type="tns:Directory" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLookupList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lookupType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLookupListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLookupListResult" type="tns:ArrayOfLookup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLookup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Lookup" nillable="true" type="tns:Lookup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Lookup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LookupType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LookupValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LookupName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetLookupTypeList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetLookupTypeListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLookupTypeListResult" type="tns:ArrayOfLookupType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLookupType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="LookupType" nillable="true" type="tns:LookupType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="LookupType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LookupTypeValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LookupTypeName" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMemberUDFColumns">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMemberUDFColumnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberUDFColumnsResult" type="tns:ArrayOfUDFColumn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUDFColumn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UDFColumn" nillable="true" type="tns:UDFColumn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UDFColumn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ColumnLabel" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="memberID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberResult" type="tns:Member" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Member">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelledDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CancelledReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TermDescriptionHtml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TermDescriptionPlainText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PirmaryCategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MemberLevelID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberLevelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberAccount" type="tns:Account" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addresses" type="tns:ArrayOfAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfMemberCategory" />
+          <s:element minOccurs="0" maxOccurs="1" name="Service" type="tns:Services" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfUDFItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeoCodes" type="tns:ArrayOfGeoCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Account">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Alias" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentAccountID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountQuality" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SecondaryPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Website" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SalesRepID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrimaryMarket" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Twitter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Facebook" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="YouTube" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkedIn" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMemberCategory">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MemberCategory" nillable="true" type="tns:MemberCategory" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberCategory">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberCategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescriptionHtml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescriptionText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddressID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCategory" type="tns:Category" />
+          <s:element minOccurs="0" maxOccurs="1" name="Directories" type="tns:ArrayOfMemberDirectory" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMemberList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberListResult" type="tns:ArrayOfMember" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMember">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Member" nillable="true" type="tns:Member" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMemberListWithAddressType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListWithAddressTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberListWithAddressTypeResult" type="tns:ArrayOfMemberAT" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMemberAT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MemberAT" nillable="true" type="tns:MemberAT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberAT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelledDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CancelledReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TermDescriptionHtml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TermDescriptionPlainText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PirmaryCategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MemberLevelID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberLevelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberAccount" type="tns:Account" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addresses" type="tns:ArrayOfAddressAT" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfMemberCategoryGC" />
+          <s:element minOccurs="0" maxOccurs="1" name="Service" type="tns:Services" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfUDFItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeoCodes" type="tns:ArrayOfGeoCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAddressAT">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AddressAT" nillable="true" type="tns:AddressAT" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddressAT">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AddressID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddressType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Street" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Suite" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StateAbbr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PostalCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CountryAbbr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GoogleMapQuery" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfMemberCategoryGC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MemberCategoryGC" nillable="true" type="tns:MemberCategoryGC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberCategoryGC">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberCategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GeoCodeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeoCodeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescriptionHtml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DescriptionText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AddressID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactFax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MCategory" type="tns:Category" />
+          <s:element minOccurs="0" maxOccurs="1" name="Directories" type="tns:ArrayOfMemberDirectory" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMembersWithCategoryGeoCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMembersWithCategoryGeoCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMembersWithCategoryGeoCodeResult" type="tns:ArrayOfMemberGC" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMemberGC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MemberGC" nillable="true" type="tns:MemberGC" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MemberGC">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MemberID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CancelledDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="CancelledReason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TermDescriptionHtml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TermDescriptionPlainText" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PirmaryCategoryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MemberLevelID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberLevelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MemberAccount" type="tns:Account" />
+          <s:element minOccurs="0" maxOccurs="1" name="Addresses" type="tns:ArrayOfAddress" />
+          <s:element minOccurs="0" maxOccurs="1" name="Categories" type="tns:ArrayOfMemberCategoryGC" />
+          <s:element minOccurs="0" maxOccurs="1" name="Service" type="tns:Services" />
+          <s:element minOccurs="0" maxOccurs="1" name="Items" type="tns:ArrayOfUDFItem" />
+          <s:element minOccurs="0" maxOccurs="1" name="GeoCodes" type="tns:ArrayOfGeoCode" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMemberListWithGeoCodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListWithGeoCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberListWithGeoCodesResult" type="tns:ArrayOfMember" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListByMembers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="memberIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListByMembersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberListByMembersResult" type="tns:ArrayOfMember" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListByGeoCodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="geoCodeIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListByGeoCodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberListByGeoCodesResult" type="tns:ArrayOfMember" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="categoryIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeChildCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberListCategoriesResult" type="tns:ArrayOfMember" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListByDirectories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="directoryIDs" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeAddresses" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeCategories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeDirectories" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeServices" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="includeUdfs" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberListByDirectoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberListByDirectoriesResult" type="tns:ArrayOfMember" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberWithVenue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="memberID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="categoryID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMemberWithVenueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMemberWithVenueResult" type="tns:MemberVenue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MemberVenue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Mem" type="tns:Member" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ven" type="tns:Venue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Venue">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="VenueID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VenueDefID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="VenueName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VenueDefName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VenueComments" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VenueCommentsHtml" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VenueAccount" type="tns:Account" />
+          <s:element minOccurs="0" maxOccurs="1" name="VenueAddress" type="tns:Address" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attributes" type="tns:ArrayOfAttribute" />
+          <s:element minOccurs="0" maxOccurs="1" name="Spaces" type="tns:ArrayOfSpace" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAttribute">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Attribute" nillable="true" type="tns:Attribute" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Attribute">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FilePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValueFilePath" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSpace">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Space" nillable="true" type="tns:Space" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Space">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SpaceID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpaceDefinitionID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ParentSpaceID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefinitionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Abbreviation" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Area" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaUnit" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MinOccupancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="MaxOccupancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Height" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attributes" type="tns:ArrayOfAttribute" />
+          <s:element minOccurs="0" maxOccurs="1" name="Configs" type="tns:ArrayOfSpaceConfig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSpaceConfig">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SpaceConfig" nillable="true" type="tns:SpaceConfig" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SpaceConfig">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SpaceConfigID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SpaceID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ConfigDefinitionID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefinitionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Occupancy" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Area" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="AreaUnits" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCancelledMembers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCancelledMembersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCancelledMembersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailTypes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="includeAttributes" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailTypesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDetailTypesResult" type="tns:ArrayOfDetailType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDetailType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DetailType" nillable="true" type="tns:DetailType" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DetailType">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetDetailTypeAttributes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="detailTypeID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDetailTypeAttributesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDetailTypeAttributesResult" type="tns:ArrayOfCAttribute" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCAttribute">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CAttribute" nillable="true" type="tns:CAttribute" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CAttribute">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="AttributeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisplayName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SortOrder" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DataType" type="tns:AmenityFieldType" />
+          <s:element minOccurs="0" maxOccurs="1" name="LookupType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttributeType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DetailTypeID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttributeValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="AmenityFieldType">
+        <s:restriction base="s:string">
+          <s:enumeration value="DropDownList" />
+          <s:enumeration value="RadioButtonList" />
+          <s:enumeration value="Text" />
+          <s:enumeration value="TextArea" />
+          <s:enumeration value="CheckBox" />
+          <s:enumeration value="Date" />
+          <s:enumeration value="Time" />
+          <s:enumeration value="DateTime" />
+          <s:enumeration value="File" />
+          <s:enumeration value="Html" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contactID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactResult" type="tns:Contact" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Contact">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ContactID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AccountID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SourceID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="EmailOption" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Salutation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MiddleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Suffix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreferredCommCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobilePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OtherEmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountContactRoleCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountContactRole" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Twitter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Facebook" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Skype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LinkedIn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PhotoFilePath" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Attributes" type="tns:ArrayOfCAttribute" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accountID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactListResult" type="tns:ArrayOfContact" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfContact">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Contact" nillable="true" type="tns:Contact" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetContactListWithDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="accountID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetContactListWithDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetContactListWithDetailsResult" type="tns:ArrayOfContact" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddressList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accountIDs" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="addresstype" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAddressListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAddressListResult" type="tns:ArrayOfAddressEx" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAddressEx">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AddressEx" nillable="true" type="tns:AddressEx" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AddressEx">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Address">
+            <s:sequence>
+              <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:decimal" />
+              <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:decimal" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="MemberLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="memberUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="memberPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MemberLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MemberLoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="C134_GetMembersByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:C134_GetMembersByCategory" />
+  </wsdl:message>
+  <wsdl:message name="C134_GetMembersByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:C134_GetMembersByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="C134_GetMembersByCategoryAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetGeoCodeListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGeoCodeList" />
+  </wsdl:message>
+  <wsdl:message name="GetGeoCodeListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGeoCodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGeoCodeListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetFullCategoryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFullCategoryList" />
+  </wsdl:message>
+  <wsdl:message name="GetFullCategoryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFullCategoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFullCategoryListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryUsedListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCategoryUsedList" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryUsedListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCategoryUsedListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCategoryUsedListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDirectoryListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDirectoryList" />
+  </wsdl:message>
+  <wsdl:message name="GetDirectoryListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDirectoryListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDirectoryListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLookupListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLookupList" />
+  </wsdl:message>
+  <wsdl:message name="GetLookupListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLookupListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLookupListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetLookupTypeListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLookupTypeList" />
+  </wsdl:message>
+  <wsdl:message name="GetLookupTypeListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLookupTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLookupTypeListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberUDFColumnsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberUDFColumns" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberUDFColumnsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberUDFColumnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberUDFColumnsAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMember" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberList" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListWithAddressTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberListWithAddressType" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListWithAddressTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberListWithAddressTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListWithAddressTypeAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMembersWithCategoryGeoCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMembersWithCategoryGeoCode" />
+  </wsdl:message>
+  <wsdl:message name="GetMembersWithCategoryGeoCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMembersWithCategoryGeoCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMembersWithCategoryGeoCodeAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListWithGeoCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberListWithGeoCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListWithGeoCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberListWithGeoCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListWithGeoCodesAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByMembersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberListByMembers" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByMembersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberListByMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByMembersAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByGeoCodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberListByGeoCodes" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByGeoCodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberListByGeoCodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByGeoCodesAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberListCategories" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberListCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListCategoriesAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByDirectoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberListByDirectories" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByDirectoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberListByDirectoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberListByDirectoriesAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberWithVenueSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMemberWithVenue" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberWithVenueSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMemberWithVenueResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMemberWithVenueAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCancelledMembersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCancelledMembers" />
+  </wsdl:message>
+  <wsdl:message name="GetCancelledMembersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCancelledMembersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCancelledMembersAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailTypesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDetailTypes" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailTypesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDetailTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailTypesAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailTypeAttributesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDetailTypeAttributes" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailTypeAttributesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDetailTypeAttributesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDetailTypeAttributesAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetContactSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContact" />
+  </wsdl:message>
+  <wsdl:message name="GetContactSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactList" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListWithDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetContactListWithDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListWithDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetContactListWithDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetContactListWithDetailsAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAddressList" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAddressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAddressListAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:message name="MemberLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:MemberLogin" />
+  </wsdl:message>
+  <wsdl:message name="MemberLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:MemberLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="MemberLoginAuthorizeHeader">
+    <wsdl:part name="AuthorizeHeader" element="tns:AuthorizeHeader" />
+  </wsdl:message>
+  <wsdl:portType name="MembersSoap">
+    <wsdl:operation name="C134_GetMembersByCategory">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">This is a custom method, use at your own risk.  Returns a list of Members with the Addresses, Categories, UDFs and Services. The Directories are placed in each Category. &lt;br /&gt;  Paremeters: &lt;br /&gt;  categoryIDs - is a comma seperated list without spaces of category ids which can be obtained from the GetCategoryList call.  If it is empty, the method will return all members. &lt;br /&gt;  includeChildCategories - is a boolean that requires "true" or "false" as the value.  If true, it will include all the child categories of the categoryids passed in the first parameter. &lt;br /&gt;  includeAddresses - is a boolean that requires "true" or "false" as the &lt;br /&gt;  value.  If true it will return all the addresses for the Member.  Note: Addresses are being pulled from the Venue tab of the corresponding Venue Def ID for the member.</wsdl:documentation>
+      <wsdl:input message="tns:C134_GetMembersByCategorySoapIn" />
+      <wsdl:output message="tns:C134_GetMembersByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGeoCodeList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all Geo Codes for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetGeoCodeListSoapIn" />
+      <wsdl:output message="tns:GetGeoCodeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all Categories for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetCategoryListSoapIn" />
+      <wsdl:output message="tns:GetCategoryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFullCategoryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all Categories with all fields for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetFullCategoryListSoapIn" />
+      <wsdl:output message="tns:GetFullCategoryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryUsedList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Categories used on active members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetCategoryUsedListSoapIn" />
+      <wsdl:output message="tns:GetCategoryUsedListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectoryList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all Directories for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetDirectoryListSoapIn" />
+      <wsdl:output message="tns:GetDirectoryListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Lookups for the client based on the LookupType passed in.  If LookupType is empty, it will return all lookups.</wsdl:documentation>
+      <wsdl:input message="tns:GetLookupListSoapIn" />
+      <wsdl:output message="tns:GetLookupListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupTypeList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all LookupTypes for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetLookupTypeListSoapIn" />
+      <wsdl:output message="tns:GetLookupTypeListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberUDFColumns">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Column UDFs for Members.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberUDFColumnsSoapIn" />
+      <wsdl:output message="tns:GetMemberUDFColumnsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a single Member.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberSoapIn" />
+      <wsdl:output message="tns:GetMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberListSoapIn" />
+      <wsdl:output message="tns:GetMemberListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListWithAddressType">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberListWithAddressTypeSoapIn" />
+      <wsdl:output message="tns:GetMemberListWithAddressTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMembersWithCategoryGeoCode">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetMembersWithCategoryGeoCodeSoapIn" />
+      <wsdl:output message="tns:GetMembersWithCategoryGeoCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListWithGeoCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberListWithGeoCodesSoapIn" />
+      <wsdl:output message="tns:GetMemberListWithGeoCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByMembers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberListByMembersSoapIn" />
+      <wsdl:output message="tns:GetMemberListByMembersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByGeoCodes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberListByGeoCodesSoapIn" />
+      <wsdl:output message="tns:GetMemberListByGeoCodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListCategories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberListCategoriesSoapIn" />
+      <wsdl:output message="tns:GetMemberListCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByDirectories">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Members for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberListByDirectoriesSoapIn" />
+      <wsdl:output message="tns:GetMemberListByDirectoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberWithVenue">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns Member for the client by category along with the .</wsdl:documentation>
+      <wsdl:input message="tns:GetMemberWithVenueSoapIn" />
+      <wsdl:output message="tns:GetMemberWithVenueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelledMembers">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a comma seperated list of IDs for members that have been cancelled</wsdl:documentation>
+      <wsdl:input message="tns:GetCancelledMembersSoapIn" />
+      <wsdl:output message="tns:GetCancelledMembersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailTypes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all Venue Definitions for the client.</wsdl:documentation>
+      <wsdl:input message="tns:GetDetailTypesSoapIn" />
+      <wsdl:output message="tns:GetDetailTypesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailTypeAttributes">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of Attributes for the given Detail Type.  If 0 is passed in for detailTypeID then all attributes will be returned.</wsdl:documentation>
+      <wsdl:input message="tns:GetDetailTypeAttributesSoapIn" />
+      <wsdl:output message="tns:GetDetailTypeAttributesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a single contact for the contactID passed in.</wsdl:documentation>
+      <wsdl:input message="tns:GetContactSoapIn" />
+      <wsdl:output message="tns:GetContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all contacts for the accountID passed in.</wsdl:documentation>
+      <wsdl:input message="tns:GetContactListSoapIn" />
+      <wsdl:output message="tns:GetContactListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContactListWithDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of all contacts for the accountID passed in.</wsdl:documentation>
+      <wsdl:input message="tns:GetContactListWithDetailsSoapIn" />
+      <wsdl:output message="tns:GetContactListWithDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressList">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns a list of extended addresses for the provided account IDs.</wsdl:documentation>
+      <wsdl:input message="tns:GetAddressListSoapIn" />
+      <wsdl:output message="tns:GetAddressListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MemberLogin">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns the user's MemberID if user is authorized to log on, 0 if not.</wsdl:documentation>
+      <wsdl:input message="tns:MemberLoginSoapIn" />
+      <wsdl:output message="tns:MemberLoginSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MembersSoap" type="tns:MembersSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="C134_GetMembersByCategory">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/C134_GetMembersByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:C134_GetMembersByCategoryAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeoCodeList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetGeoCodeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGeoCodeListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCategoryListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullCategoryList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetFullCategoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFullCategoryListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryUsedList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetCategoryUsedList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCategoryUsedListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectoryList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetDirectoryList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDirectoryListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetLookupList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLookupListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupTypeList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetLookupTypeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetLookupTypeListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberUDFColumns">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberUDFColumns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberUDFColumnsAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListWithAddressType">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListWithAddressType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberListWithAddressTypeAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembersWithCategoryGeoCode">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMembersWithCategoryGeoCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMembersWithCategoryGeoCodeAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListWithGeoCodes">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListWithGeoCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberListWithGeoCodesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByMembers">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListByMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberListByMembersAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByGeoCodes">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListByGeoCodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberListByGeoCodesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListCategories">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberListCategoriesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByDirectories">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListByDirectories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberListByDirectoriesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberWithVenue">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberWithVenue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMemberWithVenueAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelledMembers">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetCancelledMembers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCancelledMembersAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailTypes">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetDetailTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDetailTypesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailTypeAttributes">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetDetailTypeAttributes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDetailTypeAttributesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetContactAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetContactListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactListWithDetails">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetContactListWithDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetContactListWithDetailsAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressList">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/GetAddressList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAddressListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberLogin">
+      <soap:operation soapAction="http://ws.idssasp.com/Members.asmx/MemberLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:MemberLoginAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MembersSoap12" type="tns:MembersSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="C134_GetMembersByCategory">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/C134_GetMembersByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:C134_GetMembersByCategoryAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGeoCodeList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetGeoCodeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGeoCodeListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetCategoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCategoryListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFullCategoryList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetFullCategoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFullCategoryListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryUsedList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetCategoryUsedList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCategoryUsedListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDirectoryList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetDirectoryList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDirectoryListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetLookupList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLookupListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLookupTypeList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetLookupTypeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetLookupTypeListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberUDFColumns">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberUDFColumns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberUDFColumnsAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMember">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListWithAddressType">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListWithAddressType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberListWithAddressTypeAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMembersWithCategoryGeoCode">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMembersWithCategoryGeoCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMembersWithCategoryGeoCodeAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListWithGeoCodes">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListWithGeoCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberListWithGeoCodesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByMembers">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListByMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberListByMembersAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByGeoCodes">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListByGeoCodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberListByGeoCodesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListCategories">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberListCategoriesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberListByDirectories">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberListByDirectories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberListByDirectoriesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMemberWithVenue">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetMemberWithVenue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMemberWithVenueAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCancelledMembers">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetCancelledMembers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCancelledMembersAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailTypes">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetDetailTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDetailTypesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDetailTypeAttributes">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetDetailTypeAttributes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDetailTypeAttributesAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContact">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetContactAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetContactList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetContactListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetContactListWithDetails">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetContactListWithDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetContactListWithDetailsAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAddressList">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/GetAddressList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAddressListAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MemberLogin">
+      <soap12:operation soapAction="http://ws.idssasp.com/Members.asmx/MemberLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:MemberLoginAuthorizeHeader" part="AuthorizeHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Members">
+    <wsdl:port name="MembersSoap" binding="tns:MembersSoap">
+      <soap:address location="http://ws.idssasp.com/members.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MembersSoap12" binding="tns:MembersSoap12">
+      <soap12:address location="http://ws.idssasp.com/members.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

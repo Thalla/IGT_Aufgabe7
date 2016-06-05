@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://monitoreo-sep-dgtic.com.mx/ws/public/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://monitoreo-sep-dgtic.com.mx/ws/public/">
+<types>
+<xsd:schema elementFormDefault="qualified" targetNamespace="http://monitoreo-sep-dgtic.com.mx/ws/public/"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="Ubicacion">
+  <xsd:all>
+   <xsd:element name="NAME" type="xsd:string"/>
+   <xsd:element name="SITEID" type="xsd:string"/>
+   <xsd:element name="ID" type="xsd:integer"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="ubicacionesResult">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:Ubicacion[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="Dispositivo">
+  <xsd:all>
+   <xsd:element name="GROUP_ID" type="xsd:integer"/>
+   <xsd:element name="NAME" type="xsd:string"/>
+   <xsd:element name="DEVICE_ID" type="xsd:integer"/>
+   <xsd:element name="TYPE" type="xsd:integer"/>
+   <xsd:element name="ALIAS" type="xsd:string"/>
+   <xsd:element name="STATUS" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="dispositivosResult">
+  <xsd:complexContent>
+   <xsd:restriction base="SOAP-ENC:Array">
+    <xsd:attribute ref="SOAP-ENC:arrayType" wsdl:arrayType="tns:Dispositivo[]"/>
+   </xsd:restriction>
+  </xsd:complexContent>
+ </xsd:complexType>
+ <xsd:complexType name="obtenerUbicacionesRequestType"/>
+ <xsd:complexType name="obtenerUbicacionesResponseType">
+  <xsd:all>
+   <xsd:element name="ubicaciones" type="tns:ubicacionesResult"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="obtenerDispositivosRequestType"/>
+ <xsd:complexType name="obtenerDispositivosResponseType">
+  <xsd:all>
+   <xsd:element name="dispositivos" type="tns:dispositivosResult"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:element name="obtenerUbicaciones" type="tns:obtenerUbicacionesRequestType"/>
+ <xsd:element name="obtenerUbicacionesResponse" type="tns:obtenerUbicacionesResponseType"/>
+ <xsd:element name="obtenerDispositivos" type="tns:obtenerDispositivosRequestType"/>
+ <xsd:element name="obtenerDispositivosResponse" type="tns:obtenerDispositivosResponseType"/>
+</xsd:schema>
+</types>
+<message name="obtenerUbicacionesRequest">
+  <part name="parameters" element="tns:obtenerUbicaciones" /></message>
+<message name="obtenerUbicacionesResponse">
+  <part name="parameters" element="tns:obtenerUbicacionesResponse" /></message>
+<message name="obtenerDispositivosRequest">
+  <part name="parameters" element="tns:obtenerDispositivos" /></message>
+<message name="obtenerDispositivosResponse">
+  <part name="parameters" element="tns:obtenerDispositivosResponse" /></message>
+<portType name="nmsPortType">
+  <operation name="obtenerUbicaciones">
+    <documentation>Obtener Ubicaciones</documentation>
+    <input message="tns:obtenerUbicacionesRequest"/>
+    <output message="tns:obtenerUbicacionesResponse"/>
+  </operation>
+  <operation name="obtenerDispositivos">
+    <documentation>Obtener Dispositivos</documentation>
+    <input message="tns:obtenerDispositivosRequest"/>
+    <output message="tns:obtenerDispositivosResponse"/>
+  </operation>
+</portType>
+<binding name="nmsBinding" type="tns:nmsPortType">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="obtenerUbicaciones">
+    <soap:operation soapAction="urn:http://monitoreo-sep-dgtic.com.mx/ws/public/webservice.php#obtenerUbicaciones" style="document"/>
+    <input><soap:header message="tns:AuthenticationInfo" part="AuthenticationInfo" use="literal"></soap:header><soap:body use="literal" namespace="urn:http://monitoreo-sep-dgtic.com.mx/ws/public/webservice.php"/></input>
+    <output><soap:body use="literal" namespace="urn:http://monitoreo-sep-dgtic.com.mx/ws/public/webservice.php"/></output>
+  </operation>
+  <operation name="obtenerDispositivos">
+    <soap:operation soapAction="urn:http://monitoreo-sep-dgtic.com.mx/ws/public/webservice.php#obtenerDispositivos" style="document"/>
+    <input><soap:header message="tns:AuthenticationInfo" part="AuthenticationInfo" use="literal"></soap:header><soap:body use="literal" namespace="urn:http://monitoreo-sep-dgtic.com.mx/ws/public/webservice.php"/></input>
+    <output><soap:body use="literal" namespace="urn:http://monitoreo-sep-dgtic.com.mx/ws/public/webservice.php"/></output>
+  </operation>
+</binding>
+<service name="nms">
+  <port name="nmsPort" binding="tns:nmsBinding">
+    <soap:address location="http://monitoreo-sep-dgtic.com.mx/ws/public/webservice.php"/>
+  </port>
+</service>
+</definitions>

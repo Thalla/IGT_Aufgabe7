@@ -1,0 +1,46 @@
+<?xml version="1.0"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-b01-. --><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://predic8.com/wsdl/IDService/1/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://predic8.com/common/1/" targetNamespace="http://predic8.com/wsdl/IDService/1/" name="IDService">
+    <types>
+        <xsd:schema xmlns:ns1="http://predic8.com/common/1/" targetNamespace="http://predic8.com/wsdl/IDService/1/">
+            <xsd:import schemaLocation="http://www.predic8.com:8080/base/IDService?xsd=1" namespace="http://predic8.com/common/1/"></xsd:import>
+
+            <xsd:element name="generate" type="xsd:string"></xsd:element>
+            <xsd:element name="generateResponse" type="tns:GenerateResponseType"></xsd:element>
+
+            <xsd:complexType name="GenerateResponseType">
+                <xsd:sequence>
+                    <xsd:element name="id" type="ns1:IdentifierType"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+        </xsd:schema>
+    </types>
+    <message name="GenerateRequest">
+        <part name="part1" element="tns:generate"></part>
+    </message>
+    <message name="GenerateResponse">
+        <part name="part1" element="tns:generateResponse"></part>
+    </message>
+    <portType name="IDServicePT">
+        <operation name="generate">
+            <input name="input1" message="tns:GenerateRequest"></input>
+            <output name="output1" message="tns:GenerateResponse"></output>
+        </operation>
+    </portType>
+    <binding name="IDServiceBinding" type="tns:IDServicePT">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+        <operation name="generate">
+            <soap:operation></soap:operation>
+            <input name="input1">
+                <soap:body use="literal"></soap:body>
+            </input>
+            <output name="output1">
+                <soap:body use="literal"></soap:body>
+            </output>
+        </operation>
+    </binding>
+    <service name="IDService">
+        <port name="IDServicePort" binding="tns:IDServiceBinding">
+            <soap:address location="http://www.predic8.com:8080/base/IDService"></soap:address>
+        </port>
+    </service>
+</definitions>

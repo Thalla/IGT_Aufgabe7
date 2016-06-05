@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:bankvaluk" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:bankvaluk">
+<types><xsd:schema targetNamespace="urn:bankvaluk"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="bankvalidateRequestType">
+  <xsd:all>
+   <xsd:element name="userid" type="xsd:string"/>
+   <xsd:element name="pin" type="xsd:string"/>
+   <xsd:element name="sortcode" type="xsd:string"/>
+   <xsd:element name="account" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="bankvalidateResponseType">
+  <xsd:all>
+   <xsd:element name="result" type="xsd:string"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:element name="bankvalidate" type="tns:bankvalidateRequestType"/>
+ <xsd:element name="bankvalidateResponse" type="tns:bankvalidateResponseType"/>
+</xsd:schema>
+</types>
+<message name="bankvalidateRequest"><part name="parameters" element="tns:bankvalidate" /></message>
+<message name="bankvalidateResponse"><part name="parameters" element="tns:bankvalidateResponse" /></message>
+<portType name="bankvalidatePortType"><operation name="bankvalidate"><documentation>UK bank sort code and account number validation</documentation><input message="tns:bankvalidateRequest"/><output message="tns:bankvalidateResponse"/></operation></portType>
+<binding name="bankvalidateBinding" type="tns:bankvalidatePortType"><soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/><operation name="bankvalidate"><soap:operation soapAction="https://www.unifiedsoftware.co.uk:443/services/bankvaluk/bankvalidate.php#bankvalidate" style="document"/><input><soap:body use="literal" namespace="urn:bankvaluk"/></input><output><soap:body use="literal" namespace="urn:bankvaluk"/></output></operation></binding>
+<service name="bankvalidate"><port name="bankvalidatePort" binding="tns:bankvalidateBinding"><soap:address location="https://www.unifiedsoftware.co.uk:443/services/bankvaluk/bankvalidate.php"/></port></service>
+</definitions>

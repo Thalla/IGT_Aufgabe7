@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:bcie" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:bcie">
+<types>
+<xsd:schema elementFormDefault="qualified" targetNamespace="urn:bcie"
+>
+ <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+ <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+ <xsd:complexType name="add_projectproviderRequestType">
+  <xsd:all>
+   <xsd:element name="id" type="xsd:int" form="unqualified"/>
+   <xsd:element name="awarded" type="xsd:string" form="unqualified"/>
+   <xsd:element name="category" type="xsd:int" form="unqualified"/>
+   <xsd:element name="priority" type="xsd:int" form="unqualified"/>
+   <xsd:element name="country" type="xsd:int" form="unqualified"/>
+   <xsd:element name="date_adjudication" type="xsd:string" form="unqualified"/>
+   <xsd:element name="end_date_sale" type="xsd:string" form="unqualified"/>
+   <xsd:element name="start_date_sale" type="xsd:string" form="unqualified"/>
+   <xsd:element name="address" type="xsd:string" form="unqualified"/>
+   <xsd:element name="contractor_name" type="xsd:string" form="unqualified"/>
+   <xsd:element name="contractor_nationality" type="xsd:string" form="unqualified"/>
+   <xsd:element name="documentation_place" type="xsd:string" form="unqualified"/>
+   <xsd:element name="executor" type="xsd:string" form="unqualified"/>
+   <xsd:element name="process_number" type="xsd:string" form="unqualified"/>
+   <xsd:element name="project" type="xsd:string" form="unqualified"/>
+   <xsd:element name="scope" type="xsd:string" form="unqualified"/>
+   <xsd:element name="title_project" type="xsd:string" form="unqualified"/>
+   <xsd:element name="website" type="xsd:string" form="unqualified"/>
+   <xsd:element name="object" type="xsd:string" form="unqualified"/>
+   <xsd:element name="name" type="xsd:string" form="unqualified"/>
+   <xsd:element name="mount" type="xsd:string" form="unqualified"/>
+   <xsd:element name="0" type="token" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:complexType name="add_projectproviderResponseType">
+  <xsd:all>
+   <xsd:element name="products" type="xsd:string" form="unqualified"/>
+  </xsd:all>
+ </xsd:complexType>
+ <xsd:element name="add_projectprovider" type="tns:add_projectproviderRequestType"/>
+ <xsd:element name="add_projectproviderResponse" type="tns:add_projectproviderResponseType"/>
+</xsd:schema>
+</types>
+<message name="add_projectproviderRequest">
+  <part name="parameters" element="tns:add_projectprovider" /></message>
+<message name="add_projectproviderResponse">
+  <part name="parameters" element="tns:add_projectproviderResponse" /></message>
+<portType name="bciePortType">
+  <operation name="add_projectprovider">
+    <input message="tns:add_projectproviderRequest"/>
+    <output message="tns:add_projectproviderResponse"/>
+  </operation>
+</portType>
+<binding name="bcieBinding" type="tns:bciePortType">
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+  <operation name="add_projectprovider">
+    <soap:operation soapAction="http://premperhn.com/polling/cabei.php/add_projectprovider" style="document"/>
+    <input><soap:body use="encoded" namespace="Array" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></input>
+    <output><soap:body use="encoded" namespace="Array" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/></output>
+  </operation>
+</binding>
+<service name="bcie">
+  <port name="bciePort" binding="tns:bcieBinding">
+    <soap:address location="http://premperhn.com/polling/cabei.php"/>
+  </port>
+</service>
+</definitions>

@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<wsdl:definitions targetNamespace="http://Vector_Buffer_JTS.grass.ws.laits.gmu.edu" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://Vector_Buffer_JTS.grass.ws.laits.gmu.edu" xmlns:intf="http://Vector_Buffer_JTS.grass.ws.laits.gmu.edu" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://Vector_Buffer_JTS.grass.ws.laits.gmu.edu" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="BufferElement">
+    <complexType>
+     <sequence>
+      <element name="sourceURL" type="xsd:anyURI"/>
+      <element name="buffer" type="xsd:float"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="BufferResponse">
+    <complexType>
+     <sequence>
+      <element name="returnURL" type="xsd:anyURI"/>
+      <element name="returnFormat" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="bufferResponse">
+
+      <wsdl:part element="impl:BufferResponse" name="BufferResponse">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="bufferRequest">
+
+      <wsdl:part element="impl:BufferElement" name="BufferElement">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Vector_Buffer_JTSPortType">
+
+      <wsdl:operation name="buffer" parameterOrder="BufferElement">
+
+         <wsdl:input message="impl:bufferRequest" name="bufferRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:bufferResponse" name="bufferResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="Vector_Buffer_JTSSoapBinding" type="impl:Vector_Buffer_JTSPortType">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="buffer">
+
+         <wsdlsoap:operation soapAction="buffer"/>
+
+         <wsdl:input name="bufferRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="bufferResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="Vector_Buffer_JTSService">
+
+      <wsdl:port binding="impl:Vector_Buffer_JTSSoapBinding" name="Vector_Buffer_JTS">
+
+         <wsdlsoap:address location="http://129.174.131.8:9006/GeoprocessingWS/services/Vector_Buffer_JTS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

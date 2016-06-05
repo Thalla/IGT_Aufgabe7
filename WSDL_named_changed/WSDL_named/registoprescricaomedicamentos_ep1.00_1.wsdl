@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://xmlns.oracle.com/BDNP_DMM_Prescricao/RegistoPrescricaoMedicamentos/RegistoPrescricaoMedicamentos" targetNamespace="http://xmlns.oracle.com/BDNP_DMM_Prescricao/RegistoPrescricaoMedicamentos/RegistoPrescricaoMedicamentos">
+<wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<xsd:schema>
+<xsd:import schemaLocation="1.00.xsd3.xsd" namespace="http://xmlns.dmm.spms.pt/201207/RegistoPrescricaoMedicamentos"/></xsd:schema></wsdl:types>
+<wsdl:message name="RegistoPrescricaoMedicamentosRequestMessage">
+<wsdl:part name="payload" element="xsns:RegistoPrescricaoMedicamentosProcessRequest" xmlns:xsns="http://xmlns.dmm.spms.pt/201207/RegistoPrescricaoMedicamentos"/></wsdl:message>
+<wsdl:message name="RegistoPrescricaoMedicamentosResponseMessage">
+<wsdl:part name="payload" element="xsns:RegistoPrescricaoMedicamentosProcessResponse" xmlns:xsns="http://xmlns.dmm.spms.pt/201207/RegistoPrescricaoMedicamentos"/></wsdl:message>
+<wsdl:portType name="RegistoPrescricaoMedicamentos">
+<wsdl:operation name="Offline">
+<wsdl:input name="OfflineRequest" message="ns0:RegistoPrescricaoMedicamentosRequestMessage"/>
+<wsdl:output name="OfflineResponse" message="ns0:RegistoPrescricaoMedicamentosResponseMessage"/></wsdl:operation>
+<wsdl:operation name="Online">
+<wsdl:input name="OnlineRequest" message="ns0:RegistoPrescricaoMedicamentosRequestMessage"/>
+<wsdl:output name="OnlineResponse" message="ns0:RegistoPrescricaoMedicamentosResponseMessage"/></wsdl:operation></wsdl:portType>
+<wsdl:binding name="RegistoPrescricaoMedicamentosBinding" type="ns0:RegistoPrescricaoMedicamentos">
+<soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<wsdl:operation name="Offline">
+<soap11:operation soapAction="Offline" style="document"/>
+<wsdl:input name="OfflineRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="OfflineResponse">
+<soap11:body use="literal"/></wsdl:output></wsdl:operation>
+<wsdl:operation name="Online">
+<soap11:operation soapAction="Online" style="document"/>
+<wsdl:input name="OnlineRequest">
+<soap11:body use="literal"/></wsdl:input>
+<wsdl:output name="OnlineResponse">
+<soap11:body use="literal"/></wsdl:output></wsdl:operation></wsdl:binding>
+<wsdl:service name="registoprescricaomedicamentos_ep1.00">
+<wsdl:port name="RegistoPrescricaoMedicamentos_pt1.00" binding="ns0:RegistoPrescricaoMedicamentosBinding">
+<wsp:PolicyReference URI="#policy0" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"/>
+<soap11:address location="https://wsgw-teste.min-saude.pt:8000/PEM/RegistoPrescricaoMedicamentos/1.00"/></wsdl:port></wsdl:service>
+<wsp:Policy wsu:Id="policy0" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+<wsp:ExactlyOne>
+<wsp:All>
+<sp:SupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy" xmlns:ns2="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:ns1="http://xmlns.dmm.spms.pt/201207/RegistoPrescricaoMedicamentos" xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:ns3="http://www.example.org" xmlns:client="http://xmlns.oracle.com/BDNP_DMM_Prescricao/RegistoPrescricaoMedicamentos/RegistoPrescricaoMedicamentos" xmlns:WL5G3N0="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/ws/2004/09/policy">
+<wsp:Policy>
+<wsp:ExactlyOne>
+<wsp:All>
+<sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+<wsp:Policy>
+<wsp:ExactlyOne>
+<wsp:All>
+<sp:WssUsernameToken10/></wsp:All></wsp:ExactlyOne></wsp:Policy></sp:UsernameToken></wsp:All></wsp:ExactlyOne></wsp:Policy></sp:SupportingTokens></wsp:All></wsp:ExactlyOne></wsp:Policy></wsdl:definitions>

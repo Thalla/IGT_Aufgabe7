@@ -1,0 +1,696 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://fp.ecba.cz/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://fp.ecba.cz/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://fp.ecba.cz/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Hodnoceni_Obec">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstup" type="tns:ObecVstup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ObecVstup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVstup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ICO" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PocetObyvatel" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ObecneVstup">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="RokPoslednihoDanovehoPriznani" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ObjemInvestice" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="VysePodporyCelkem" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Hodnoceni_ObecResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hodnoceni_ObecResult" type="tns:ObecVystup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ObecVystup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVystup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="A" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="B" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="C" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="D" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="E" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="F" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="G" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="H" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="I" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="J" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="K" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="L" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="M" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="N" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="O" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="P" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="Q" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="R" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="S" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="T" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="U" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="V" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="W" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="X" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AO" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AP" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ObecneVystup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="HodnoceniFinancnihoZdravi" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HodnoceniKapitalovePrimerenosti" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Poznamka" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PolozkaVykazu">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Rok1" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rok" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Hodnoceni_DobrovolneSdruzeniObci">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstup" type="tns:DobrovolneSdruzeniObciVstup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DobrovolneSdruzeniObciVstup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVstup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="SeznamObci" type="tns:ArrayOfPopisObce" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfPopisObce">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PopisObce" nillable="true" type="tns:PopisObce" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PopisObce">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ICO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PocetObyvatel" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="Hodnoceni_DobrovolneSdruzeniObciResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hodnoceni_DobrovolneSdruzeniObciResult" type="tns:DobrovolneSdruzeniObciVystup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DobrovolneSdruzeniObciVystup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVystup" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_Kraj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstup" type="tns:KrajVstup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KrajVstup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVstup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ICO" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PocetObyvatel" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AK" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AM" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_KrajResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hodnoceni_KrajResult" type="tns:KrajVystup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="KrajVystup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVystup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="A" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="B" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="F" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="H" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="I" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="J" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="K" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="M" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="N" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="S" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="T" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="U" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="V" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="X" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AC" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AD" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AG" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AH" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AI" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AJ" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AO" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AP" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_PrispevkovaOrganizaceObce">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstup" type="tns:PrispevkovaOrganizaceObceVstup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PrispevkovaOrganizaceObceVstup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVstup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ICO" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PocetObyvatel" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_PrispevkovaOrganizaceObceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hodnoceni_PrispevkovaOrganizaceObceResult" type="tns:PrispevkovaOrganizaceObceVystup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PrispevkovaOrganizaceObceVystup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVystup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="A" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="B" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="C" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="D" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="E" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="F" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="G" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="H" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="I" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="J" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="K" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="L" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="M" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="N" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="O" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="P" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="Q" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="R" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="S" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="T" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="U" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="V" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="W" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="X" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AO" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AP" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_PrispevkovaOrganizaceKraje">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstup" type="tns:PrispevkovaOrganizaceKrajeVstup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PrispevkovaOrganizaceKrajeVstup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVstup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ICO" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="PocetObyvatel" type="s:int" />
+              <s:element minOccurs="0" maxOccurs="1" name="AK" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AM" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_PrispevkovaOrganizaceKrajeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hodnoceni_PrispevkovaOrganizaceKrajeResult" type="tns:PrispevkovaOrganizaceKrajeVystup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PrispevkovaOrganizaceKrajeVystup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVystup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="A" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="B" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="F" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="H" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="I" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="J" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="K" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="M" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="N" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="S" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="T" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="U" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="V" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="X" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AC" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AD" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AG" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AH" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AI" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AJ" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AO" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="AP" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_SubjektPodvojneUcetnictvi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstup" type="tns:SubjektPodvojneUcetnictviVstup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SubjektPodvojneUcetnictviVstup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVstup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ICO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="A" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="B" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="C" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="D" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="E" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="F" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="G" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="H" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="I" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="J" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="K" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="L" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="M" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_SubjektPodvojneUcetnictviResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hodnoceni_SubjektPodvojneUcetnictviResult" type="tns:SubjektPodvojneUcetnictviVystup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SubjektPodvojneUcetnictviVystup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVystup" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_SubjektDanovaEvidence">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstup" type="tns:SubjektDanovaEvidenceVstup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SubjektDanovaEvidenceVstup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVstup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ICO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="A" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="B" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="C" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="D" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="E" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="F" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="G" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="H" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="I" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="J" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="K" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="L" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="M" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="N" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="O" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_SubjektDanovaEvidenceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hodnoceni_SubjektDanovaEvidenceResult" type="tns:SubjektDanovaEvidenceVystup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="SubjektDanovaEvidenceVystup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVystup" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_NeziskovaOrganizace">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vstup" type="tns:NeziskovaOrganizaceVstup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NeziskovaOrganizaceVstup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVstup">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ICO" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="A" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="B" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="C" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="D" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="E" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="F" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="G" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="H" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="I" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="J" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="K" type="tns:PolozkaVykazu" />
+              <s:element minOccurs="0" maxOccurs="1" name="L" type="tns:PolozkaVykazu" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="Hodnoceni_NeziskovaOrganizaceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Hodnoceni_NeziskovaOrganizaceResult" type="tns:NeziskovaOrganizaceVystup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="NeziskovaOrganizaceVystup">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ObecneVystup" />
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_ObecSoapIn">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_Obec" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_ObecSoapOut">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_ObecResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_DobrovolneSdruzeniObciSoapIn">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_DobrovolneSdruzeniObci" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_DobrovolneSdruzeniObciSoapOut">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_DobrovolneSdruzeniObciResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_KrajSoapIn">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_Kraj" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_KrajSoapOut">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_KrajResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_PrispevkovaOrganizaceObceSoapIn">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_PrispevkovaOrganizaceObce" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_PrispevkovaOrganizaceObceSoapOut">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_PrispevkovaOrganizaceObceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_PrispevkovaOrganizaceKrajeSoapIn">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_PrispevkovaOrganizaceKraje" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_PrispevkovaOrganizaceKrajeSoapOut">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_PrispevkovaOrganizaceKrajeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_SubjektPodvojneUcetnictviSoapIn">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_SubjektPodvojneUcetnictvi" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_SubjektPodvojneUcetnictviSoapOut">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_SubjektPodvojneUcetnictviResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_SubjektDanovaEvidenceSoapIn">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_SubjektDanovaEvidence" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_SubjektDanovaEvidenceSoapOut">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_SubjektDanovaEvidenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_NeziskovaOrganizaceSoapIn">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_NeziskovaOrganizace" />
+  </wsdl:message>
+  <wsdl:message name="Hodnoceni_NeziskovaOrganizaceSoapOut">
+    <wsdl:part name="parameters" element="tns:Hodnoceni_NeziskovaOrganizaceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EcbaServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_Obec">
+      <wsdl:input message="tns:Hodnoceni_ObecSoapIn" />
+      <wsdl:output message="tns:Hodnoceni_ObecSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_DobrovolneSdruzeniObci">
+      <wsdl:input message="tns:Hodnoceni_DobrovolneSdruzeniObciSoapIn" />
+      <wsdl:output message="tns:Hodnoceni_DobrovolneSdruzeniObciSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_Kraj">
+      <wsdl:input message="tns:Hodnoceni_KrajSoapIn" />
+      <wsdl:output message="tns:Hodnoceni_KrajSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_PrispevkovaOrganizaceObce">
+      <wsdl:input message="tns:Hodnoceni_PrispevkovaOrganizaceObceSoapIn" />
+      <wsdl:output message="tns:Hodnoceni_PrispevkovaOrganizaceObceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_PrispevkovaOrganizaceKraje">
+      <wsdl:input message="tns:Hodnoceni_PrispevkovaOrganizaceKrajeSoapIn" />
+      <wsdl:output message="tns:Hodnoceni_PrispevkovaOrganizaceKrajeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_SubjektPodvojneUcetnictvi">
+      <wsdl:input message="tns:Hodnoceni_SubjektPodvojneUcetnictviSoapIn" />
+      <wsdl:output message="tns:Hodnoceni_SubjektPodvojneUcetnictviSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_SubjektDanovaEvidence">
+      <wsdl:input message="tns:Hodnoceni_SubjektDanovaEvidenceSoapIn" />
+      <wsdl:output message="tns:Hodnoceni_SubjektDanovaEvidenceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_NeziskovaOrganizace">
+      <wsdl:input message="tns:Hodnoceni_NeziskovaOrganizaceSoapIn" />
+      <wsdl:output message="tns:Hodnoceni_NeziskovaOrganizaceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EcbaServiceSoap" type="tns:EcbaServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://fp.ecba.cz/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_Obec">
+      <soap:operation soapAction="http://fp.ecba.cz/Hodnoceni_Obec" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_DobrovolneSdruzeniObci">
+      <soap:operation soapAction="http://fp.ecba.cz/Hodnoceni_DobrovolneSdruzeniObci" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_Kraj">
+      <soap:operation soapAction="http://fp.ecba.cz/Hodnoceni_Kraj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_PrispevkovaOrganizaceObce">
+      <soap:operation soapAction="http://fp.ecba.cz/Hodnoceni_PrispevkovaOrganizaceObce" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_PrispevkovaOrganizaceKraje">
+      <soap:operation soapAction="http://fp.ecba.cz/Hodnoceni_PrispevkovaOrganizaceKraje" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_SubjektPodvojneUcetnictvi">
+      <soap:operation soapAction="http://fp.ecba.cz/Hodnoceni_SubjektPodvojneUcetnictvi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_SubjektDanovaEvidence">
+      <soap:operation soapAction="http://fp.ecba.cz/Hodnoceni_SubjektDanovaEvidence" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_NeziskovaOrganizace">
+      <soap:operation soapAction="http://fp.ecba.cz/Hodnoceni_NeziskovaOrganizace" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EcbaServiceSoap12" type="tns:EcbaServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://fp.ecba.cz/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_Obec">
+      <soap12:operation soapAction="http://fp.ecba.cz/Hodnoceni_Obec" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_DobrovolneSdruzeniObci">
+      <soap12:operation soapAction="http://fp.ecba.cz/Hodnoceni_DobrovolneSdruzeniObci" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_Kraj">
+      <soap12:operation soapAction="http://fp.ecba.cz/Hodnoceni_Kraj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_PrispevkovaOrganizaceObce">
+      <soap12:operation soapAction="http://fp.ecba.cz/Hodnoceni_PrispevkovaOrganizaceObce" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_PrispevkovaOrganizaceKraje">
+      <soap12:operation soapAction="http://fp.ecba.cz/Hodnoceni_PrispevkovaOrganizaceKraje" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_SubjektPodvojneUcetnictvi">
+      <soap12:operation soapAction="http://fp.ecba.cz/Hodnoceni_SubjektPodvojneUcetnictvi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_SubjektDanovaEvidence">
+      <soap12:operation soapAction="http://fp.ecba.cz/Hodnoceni_SubjektDanovaEvidence" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Hodnoceni_NeziskovaOrganizace">
+      <soap12:operation soapAction="http://fp.ecba.cz/Hodnoceni_NeziskovaOrganizace" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EcbaService">
+    <wsdl:port name="EcbaServiceSoap" binding="tns:EcbaServiceSoap">
+      <soap:address location="http://online.ecba.cz/services/strednimorava/ecbaservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EcbaServiceSoap12" binding="tns:EcbaServiceSoap12">
+      <soap12:address location="http://online.ecba.cz/services/strednimorava/ecbaservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

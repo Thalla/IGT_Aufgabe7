@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions name='ws_reqManMd_Service' targetNamespace='https://timad.havre-port.net/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='https://timad.havre-port.net/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema elementFormDefault='qualified' targetNamespace='https://timad.havre-port.net/' version='1.0' xmlns:tns='https://timad.havre-port.net/' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='wsFault' type='tns:exceptionType'/>
+   <xs:element name='reqManMd' type='tns:reqManMdType'/>
+   <xs:element name='wsResponse' type='tns:wsResponseType'/>
+   <xs:complexType name="reqManMdType">
+    <xs:sequence>
+     <xs:element minOccurs="0" maxOccurs="1" name="rien" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="numEscale" type="tns:numEscaleType" use="required"/>
+    <xs:attribute name="shipCallId" type="tns:shipCallIdType" use="required"/>
+    <xs:attribute name="typeEntree" type="tns:boolType" />
+    <xs:attribute name="typeSortie" type="tns:boolType" />
+    <xs:attribute name="typeTransit" type="tns:boolType" />
+   </xs:complexType>
+   <xs:simpleType name="boolType">
+    <xs:annotation>
+     <xs:documentation xml:lang="FR">True si faire requete, False sinon</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="True" />
+     <xs:enumeration value="False" />
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="numEscaleType">
+    <xs:annotation>
+     <xs:documentation xml:lang="FR">Numero escale</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="0" />
+     <xs:maxLength value="20" />
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="shipCallIdType">
+    <xs:annotation>
+     <xs:documentation xml:lang="FR">Ship Call ID</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+     <xs:minLength value="0" />
+     <xs:maxLength value="20" />
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="wsResponseType">
+    <xs:sequence>
+     <xs:element minOccurs="0" maxOccurs="1" name="message" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute name="status" type="tns:statusType" use="required"/>
+   </xs:complexType>
+   <xs:simpleType name="statusType">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="OK" />
+     <xs:enumeration value="ERROR" />
+    </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name='exceptionType'>
+    <xs:sequence>
+     <xs:element form='unqualified' minOccurs='0' name='fault' type='tns:faultType'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='faultType'>
+    <xs:sequence>
+     <xs:element form='unqualified' minOccurs='0' name='detail' type='xs:string'/>
+     <xs:element form='unqualified' minOccurs='0' name='faultActor' type='xs:string'/>
+     <xs:element form='unqualified' minOccurs='0' name='faultCode' type='xs:string'/>
+     <xs:element form='unqualified' maxOccurs='unbounded' minOccurs='0' name='faultsString' nillable='true' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='ws_reqManMd_Msg'>
+  <part element='tns:reqManMd' name='reqManMd'></part>
+ </message>
+ <message name='ws_response_Msg'>
+  <part element='tns:wsResponse' name='wsResponse'></part>
+ </message>
+ <message name='wsFault'>
+  <part element='tns:wsFault' name='wsFault'></part>
+ </message>
+ <portType name='ws_reqManMd_PortType'>
+  <operation name='reqManMd' parameterOrder='reqManMd'>
+   <input message='tns:ws_reqManMd_Msg'></input>
+   <output message='tns:ws_response_Msg'></output>
+   <fault message='tns:wsFault' name='wsFault'></fault>
+  </operation>
+ </portType>
+ <binding name='ws_reqManMd_Binding' type='tns:ws_reqManMd_PortType'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='reqManMd'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+   <fault name='wsFault'>
+    <soap:fault name='wsFault' use='literal'/>
+   </fault>
+  </operation>
+ </binding>
+ <service name='ws_reqManMd_Service'>
+  <port binding='tns:ws_reqManMd_Binding' name='WsReqManMd'>
+   <soap:address location='http://localhost/ctxws/reqManMd'/>
+  </port>
+ </service>
+</definitions>

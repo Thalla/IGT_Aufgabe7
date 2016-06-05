@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:ns0="http://nks34.t320" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://nks34.t320">
+    <wsdl:documentation>HelloService</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ns="http://nks34.t320" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://nks34.t320">
+            <xs:element name="helloName">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="helloNameResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="helloNameRequest">
+        <wsdl:part name="parameters" element="ns0:helloName"/>
+    </wsdl:message>
+    <wsdl:message name="helloNameResponse">
+        <wsdl:part name="parameters" element="ns0:helloNameResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="HelloServicePortType">
+        <wsdl:operation name="helloName">
+            <wsdl:input message="ns0:helloNameRequest" wsaw:Action="urn:helloName"/>
+            <wsdl:output message="ns0:helloNameResponse" wsaw:Action="urn:helloNameResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="HelloServiceSOAP11Binding" type="ns0:HelloServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="helloName">
+            <soap:operation soapAction="urn:helloName" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="HelloServiceSOAP12Binding" type="ns0:HelloServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="helloName">
+            <soap12:operation soapAction="urn:helloName" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="HelloServiceHttpBinding" type="ns0:HelloServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="helloName">
+            <http:operation location="HelloService/helloName"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="helloName"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="helloName"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="HelloService">
+        <wsdl:port name="HelloServiceSOAP11port_http" binding="ns0:HelloServiceSOAP11Binding">
+            <soap:address location="http://t320webservices.open.ac.uk:80/t320/services/HelloService"/>
+        </wsdl:port>
+        <wsdl:port name="HelloServiceSOAP12port_http" binding="ns0:HelloServiceSOAP12Binding">
+            <soap12:address location="http://t320webservices.open.ac.uk:80/t320/services/HelloService"/>
+        </wsdl:port>
+        <wsdl:port name="HelloServiceHttpport" binding="ns0:HelloServiceHttpBinding">
+            <http:address location="http://t320webservices.open.ac.uk:80/t320/services/HelloService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

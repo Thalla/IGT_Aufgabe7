@@ -1,0 +1,3643 @@
+<?xml version="1.0" ?>
+<wsdl:definitions xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webapoyobi.cl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.webapoyobi.cl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Formato de Fecha YYYY-MM-DD (www.webapoyobi.cl)</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webapoyobi.cl">
+      <s:element name="Obtener_Dolar">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_DolarResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_DolarResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_UF">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_UFResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_UFResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Euro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_EuroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_EuroResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IPSA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IPSAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_IPSAResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Feriados">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_FeriadosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_FeriadosResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Identificacion_FFMM">
+        <s:complexType />
+      </s:element>
+      <s:element name="Obtener_Identificacion_FFMMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Identificacion_FFMMResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IVP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IVPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_IVPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IPC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IPCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_IPCResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_UTM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_UTMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_UTMResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Poligono_Region_Chile">
+        <s:complexType />
+      </s:element>
+      <s:element name="Obtener_Poligono_Region_ChileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Poligono_Region_ChileResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Poligono_Comunas_Chile">
+        <s:complexType />
+      </s:element>
+      <s:element name="Obtener_Poligono_Comunas_ChileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Poligono_Comunas_ChileResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IGPA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IGPAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_IGPAResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_INTER_10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_INTER_10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_INTER_10Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COMMODITIES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COMMODITIESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COMMODITIESResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_BANCA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_BANCAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_BANCAResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IGPA_SMALL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IGPA_SMALLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_IGPA_SMALLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IGPA_LARGE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IGPA_LARGEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_IGPA_LARGEResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IGPA_MID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IGPA_MIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_IGPA_MIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_CONST_INMOB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_CONST_INMOBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_CONST_INMOBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_CONSUMO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_CONSUMOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_CONSUMOResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_INDUSTRIAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_INDUSTRIALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_INDUSTRIALResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_RETAIL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_RETAILResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_RETAILResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_UTILITIES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_UTILITIESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_UTILITIESResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_CAC_40">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_CAC_40Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_CAC_40Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_DOWJONES_I">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_DOWJONES_IResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_DOWJONES_IResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_FTSE_250">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_FTSE_250Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_FTSE_250Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IBEX_35">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_IBEX_35Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_IBEX_35Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_NASDAQ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_NASDAQResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_NASDAQResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_SP_500">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_SP_500Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_SP_500Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Fondo_Pension">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Fondo_PensionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Fondo_PensionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Cuota_FFMM">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_Cuota_FFMMResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_Cuota_FFMMResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLCAP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLCAPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COLCAPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLCAPAZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLCAPAZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COLCAPAZResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLEQTY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLEQTYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COLEQTYResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLIR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLIRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COLIRResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLSC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLSCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COLSCResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLTES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLTESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COLTESResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLTESLP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLTESLPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COLTESLPResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLTESUVR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FechaInicial" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FechaFinal" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Obtener_COLTESUVRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Obtener_COLTESUVRResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Obtener_DolarSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Dolar" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DolarSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_DolarResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UFSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_UF" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UFSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_UFResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EuroSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Euro" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EuroSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_EuroResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPSASoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_IPSA" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPSASoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_IPSAResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FeriadosSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Feriados" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FeriadosSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_FeriadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Identificacion_FFMMSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Identificacion_FFMM" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Identificacion_FFMMSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Identificacion_FFMMResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IVPSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_IVP" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IVPSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_IVPResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPCSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_IPC" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPCSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_IPCResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTMSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_UTM" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTMSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_UTMResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Poligono_Region_ChileSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Poligono_Region_Chile" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Poligono_Region_ChileSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Poligono_Region_ChileResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Poligono_Comunas_ChileSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Poligono_Comunas_Chile" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Poligono_Comunas_ChileSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Poligono_Comunas_ChileResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPASoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_IGPA" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPASoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_IGPAResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INTER_10SoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_INTER_10" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INTER_10SoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_INTER_10Response" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COMMODITIESSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COMMODITIES" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COMMODITIESSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COMMODITIESResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_BANCASoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_BANCA" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_BANCASoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_BANCAResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_SMALLSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_IGPA_SMALL" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_SMALLSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_IGPA_SMALLResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_LARGESoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_IGPA_LARGE" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_LARGESoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_IGPA_LARGEResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_MIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_IGPA_MID" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_MIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_IGPA_MIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONST_INMOBSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_CONST_INMOB" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONST_INMOBSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_CONST_INMOBResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONSUMOSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_CONSUMO" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONSUMOSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_CONSUMOResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INDUSTRIALSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_INDUSTRIAL" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INDUSTRIALSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_INDUSTRIALResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_RETAILSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_RETAIL" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_RETAILSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_RETAILResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTILITIESSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_UTILITIES" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTILITIESSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_UTILITIESResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CAC_40SoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_CAC_40" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CAC_40SoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_CAC_40Response" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DOWJONES_ISoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_DOWJONES_I" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DOWJONES_ISoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_DOWJONES_IResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FTSE_250SoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_FTSE_250" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FTSE_250SoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_FTSE_250Response" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IBEX_35SoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_IBEX_35" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IBEX_35SoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_IBEX_35Response" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_NASDAQSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_NASDAQ" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_NASDAQSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_NASDAQResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_SP_500SoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_SP_500" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_SP_500SoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_SP_500Response" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Fondo_PensionSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Fondo_Pension" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Fondo_PensionSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Fondo_PensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cuota_FFMMSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_Cuota_FFMM" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cuota_FFMMSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_Cuota_FFMMResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COLCAP" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COLCAPResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPAZSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COLCAPAZ" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPAZSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COLCAPAZResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLEQTYSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COLEQTY" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLEQTYSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COLEQTYResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLIRSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COLIR" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLIRSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COLIRResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLSCSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COLSC" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLSCSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COLSCResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COLTES" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COLTESResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESLPSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COLTESLP" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESLPSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COLTESLPResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESUVRSoapIn">
+    <wsdl:part name="parameters" element="tns:Obtener_COLTESUVR" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESUVRSoapOut">
+    <wsdl:part name="parameters" element="tns:Obtener_COLTESUVRResponse" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DolarHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DolarHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UFHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UFHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EuroHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EuroHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPSAHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPSAHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FeriadosHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FeriadosHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Identificacion_FFMMHttpGetIn" />
+  <wsdl:message name="Obtener_Identificacion_FFMMHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IVPHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IVPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPCHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPCHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTMHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTMHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Poligono_Region_ChileHttpGetIn" />
+  <wsdl:message name="Obtener_Poligono_Region_ChileHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Poligono_Comunas_ChileHttpGetIn" />
+  <wsdl:message name="Obtener_Poligono_Comunas_ChileHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPAHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPAHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INTER_10HttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INTER_10HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COMMODITIESHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COMMODITIESHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_BANCAHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_BANCAHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_SMALLHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_SMALLHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_LARGEHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_LARGEHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_MIDHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_MIDHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONST_INMOBHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONST_INMOBHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONSUMOHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONSUMOHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INDUSTRIALHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INDUSTRIALHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_RETAILHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_RETAILHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTILITIESHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTILITIESHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CAC_40HttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CAC_40HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DOWJONES_IHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DOWJONES_IHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FTSE_250HttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FTSE_250HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IBEX_35HttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IBEX_35HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_NASDAQHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_NASDAQHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_SP_500HttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_SP_500HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Fondo_PensionHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Fondo_PensionHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cuota_FFMMHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cuota_FFMMHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPAZHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPAZHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLEQTYHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLEQTYHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLIRHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLIRHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLSCHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLSCHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESLPHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESLPHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESUVRHttpGetIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESUVRHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DolarHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DolarHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UFHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UFHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EuroHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_EuroHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPSAHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPSAHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FeriadosHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FeriadosHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Identificacion_FFMMHttpPostIn" />
+  <wsdl:message name="Obtener_Identificacion_FFMMHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IVPHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IVPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPCHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IPCHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTMHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTMHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Poligono_Region_ChileHttpPostIn" />
+  <wsdl:message name="Obtener_Poligono_Region_ChileHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Poligono_Comunas_ChileHttpPostIn" />
+  <wsdl:message name="Obtener_Poligono_Comunas_ChileHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPAHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPAHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INTER_10HttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INTER_10HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COMMODITIESHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COMMODITIESHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_BANCAHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_BANCAHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_SMALLHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_SMALLHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_LARGEHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_LARGEHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_MIDHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IGPA_MIDHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONST_INMOBHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONST_INMOBHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONSUMOHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CONSUMOHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INDUSTRIALHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_INDUSTRIALHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_RETAILHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_RETAILHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTILITIESHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_UTILITIESHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CAC_40HttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_CAC_40HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DOWJONES_IHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_DOWJONES_IHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FTSE_250HttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_FTSE_250HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IBEX_35HttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_IBEX_35HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_NASDAQHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_NASDAQHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_SP_500HttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_SP_500HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Fondo_PensionHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Fondo_PensionHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cuota_FFMMHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_Cuota_FFMMHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPAZHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLCAPAZHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLEQTYHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLEQTYHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLIRHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLIRHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLSCHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLSCHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESLPHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESLPHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESUVRHttpPostIn">
+    <wsdl:part name="FechaInicial" type="s:string" />
+    <wsdl:part name="FechaFinal" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Obtener_COLTESUVRHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="Web_Apoyo_BISoap">
+    <wsdl:operation name="Obtener_Dolar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Dolar desde Banco Central  a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_DolarSoapIn" />
+      <wsdl:output message="tns:Obtener_DolarSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UF desde Banco Central  a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UFSoapIn" />
+      <wsdl:output message="tns:Obtener_UFSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Euro">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata EURO desde Banco Central a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_EuroSoapIn" />
+      <wsdl:output message="tns:Obtener_EuroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPSA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IPSA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IPSASoapIn" />
+      <wsdl:output message="tns:Obtener_IPSASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Feriados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Feriados desde feriadoschile.cl,  actualizado todos los dias Miercoles</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_FeriadosSoapIn" />
+      <wsdl:output message="tns:Obtener_FeriadosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Identificacion_FFMM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata descripcion de Fondos Mutuos desde SVS,  actualizado todos los dias Lunes</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Identificacion_FFMMSoapIn" />
+      <wsdl:output message="tns:Obtener_Identificacion_FFMMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IVP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IVP desde Banco Central a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IVPSoapIn" />
+      <wsdl:output message="tns:Obtener_IVPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IPC desde Banco Central a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IPCSoapIn" />
+      <wsdl:output message="tns:Obtener_IPCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UTM desde Banco Central  a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UTMSoapIn" />
+      <wsdl:output message="tns:Obtener_UTMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Region_Chile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega poligonos de ubicacion espacial de las regiones Chilenas</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Poligono_Region_ChileSoapIn" />
+      <wsdl:output message="tns:Obtener_Poligono_Region_ChileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Comunas_Chile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega poligonos de ubicacion espacial de las comunas Chilenas</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Poligono_Comunas_ChileSoapIn" />
+      <wsdl:output message="tns:Obtener_Poligono_Comunas_ChileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPASoapIn" />
+      <wsdl:output message="tns:Obtener_IGPASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INTER_10">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata INTER-10 desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_INTER_10SoapIn" />
+      <wsdl:output message="tns:Obtener_INTER_10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COMMODITIES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata COMMODITIES desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COMMODITIESSoapIn" />
+      <wsdl:output message="tns:Obtener_COMMODITIESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_BANCA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata BANCA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_BANCASoapIn" />
+      <wsdl:output message="tns:Obtener_BANCASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_SMALL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA SMALL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_SMALLSoapIn" />
+      <wsdl:output message="tns:Obtener_IGPA_SMALLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_LARGE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA LARGE desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_LARGESoapIn" />
+      <wsdl:output message="tns:Obtener_IGPA_LARGESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_MID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA MID desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_MIDSoapIn" />
+      <wsdl:output message="tns:Obtener_IGPA_MIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONST_INMOB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CONST.&amp;INMOB. desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CONST_INMOBSoapIn" />
+      <wsdl:output message="tns:Obtener_CONST_INMOBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONSUMO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CONSUMO desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CONSUMOSoapIn" />
+      <wsdl:output message="tns:Obtener_CONSUMOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INDUSTRIAL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata INDUSTRIAL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_INDUSTRIALSoapIn" />
+      <wsdl:output message="tns:Obtener_INDUSTRIALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_RETAIL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata RETAIL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_RETAILSoapIn" />
+      <wsdl:output message="tns:Obtener_RETAILSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTILITIES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UTILITIES desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UTILITIESSoapIn" />
+      <wsdl:output message="tns:Obtener_UTILITIESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CAC_40">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CAC-40 Index Paris a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CAC_40SoapIn" />
+      <wsdl:output message="tns:Obtener_CAC_40SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_DOWJONES_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata DOW JONES Industrial Average a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_DOWJONES_ISoapIn" />
+      <wsdl:output message="tns:Obtener_DOWJONES_ISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_FTSE_250">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata FTSE-250 Index London a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_FTSE_250SoapIn" />
+      <wsdl:output message="tns:Obtener_FTSE_250SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IBEX_35">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IBEX Index Madrid a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IBEX_35SoapIn" />
+      <wsdl:output message="tns:Obtener_IBEX_35SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_NASDAQ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata NASDAQ Composite a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_NASDAQSoapIn" />
+      <wsdl:output message="tns:Obtener_NASDAQSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SP_500">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata S&amp;P 500 a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_SP_500SoapIn" />
+      <wsdl:output message="tns:Obtener_SP_500SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Fondo_Pension">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Cuota y Patrimonio de Fondos de Pensiones a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Fondo_PensionSoapIn" />
+      <wsdl:output message="tns:Obtener_Fondo_PensionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cuota_FFMM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Cuota y Patrimonio de Fondos de Mutuos a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Cuota_FFMMSoapIn" />
+      <wsdl:output message="tns:Obtener_Cuota_FFMMSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLCAP Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLCAPSoapIn" />
+      <wsdl:output message="tns:Obtener_COLCAPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAPAZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLCAPAZ Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLCAPAZSoapIn" />
+      <wsdl:output message="tns:Obtener_COLCAPAZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLEQTY">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLEQTY Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLEQTYSoapIn" />
+      <wsdl:output message="tns:Obtener_COLEQTYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLIR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLIR Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLIRSoapIn" />
+      <wsdl:output message="tns:Obtener_COLIRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLSC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLSC Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLSCSoapIn" />
+      <wsdl:output message="tns:Obtener_COLSCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESSoapIn" />
+      <wsdl:output message="tns:Obtener_COLTESSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESLP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES LP Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESLPSoapIn" />
+      <wsdl:output message="tns:Obtener_COLTESLPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESUVR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES UVR Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESUVRSoapIn" />
+      <wsdl:output message="tns:Obtener_COLTESUVRSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Web_Apoyo_BIHttpGet">
+    <wsdl:operation name="Obtener_Dolar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Dolar desde Banco Central  a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_DolarHttpGetIn" />
+      <wsdl:output message="tns:Obtener_DolarHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UF desde Banco Central  a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UFHttpGetIn" />
+      <wsdl:output message="tns:Obtener_UFHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Euro">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata EURO desde Banco Central a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_EuroHttpGetIn" />
+      <wsdl:output message="tns:Obtener_EuroHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPSA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IPSA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IPSAHttpGetIn" />
+      <wsdl:output message="tns:Obtener_IPSAHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Feriados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Feriados desde feriadoschile.cl,  actualizado todos los dias Miercoles</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_FeriadosHttpGetIn" />
+      <wsdl:output message="tns:Obtener_FeriadosHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Identificacion_FFMM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata descripcion de Fondos Mutuos desde SVS,  actualizado todos los dias Lunes</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Identificacion_FFMMHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Identificacion_FFMMHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IVP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IVP desde Banco Central a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IVPHttpGetIn" />
+      <wsdl:output message="tns:Obtener_IVPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IPC desde Banco Central a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IPCHttpGetIn" />
+      <wsdl:output message="tns:Obtener_IPCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UTM desde Banco Central  a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UTMHttpGetIn" />
+      <wsdl:output message="tns:Obtener_UTMHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Region_Chile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega poligonos de ubicacion espacial de las regiones Chilenas</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Poligono_Region_ChileHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Poligono_Region_ChileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Comunas_Chile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega poligonos de ubicacion espacial de las comunas Chilenas</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Poligono_Comunas_ChileHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Poligono_Comunas_ChileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPAHttpGetIn" />
+      <wsdl:output message="tns:Obtener_IGPAHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INTER_10">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata INTER-10 desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_INTER_10HttpGetIn" />
+      <wsdl:output message="tns:Obtener_INTER_10HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COMMODITIES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata COMMODITIES desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COMMODITIESHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COMMODITIESHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_BANCA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata BANCA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_BANCAHttpGetIn" />
+      <wsdl:output message="tns:Obtener_BANCAHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_SMALL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA SMALL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_SMALLHttpGetIn" />
+      <wsdl:output message="tns:Obtener_IGPA_SMALLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_LARGE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA LARGE desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_LARGEHttpGetIn" />
+      <wsdl:output message="tns:Obtener_IGPA_LARGEHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_MID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA MID desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_MIDHttpGetIn" />
+      <wsdl:output message="tns:Obtener_IGPA_MIDHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONST_INMOB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CONST.&amp;INMOB. desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CONST_INMOBHttpGetIn" />
+      <wsdl:output message="tns:Obtener_CONST_INMOBHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONSUMO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CONSUMO desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CONSUMOHttpGetIn" />
+      <wsdl:output message="tns:Obtener_CONSUMOHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INDUSTRIAL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata INDUSTRIAL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_INDUSTRIALHttpGetIn" />
+      <wsdl:output message="tns:Obtener_INDUSTRIALHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_RETAIL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata RETAIL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_RETAILHttpGetIn" />
+      <wsdl:output message="tns:Obtener_RETAILHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTILITIES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UTILITIES desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UTILITIESHttpGetIn" />
+      <wsdl:output message="tns:Obtener_UTILITIESHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CAC_40">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CAC-40 Index Paris a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CAC_40HttpGetIn" />
+      <wsdl:output message="tns:Obtener_CAC_40HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_DOWJONES_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata DOW JONES Industrial Average a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_DOWJONES_IHttpGetIn" />
+      <wsdl:output message="tns:Obtener_DOWJONES_IHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_FTSE_250">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata FTSE-250 Index London a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_FTSE_250HttpGetIn" />
+      <wsdl:output message="tns:Obtener_FTSE_250HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IBEX_35">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IBEX Index Madrid a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IBEX_35HttpGetIn" />
+      <wsdl:output message="tns:Obtener_IBEX_35HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_NASDAQ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata NASDAQ Composite a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_NASDAQHttpGetIn" />
+      <wsdl:output message="tns:Obtener_NASDAQHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SP_500">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata S&amp;P 500 a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_SP_500HttpGetIn" />
+      <wsdl:output message="tns:Obtener_SP_500HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Fondo_Pension">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Cuota y Patrimonio de Fondos de Pensiones a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Fondo_PensionHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Fondo_PensionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cuota_FFMM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Cuota y Patrimonio de Fondos de Mutuos a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Cuota_FFMMHttpGetIn" />
+      <wsdl:output message="tns:Obtener_Cuota_FFMMHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLCAP Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLCAPHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COLCAPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAPAZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLCAPAZ Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLCAPAZHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COLCAPAZHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLEQTY">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLEQTY Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLEQTYHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COLEQTYHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLIR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLIR Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLIRHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COLIRHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLSC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLSC Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLSCHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COLSCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COLTESHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESLP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES LP Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESLPHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COLTESLPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESUVR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES UVR Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESUVRHttpGetIn" />
+      <wsdl:output message="tns:Obtener_COLTESUVRHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Web_Apoyo_BIHttpPost">
+    <wsdl:operation name="Obtener_Dolar">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Dolar desde Banco Central  a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_DolarHttpPostIn" />
+      <wsdl:output message="tns:Obtener_DolarHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UF">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UF desde Banco Central  a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UFHttpPostIn" />
+      <wsdl:output message="tns:Obtener_UFHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Euro">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata EURO desde Banco Central a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_EuroHttpPostIn" />
+      <wsdl:output message="tns:Obtener_EuroHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPSA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IPSA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IPSAHttpPostIn" />
+      <wsdl:output message="tns:Obtener_IPSAHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Feriados">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Feriados desde feriadoschile.cl,  actualizado todos los dias Miercoles</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_FeriadosHttpPostIn" />
+      <wsdl:output message="tns:Obtener_FeriadosHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Identificacion_FFMM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata descripcion de Fondos Mutuos desde SVS,  actualizado todos los dias Lunes</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Identificacion_FFMMHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Identificacion_FFMMHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IVP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IVP desde Banco Central a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IVPHttpPostIn" />
+      <wsdl:output message="tns:Obtener_IVPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IPC desde Banco Central a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IPCHttpPostIn" />
+      <wsdl:output message="tns:Obtener_IPCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UTM desde Banco Central  a (T)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UTMHttpPostIn" />
+      <wsdl:output message="tns:Obtener_UTMHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Region_Chile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega poligonos de ubicacion espacial de las regiones Chilenas</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Poligono_Region_ChileHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Poligono_Region_ChileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Comunas_Chile">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Entrega poligonos de ubicacion espacial de las comunas Chilenas</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Poligono_Comunas_ChileHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Poligono_Comunas_ChileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPAHttpPostIn" />
+      <wsdl:output message="tns:Obtener_IGPAHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INTER_10">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata INTER-10 desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_INTER_10HttpPostIn" />
+      <wsdl:output message="tns:Obtener_INTER_10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COMMODITIES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata COMMODITIES desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COMMODITIESHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COMMODITIESHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_BANCA">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata BANCA desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_BANCAHttpPostIn" />
+      <wsdl:output message="tns:Obtener_BANCAHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_SMALL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA SMALL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_SMALLHttpPostIn" />
+      <wsdl:output message="tns:Obtener_IGPA_SMALLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_LARGE">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA LARGE desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_LARGEHttpPostIn" />
+      <wsdl:output message="tns:Obtener_IGPA_LARGEHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_MID">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IGPA MID desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IGPA_MIDHttpPostIn" />
+      <wsdl:output message="tns:Obtener_IGPA_MIDHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONST_INMOB">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CONST.&amp;INMOB. desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CONST_INMOBHttpPostIn" />
+      <wsdl:output message="tns:Obtener_CONST_INMOBHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONSUMO">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CONSUMO desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CONSUMOHttpPostIn" />
+      <wsdl:output message="tns:Obtener_CONSUMOHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INDUSTRIAL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata INDUSTRIAL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_INDUSTRIALHttpPostIn" />
+      <wsdl:output message="tns:Obtener_INDUSTRIALHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_RETAIL">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata RETAIL desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_RETAILHttpPostIn" />
+      <wsdl:output message="tns:Obtener_RETAILHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTILITIES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata UTILITIES desde Bolsa de Comercio a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_UTILITIESHttpPostIn" />
+      <wsdl:output message="tns:Obtener_UTILITIESHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CAC_40">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata CAC-40 Index Paris a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_CAC_40HttpPostIn" />
+      <wsdl:output message="tns:Obtener_CAC_40HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_DOWJONES_I">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata DOW JONES Industrial Average a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_DOWJONES_IHttpPostIn" />
+      <wsdl:output message="tns:Obtener_DOWJONES_IHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_FTSE_250">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata FTSE-250 Index London a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_FTSE_250HttpPostIn" />
+      <wsdl:output message="tns:Obtener_FTSE_250HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IBEX_35">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata IBEX Index Madrid a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_IBEX_35HttpPostIn" />
+      <wsdl:output message="tns:Obtener_IBEX_35HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_NASDAQ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata NASDAQ Composite a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_NASDAQHttpPostIn" />
+      <wsdl:output message="tns:Obtener_NASDAQHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SP_500">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata S&amp;P 500 a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_SP_500HttpPostIn" />
+      <wsdl:output message="tns:Obtener_SP_500HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Fondo_Pension">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Cuota y Patrimonio de Fondos de Pensiones a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Fondo_PensionHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Fondo_PensionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cuota_FFMM">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Cuota y Patrimonio de Fondos de Mutuos a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_Cuota_FFMMHttpPostIn" />
+      <wsdl:output message="tns:Obtener_Cuota_FFMMHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLCAP Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLCAPHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COLCAPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAPAZ">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLCAPAZ Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLCAPAZHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COLCAPAZHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLEQTY">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLEQTY Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLEQTYHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COLEQTYHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLIR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLIR Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLIRHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COLIRHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLSC">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLSC Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLSCHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COLSCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTES">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COLTESHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESLP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES LP Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESLPHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COLTESLPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESUVR">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Rescata Valor Hoy COLTES UVR Bolsa Colombia a (T-1)</wsdl:documentation>
+      <wsdl:input message="tns:Obtener_COLTESUVRHttpPostIn" />
+      <wsdl:output message="tns:Obtener_COLTESUVRHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Web_Apoyo_BISoap" type="tns:Web_Apoyo_BISoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obtener_Dolar">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_Dolar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UF">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_UF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Euro">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_Euro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPSA">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_IPSA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Feriados">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_Feriados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Identificacion_FFMM">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_Identificacion_FFMM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IVP">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_IVP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPC">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_IPC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTM">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_UTM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Region_Chile">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_Poligono_Region_Chile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Comunas_Chile">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_Poligono_Comunas_Chile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_IGPA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INTER_10">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_INTER_10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COMMODITIES">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COMMODITIES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_BANCA">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_BANCA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_SMALL">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_IGPA_SMALL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_LARGE">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_IGPA_LARGE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_MID">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_IGPA_MID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONST_INMOB">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_CONST_INMOB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONSUMO">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_CONSUMO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INDUSTRIAL">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_INDUSTRIAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_RETAIL">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_RETAIL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTILITIES">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_UTILITIES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CAC_40">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_CAC_40" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_DOWJONES_I">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_DOWJONES_I" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_FTSE_250">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_FTSE_250" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IBEX_35">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_IBEX_35" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_NASDAQ">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_NASDAQ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SP_500">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_SP_500" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Fondo_Pension">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_Fondo_Pension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cuota_FFMM">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_Cuota_FFMM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAP">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COLCAP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAPAZ">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COLCAPAZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLEQTY">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COLEQTY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLIR">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COLIR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLSC">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COLSC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTES">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COLTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESLP">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COLTESLP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESUVR">
+      <soap:operation soapAction="http://www.webapoyobi.cl/Obtener_COLTESUVR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Web_Apoyo_BISoap12" type="tns:Web_Apoyo_BISoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Obtener_Dolar">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_Dolar" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UF">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_UF" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Euro">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_Euro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPSA">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_IPSA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Feriados">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_Feriados" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Identificacion_FFMM">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_Identificacion_FFMM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IVP">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_IVP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPC">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_IPC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTM">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_UTM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Region_Chile">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_Poligono_Region_Chile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Comunas_Chile">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_Poligono_Comunas_Chile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_IGPA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INTER_10">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_INTER_10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COMMODITIES">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COMMODITIES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_BANCA">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_BANCA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_SMALL">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_IGPA_SMALL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_LARGE">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_IGPA_LARGE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_MID">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_IGPA_MID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONST_INMOB">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_CONST_INMOB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONSUMO">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_CONSUMO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INDUSTRIAL">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_INDUSTRIAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_RETAIL">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_RETAIL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTILITIES">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_UTILITIES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CAC_40">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_CAC_40" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_DOWJONES_I">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_DOWJONES_I" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_FTSE_250">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_FTSE_250" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IBEX_35">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_IBEX_35" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_NASDAQ">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_NASDAQ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SP_500">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_SP_500" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Fondo_Pension">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_Fondo_Pension" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cuota_FFMM">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_Cuota_FFMM" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAP">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COLCAP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAPAZ">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COLCAPAZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLEQTY">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COLEQTY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLIR">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COLIR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLSC">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COLSC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTES">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COLTES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESLP">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COLTESLP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESUVR">
+      <soap12:operation soapAction="http://www.webapoyobi.cl/Obtener_COLTESUVR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Web_Apoyo_BIHttpGet" type="tns:Web_Apoyo_BIHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="Obtener_Dolar">
+      <http:operation location="/Obtener_Dolar" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UF">
+      <http:operation location="/Obtener_UF" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Euro">
+      <http:operation location="/Obtener_Euro" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPSA">
+      <http:operation location="/Obtener_IPSA" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Feriados">
+      <http:operation location="/Obtener_Feriados" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Identificacion_FFMM">
+      <http:operation location="/Obtener_Identificacion_FFMM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IVP">
+      <http:operation location="/Obtener_IVP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPC">
+      <http:operation location="/Obtener_IPC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTM">
+      <http:operation location="/Obtener_UTM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Region_Chile">
+      <http:operation location="/Obtener_Poligono_Region_Chile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Comunas_Chile">
+      <http:operation location="/Obtener_Poligono_Comunas_Chile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA">
+      <http:operation location="/Obtener_IGPA" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INTER_10">
+      <http:operation location="/Obtener_INTER_10" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COMMODITIES">
+      <http:operation location="/Obtener_COMMODITIES" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_BANCA">
+      <http:operation location="/Obtener_BANCA" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_SMALL">
+      <http:operation location="/Obtener_IGPA_SMALL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_LARGE">
+      <http:operation location="/Obtener_IGPA_LARGE" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_MID">
+      <http:operation location="/Obtener_IGPA_MID" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONST_INMOB">
+      <http:operation location="/Obtener_CONST_INMOB" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONSUMO">
+      <http:operation location="/Obtener_CONSUMO" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INDUSTRIAL">
+      <http:operation location="/Obtener_INDUSTRIAL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_RETAIL">
+      <http:operation location="/Obtener_RETAIL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTILITIES">
+      <http:operation location="/Obtener_UTILITIES" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CAC_40">
+      <http:operation location="/Obtener_CAC_40" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_DOWJONES_I">
+      <http:operation location="/Obtener_DOWJONES_I" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_FTSE_250">
+      <http:operation location="/Obtener_FTSE_250" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IBEX_35">
+      <http:operation location="/Obtener_IBEX_35" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_NASDAQ">
+      <http:operation location="/Obtener_NASDAQ" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SP_500">
+      <http:operation location="/Obtener_SP_500" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Fondo_Pension">
+      <http:operation location="/Obtener_Fondo_Pension" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cuota_FFMM">
+      <http:operation location="/Obtener_Cuota_FFMM" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAP">
+      <http:operation location="/Obtener_COLCAP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAPAZ">
+      <http:operation location="/Obtener_COLCAPAZ" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLEQTY">
+      <http:operation location="/Obtener_COLEQTY" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLIR">
+      <http:operation location="/Obtener_COLIR" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLSC">
+      <http:operation location="/Obtener_COLSC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTES">
+      <http:operation location="/Obtener_COLTES" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESLP">
+      <http:operation location="/Obtener_COLTESLP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESUVR">
+      <http:operation location="/Obtener_COLTESUVR" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Web_Apoyo_BIHttpPost" type="tns:Web_Apoyo_BIHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="Obtener_Dolar">
+      <http:operation location="/Obtener_Dolar" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UF">
+      <http:operation location="/Obtener_UF" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Euro">
+      <http:operation location="/Obtener_Euro" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPSA">
+      <http:operation location="/Obtener_IPSA" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Feriados">
+      <http:operation location="/Obtener_Feriados" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Identificacion_FFMM">
+      <http:operation location="/Obtener_Identificacion_FFMM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IVP">
+      <http:operation location="/Obtener_IVP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IPC">
+      <http:operation location="/Obtener_IPC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTM">
+      <http:operation location="/Obtener_UTM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Region_Chile">
+      <http:operation location="/Obtener_Poligono_Region_Chile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Poligono_Comunas_Chile">
+      <http:operation location="/Obtener_Poligono_Comunas_Chile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA">
+      <http:operation location="/Obtener_IGPA" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INTER_10">
+      <http:operation location="/Obtener_INTER_10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COMMODITIES">
+      <http:operation location="/Obtener_COMMODITIES" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_BANCA">
+      <http:operation location="/Obtener_BANCA" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_SMALL">
+      <http:operation location="/Obtener_IGPA_SMALL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_LARGE">
+      <http:operation location="/Obtener_IGPA_LARGE" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IGPA_MID">
+      <http:operation location="/Obtener_IGPA_MID" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONST_INMOB">
+      <http:operation location="/Obtener_CONST_INMOB" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CONSUMO">
+      <http:operation location="/Obtener_CONSUMO" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_INDUSTRIAL">
+      <http:operation location="/Obtener_INDUSTRIAL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_RETAIL">
+      <http:operation location="/Obtener_RETAIL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_UTILITIES">
+      <http:operation location="/Obtener_UTILITIES" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_CAC_40">
+      <http:operation location="/Obtener_CAC_40" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_DOWJONES_I">
+      <http:operation location="/Obtener_DOWJONES_I" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_FTSE_250">
+      <http:operation location="/Obtener_FTSE_250" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_IBEX_35">
+      <http:operation location="/Obtener_IBEX_35" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_NASDAQ">
+      <http:operation location="/Obtener_NASDAQ" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_SP_500">
+      <http:operation location="/Obtener_SP_500" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Fondo_Pension">
+      <http:operation location="/Obtener_Fondo_Pension" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_Cuota_FFMM">
+      <http:operation location="/Obtener_Cuota_FFMM" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAP">
+      <http:operation location="/Obtener_COLCAP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLCAPAZ">
+      <http:operation location="/Obtener_COLCAPAZ" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLEQTY">
+      <http:operation location="/Obtener_COLEQTY" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLIR">
+      <http:operation location="/Obtener_COLIR" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLSC">
+      <http:operation location="/Obtener_COLSC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTES">
+      <http:operation location="/Obtener_COLTES" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESLP">
+      <http:operation location="/Obtener_COLTESLP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Obtener_COLTESUVR">
+      <http:operation location="/Obtener_COLTESUVR" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Web_Apoyo_BI">
+    <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Formato de Fecha YYYY-MM-DD (www.webapoyobi.cl)</wsdl:documentation>
+    <wsdl:port name="Web_Apoyo_BISoap" binding="tns:Web_Apoyo_BISoap">
+      <soap:address location="http://webapoyobi.cl/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Web_Apoyo_BISoap12" binding="tns:Web_Apoyo_BISoap12">
+      <soap12:address location="http://webapoyobi.cl/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Web_Apoyo_BIHttpGet" binding="tns:Web_Apoyo_BIHttpGet">
+      <http:address location="http://webapoyobi.cl/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Web_Apoyo_BIHttpPost" binding="tns:Web_Apoyo_BIHttpPost">
+      <http:address location="http://webapoyobi.cl/service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

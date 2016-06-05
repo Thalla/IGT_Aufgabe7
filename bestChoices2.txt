@@ -1,0 +1,110 @@
+Pool.bpmn
+ShippingSvc_1.wsdl             15                                                                                                                     
+IncidentManagement(ProcessEngineExecutable).bpmn
+DatosAlumno_1.wsdl             17,2                                                                                                                   
+APIService_1.wsdl              9,6                                                                                                                    
+VMS_Alarmi_RAZVOJ_MapServer... 4                                                                                                                      
+SFAPIService_1.wsdl            4                                                                                                                      
+Members_1.wsdl                 2,4                                                                                                                    
+Examples-DI-ExpandedSub-Process.bpmn
+Servicev2_1.wsdl               498                                                                                                                    
+Examples-DI-ExpandedSub-Process(1).bpmn
+Servicev2_1.wsdl               498                                                                                                                    
+EmailVoting2.bpmn
+Servicev2_1.wsdl               28,5                                                                                                                   
+Members_1.wsdl                 22,8571428571429                                                                                                       
+Web_Apoyo_BI_1.wsdl            19,4285714285714                                                                                                       
+Web_Apoyo_BI_2.wsdl            19,4285714285714                                                                                                       
+APIService_1.wsdl              18,5                                                                                                                   
+CollapsedSubProcess.bpmn
+ShippingSvc_1.wsdl             9,75                                                                                                                   
+CustomerService_1.wsdl         2,5                                                                                                                    
+GASService_1.wsdl              1,25                                                                                                                   
+IssuePolicy_1.wsdl             0,25                                                                                                                   
+ShopService_1.wsdl             0,25                                                                                                                   
+Examples-DI-LanesandNestedLanes.bpmn
+Servicev2_1.wsdl               33,3333333333333                                                                                                       
+APIService_1.wsdl              15,3333333333333                                                                                                       
+SFAPIService_1.wsdl            13,6666666666667                                                                                                       
+DatosAlumno_1.wsdl             9,33333333333333                                                                                                       
+egmSorguService_1.wsdl         2,66666666666667                                                                                                       
+IncidentManagementlevel1.bpmn
+GASService_1.wsdl              19                                                                                                                     
+IssuePolicy_1.wsdl             4,33333333333333                                                                                                       
+VMS_Alarmi_RAZVOJ_MapServer... 4,16666666666667                                                                                                       
+APIService_1.wsdl              3                                                                                                                      
+Members_1.wsdl                 2                                                                                                                      
+IncidentManagement(WholeCollab).bpmn
+VMS_Alarmi_RAZVOJ_MapServer... 186,4                                                                                                                  
+APIService_1.wsdl              66,6                                                                                                                   
+DatosAlumno_1.wsdl             64                                                                                                                     
+Servicev2_1.wsdl               47,95                                                                                                                  
+Web_Apoyo_BI_1.wsdl            35,5                                                                                                                   
+Laneset.bpmn
+ShippingSvc_1.wsdl             15                                                                                                                     
+Process.bpmn
+ShippingSvc_1.wsdl             15                                                                                                                     
+triso-OrderProcessforPizzaV4.bpmn
+APIService_1.wsdl              2,5                                                                                                                    
+CustomerService_1.wsdl         1,66666666666667                                                                                                       
+Servicev2_1.wsdl               1,66666666666667                                                                                                       
+IssuePolicy_1.wsdl             0,333333333333333                                                                                                      
+ShippingSvc_1.wsdl             0,166666666666667                                                                                                      
+Examples-DI-Choreography.bpmn
+Examples-DI-CollapsedSub-Process.bpmn
+Servicev2_1.wsdl               498                                                                                                                    
+IncidentManagement-collchor.bpmn
+APIService_1.wsdl              21,6                                                                                                                   
+VMS_Alarmi_RAZVOJ_MapServer... 16                                                                                                                     
+Members_1.wsdl                 9,86666666666667                                                                                                       
+GASService_1.wsdl              7,93333333333333                                                                                                       
+XigniteScreener_1.wsdl         2,4                                                                                                                    
+ProcurementProcesseswithErrorHandling-StencilTrisotech3pages.bpmn
+ArticleService_1.wsdl          8,14285714285714                                                                                                       
+ShippingSvc_1.wsdl             4,28571428571429                                                                                                       
+VMS_Alarmi_RAZVOJ_MapServer... 3,14285714285714                                                                                                       
+CustomerService_1.wsdl         2,85714285714286                                                                                                       
+APIService_1.wsdl              2,28571428571429                                                                                                       
+ExpandedSubProcess.bpmn
+ShippingSvc_1.wsdl             9,75                                                                                                                   
+CustomerService_1.wsdl         2,5                                                                                                                    
+GASService_1.wsdl              1,25                                                                                                                   
+IssuePolicy_1.wsdl             0,25                                                                                                                   
+ShopService_1.wsdl             0,25                                                                                                                   
+CallActivity.bpmn
+ShippingSvc_1.wsdl             9,75                                                                                                                   
+CustomerService_1.wsdl         2,5                                                                                                                    
+GASService_1.wsdl              1,25                                                                                                                   
+IssuePolicy_1.wsdl             0,25                                                                                                                   
+ShopService_1.wsdl             0,25                                                                                                                   
+TavelBooking.bpmn
+Info_1.wsdl                    29,1818181818182                                                                                                       
+DatosAlumno_1.wsdl             16,6363636363636                                                                                                       
+APIService_1.wsdl              15,5454545454545                                                                                                       
+VMS_Alarmi_RAZVOJ_MapServer... 12,7727272727273                                                                                                       
+XigniteScreener_1.wsdl         10,5                                                                                                                   
+NobelPrizeProcess.bpmn
+Members_1.wsdl                 15,047619047619                                                                                                        
+CallistoIdentiteObjectSecur... 12,8095238095238                                                                                                       
+APIService_1.wsdl              5,42857142857143                                                                                                       
+Web_Apoyo_BI_1.wsdl            5,14285714285714                                                                                                       
+Web_Apoyo_BI_2.wsdl            5,14285714285714                                                                                                       
+Examples-DI-VerticalCollaboration.bpmn
+triso-HardwareRetailerv2.bpmn
+Web_Apoyo_BI_1.wsdl            19,0588235294118                                                                                                       
+Web_Apoyo_BI_2.wsdl            19,0588235294118                                                                                                       
+XigniteScreener_1.wsdl         4,76470588235294                                                                                                       
+CallistoIdentiteObjectSecur... 3,82352941176471                                                                                                       
+VMS_Alarmi_RAZVOJ_MapServer... 3,58823529411765                                                                                                       
+IncidentManagement(ProcessEngineOnly).bpmn
+APIService_1.wsdl              19,5454545454545                                                                                                       
+DatosAlumno_1.wsdl             10,3636363636364                                                                                                       
+GASService_1.wsdl              6,45454545454545                                                                                                       
+Members_1.wsdl                 4                                                                                                                      
+SFAPIService_1.wsdl            1,81818181818182                                                                                                       
+IncidentManagement(AccountManagerOnly).bpmn
+VMS_Alarmi_RAZVOJ_MapServer... 18,8                                                                                                                   
+APIService_1.wsdl              11,6                                                                                                                   
+Members_1.wsdl                 5,2                                                                                                                    
+XigniteScreener_1.wsdl         4                                                                                                                      
+CDC_1.wsdl                     3,6

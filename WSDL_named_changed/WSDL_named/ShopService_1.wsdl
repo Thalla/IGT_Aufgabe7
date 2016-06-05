@@ -1,0 +1,117 @@
+<?xml version="1.0"?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2.1-b01-. --><definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://predic8.com/wsdl/shop/1/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://predic8.com/common/1/" targetNamespace="http://predic8.com/wsdl/shop/1/" name="shop">
+    <types>
+        <xsd:schema xmlns:c="http://predic8.com/common/1/" targetNamespace="http://predic8.com/wsdl/shop/1/">
+            <xsd:import schemaLocation="http://www.predic8.com:8080/shop/ShopService?xsd=1" namespace="http://predic8.com/common/1/"></xsd:import>
+
+            <xsd:element name="createResponse" type="tns:CreateResponseType"></xsd:element>
+            <xsd:complexType name="CreateResponseType">
+                <xsd:sequence>
+                    <xsd:element name="cartId" type="c:IdentifierType"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="create" type="tns:CreateType"></xsd:element>
+            <xsd:complexType name="CreateType">
+                <xsd:sequence>
+                    <xsd:element name="customerId" type="c:IdentifierType"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="addToCartResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="addToCart" type="tns:AddToCartType"></xsd:element>
+            <xsd:complexType name="AddToCartType">
+                <xsd:sequence>
+                    <xsd:element name="cartId" type="c:IdentifierType"></xsd:element>
+                    <xsd:element name="articleId" type="c:IdentifierType"></xsd:element>
+                    <xsd:element name="quantity" type="xsd:decimal"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="checkoutResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="checkout" type="tns:CheckoutType"></xsd:element>
+            <xsd:complexType name="CheckoutType">
+                <xsd:sequence>
+                    <xsd:element name="cartId" type="c:IdentifierType"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+        </xsd:schema>
+    </types>
+    <message name="createRequest">
+        <part name="part1" element="tns:create"></part>
+    </message>
+    <message name="createResponse">
+        <part name="part1" element="tns:createResponse"></part>
+    </message>
+    <message name="addToCartRequest">
+        <part name="part1" element="tns:addToCart"></part>
+    </message>
+    <message name="addToCartResponse">
+        <part name="part1" element="tns:addToCartResponse"></part>
+    </message>
+    <message name="checkoutRequest">
+        <part name="part1" element="tns:checkout"></part>
+    </message>
+    <message name="checkoutResponse">
+        <part name="part1" element="tns:checkoutResponse"></part>
+    </message>
+    <portType name="ShopServicePT">
+        <operation name="create">
+            <input name="input1" message="tns:createRequest"></input>
+            <output name="output1" message="tns:createResponse"></output>
+        </operation>
+        <operation name="addToCart">
+            <input name="input2" message="tns:addToCartRequest"></input>
+            <output name="output2" message="tns:addToCartResponse"></output>
+        </operation>
+        <operation name="checkout">
+            <input name="input3" message="tns:checkoutRequest"></input>
+            <output name="output3" message="tns:checkoutResponse"></output>
+        </operation>
+    </portType>
+    <wsdl:binding name="ShopServicePTBinding" type="tns:ShopServicePT">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+        <wsdl:operation name="create">
+            <soap:operation soapAction="create_action"></soap:operation>
+            <wsdl:input name="input1">
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output name="output1">
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="addToCart">
+            <soap:operation soapAction="addToCart_action"></soap:operation>
+            <wsdl:input name="input2">
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output name="output2">
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="checkout">
+            <soap:operation soapAction="checkout_action"></soap:operation>
+            <wsdl:input name="input3">
+                <soap:body use="literal"></soap:body>
+            </wsdl:input>
+            <wsdl:output name="output3">
+                <soap:body use="literal"></soap:body>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ShopService">
+        <wsdl:port name="ShopServicePTPort" binding="tns:ShopServicePTBinding">
+            <soap:address location="http://www.predic8.com:8080/shop/ShopService"></soap:address>
+        </wsdl:port>
+    </wsdl:service>
+</definitions>
